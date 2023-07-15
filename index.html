@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>⚔ TeamMatch 💜💚</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>⚔ TeamMatch 💜💚</h1>
+    <div id="questions">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name"><br><br>
+
+        <!-- Agrega aquí las preguntas y opciones de respuesta -->
+        
+        <button onclick="calculateTeam()">Calcular equipo</button>
+    </div>
+    
+    <div id="result" style="display: none;">
+        <h2>Tu equipo es: <span id="teamColor"></span></h2>
+        <img id="cupcake" src="" alt="Cupcake">
+        <button onclick="shareOnSocialMedia()">Compartir en redes sociales</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
