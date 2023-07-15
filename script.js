@@ -181,8 +181,6 @@ function captureResultImage() {
   clone.style.width = `390px`; // Establece el ancho del clon igual al ancho original
   clone.style.height = `844px`; // Establece la altura del clon igual a la altura original
   clone.style.overflow = "visible"; // Asegura que el contenido completo sea visible
-  clone.style.backgroundColor = teamColor; // Establece el color de fondo del clon igual al del equipo
-
   // Agregué el clon al documento
   document.body.appendChild(clone);
 
