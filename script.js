@@ -60,12 +60,12 @@ const calculateTeam = () => {
 const showQuestion = () => {
   const questionElement = document.getElementById('questions');
   questionElement.innerHTML = `
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" value="${getNameFromStorage()}"><br><br>
+    
+    <input onclick="calculateTeam()" placeholder="Digita Tu Nombre" type="text" id="name" value="${getNameFromStorage()}"><br><br>
     <h2 class='questionText'>${questions[currentQuestion].question}</h2>
     ${getOptionsHTML(questions[currentQuestion].options)}
     <br><br>
-    <button onclick="calculateTeam()">Siguiente pregunta</button>
+    
   `;
 }
 
@@ -74,7 +74,7 @@ const getOptionsHTML = (options) => {
   let optionsHTML = '';
   for (let i = 0; i < options.length; i++) {
     optionsHTML += `
-      <input type="radio" name="answer" value="${i}">${options[i]}<br>
+      <input onclick="calculateTeam()" type="radio" name="answer" value="${i}">${options[i]}<br>
     `;
   }
   return optionsHTML;
