@@ -1,8 +1,19 @@
 @font-face {
-  font-family: "Riffic Free";
-  src: url("fonts/RifficFree-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Riffic Free';
+    src: url('fonts/RifficFree-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    text-align: center;
+    font-family: 'Riffic Free', Arial, sans-serif;
+    padding: 4vmin;
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
 }
 
 body {
@@ -17,9 +28,17 @@ body {
 }
 
 h1 {
-  color: #800080;
-  margin-top: 20px;
-  font-size: 5vw;
+    color: #800080;
+    margin-top: 1vmin;
+    font-size: 10vmin;
+}
+
+.questionText {
+    color: #fff;
+    letter-spacing: -1px;
+    font-size: 5vmin;
+    -webkit-text-stroke: 2px #00ffff;
+    text-shadow: 3px 3px 1px #0000ff;
 }
 
 label {
