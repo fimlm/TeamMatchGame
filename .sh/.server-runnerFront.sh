@@ -18,3 +18,6 @@ rm actions-runner-linux-x64-2.306.0.tar.gz
 ./svc.sh install
 ./svc.sh status
 ./svc.sh start
+
+# Use this YAML in your workflow file for each job
+# runs-on: self-hosted
