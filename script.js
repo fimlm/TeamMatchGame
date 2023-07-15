@@ -80,7 +80,6 @@ const getOptionsHTML = (options) => {
   return optionsHTML;
 }
 
-
 // Función para seleccionar una respuesta
 const selectAnswer = (optionIndex) => {
   const radioButtons = document.getElementsByName('answer');
@@ -105,7 +104,6 @@ const showResultWithAnimation = () => {
     showResult();
   }, 3000);
 }
-
 
 // Función para mostrar el resultado
 const showResult = () => {
@@ -137,6 +135,20 @@ const shareOnSocialMedia = () => {
   // Aquí puedes agregar la lógica para compartir en redes sociales
   alert(`Compartiendo en redes sociales: ¡Soy del ${teamColor}!`);
 }
+
+// Función para obtener un arreglo de preguntas en orden aleatorio
+const getRandomQuestions = () => {
+  const randomQuestions = [...questions];
+  for (let i = randomQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [randomQuestions[i], randomQuestions[j]] = [randomQuestions[j], randomQuestions[i]];
+  }
+  return randomQuestions;
+}
+
+// Mostrar las preguntas en orden aleatorio
+const randomQuestions = getRandomQuestions();
+questions.splice(0, questions.length, ...randomQuestions);
 
 // Mostrar la primera pregunta al cargar la página
 showQuestion();
