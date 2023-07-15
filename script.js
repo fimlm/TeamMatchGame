@@ -65,7 +65,7 @@ const showQuestion = () => {
         <input type="radio" name="answer" value="A"> A
         <input type="radio" name="answer" value="B"> B
         <br><br>
-        <button onclick="calculateTeam()">Siguiente pregunta</button>
+        <button onclick="calculateTeam()" class='nextQuestionButton'>Siguiente pregunta</button>
     `;
 }
 
