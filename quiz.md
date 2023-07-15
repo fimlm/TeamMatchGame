@@ -1,6 +1,3 @@
-A = Equipo verde
-B = Equipo morado
-
 ¿Qué prefieres?
 
 🎨 ¿Qué artista prefieres?
@@ -57,7 +54,7 @@ A: 1984
 B: La Biblia
 B: La historia de Europa
 
-⚽ ¿Qué prefieres?
+🏈 ¿Qué prefieres?
 A: Fútbol
 A: Ajedrez
 B: Básquet
@@ -69,5 +66,5 @@ A: Negro
 B: Turquesa
 B: Fucsia
 
-Donde A es = Equipo Verde
-Donde B es = Equipo Morado
+Donde A es = 💚
+Donde B es = 💜

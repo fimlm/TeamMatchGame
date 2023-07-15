@@ -9,7 +9,7 @@ const questions = [
   { question: '💐 ¿Qué flor prefieres?', options: ['Margarita', 'Rosas', 'Tulipanes', 'Orquídeas'], color: '' },
   { question: '🍦 ¿Qué sabores de helado prefieres?', options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'], color: '' },
   { question: '📚 ¿Qué libro prefieres?', options: ['Crónicas de una muerte anunciada', '1984', 'La Biblia', 'La historia de Europa'], color: '' },
-  { question: '⚽ ¿Qué deporte prefieres?', options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'], color: '' },
+  { question: '🏈 ¿Qué deporte prefieres?', options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'], color: '' },
   { question: '🌈 ¿Qué color prefieres?', options: ['Rojo', 'Negro', 'Turquesa', 'Fucsia'], color: '' }
 ];
 
