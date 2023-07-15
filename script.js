@@ -10,7 +10,7 @@ const questions = [
     { question: '🚗 ¿Qué carro prefieres?', options: ['BMW', 'Mercedes', 'Porsche', 'Ferrari'], color: '' },
     { question: '💐 ¿Qué flor prefieres?', options: ['Margarita', 'Rosas', 'Tulipanes', 'Orquídeas'], color: '' },
     { question: '🍦 ¿Qué sabor de helado prefieres?', options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'], color: '' },
-    { question: '📚 ¿Qué libro prefieres?', options: ['Crónicas de una muerte anunciada', '1984', 'La Biblia', 'La historia de Europa'], color: '' },
+    { question: '📚 ¿Qué libro prefieres?', options: ['Crónicas de una muerte anunciada', '1984', 'La Biblia', 'El Principito'], color: '' },
     { question: '🏈 ¿Qué deporte prefieres?', options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'], color: '' },
     { question: '🌈 ¿Qué color prefieres?', options: ['Rojo', 'Negro', 'Turquesa', 'Fucsia'], color: '' }
 ];
@@ -120,7 +120,7 @@ const showResultWithAnimation = () => {
 
 // Función para mostrar el resultado
 const showResult = () => {
-    questionElement.innerHTML = "<img src='./img/giphy.gif' style='background-color:transparent'>";
+    questionElement.innerHTML = "<img src='./media/img/giphy.gif' style='background-color:transparent'>";
 
     setTimeout(() => {
         questionElement.innerHTML = '<h2>🧁🎉🥳 <span id="teamColor"></span></h2><img id="cupcake" src="" alt="Cupcake">  <button onclick="shareOnSocialMedia()">Descargar recordatorio para compartir en redes sociales</button>';
