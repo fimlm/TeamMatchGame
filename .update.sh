@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Setup permision
+cd .. && chown -R worldsite.worldsite TeamMatchGame && cd TeamMatchGame
+
 # Commits Local Server Production
 git config pull.rebase true
 git add .
