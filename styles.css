@@ -13,56 +13,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Ajustar el alto del fondo a la altura de la ventana */
+  height: 100vh;
 }
 
 h1 {
   color: #800080;
   margin-top: 20px;
-}
-
-#questions {
-  display: block;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-#result {
-  display: none;
-  max-width: 500px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-#teamColor {
-  font-weight: bold;
-}
-
-#cupcake {
-  width: 200px;
-  height: 200px;
-  margin-top: 20px;
-}
-
-button {
-  margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-  h1 {
-      font-size: 24px;
-  }
-
-  #questions {
-      max-width: 90%;
-  }
-
-  #result {
-      max-width: 90%;
-  }
-
-  #cupcake {
-      width: 150px;
-      height: 150px;
-  }
+  font-size: 5vw;
 }
