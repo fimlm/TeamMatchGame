@@ -64,11 +64,11 @@ label {
 }
 
 input {
+  text-align: center;
   border: 2px solid #800080;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+  font-family: "Riffic Free", Arial, sans-serif;
 }
-input{
-  text-align: center;
-}
+
