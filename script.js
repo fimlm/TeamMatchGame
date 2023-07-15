@@ -102,7 +102,7 @@ const showResult = () => {
   }
 
   const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
-  teamColorElement.textContent = `${name}, tu equipo es ${teamColor}`;
+  teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
 }
 
 // Función para compartir en redes sociales
