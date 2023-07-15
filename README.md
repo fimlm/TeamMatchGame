@@ -8,7 +8,17 @@
   - Unimacion que abre un CupCake y le dice el color del equipo elejido.
   - Generar un JPG con el resultado
   - Poder compartir en redes sociales
+  - 
  
+# Hexadecimales
+
+# Colores 💚💜
+#SE0A99
+#02C627
+
+# Colores Preguntas
+#00ffff y #0000ff 
+
 > ¿Qué prefieres?
 
 Artistas
