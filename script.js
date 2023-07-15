@@ -45,7 +45,7 @@ const calculateTeam = () => {
 
     saveNameToStorage(name); // Guardar el nombre en el almacenamiento del navegador
 
-    const answer = document.querySelector('input[name="answer"]:checked');
+    const answer = document.querySelector('#answer');
 
     if (!answer) {
         return Swal.fire({
@@ -88,7 +88,7 @@ const getOptionsHTML = (options) => {
     let optionsHTML = '';
     for (let i = 0; i < options.length; i++) {
         optionsHTML += `
-      <input onclick="calculateTeam()" type="radio" name="answer" value="${i}">${options[i]}<br>
+        <button value='${i}' onclick="calculateTeam()" name="answer" id='answer'> ${ options[i] } </button><br>
     `;
     }
     return optionsHTML;
@@ -152,7 +152,7 @@ const shareOnSocialMedia = () => {
         imageUrl: 'https://placeholder.pics/svg/300x1500',
         imageHeight: 500,
         imageAlt: 'A tall image'
-      })
+    })
 }
 
 // Función para obtener un arreglo de preguntas en orden aleatorio
