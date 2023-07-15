@@ -61,7 +61,7 @@ const showQuestion = () => {
   const questionElement = document.getElementById('questions');
   questionElement.innerHTML = `
     
-    <input onclick="calculateTeam()" placeholder="Digita Tu Nombre" type="text" id="name" value="${getNameFromStorage()}"><br><br>
+    <input placeholder="Digita Tu Nombre" type="text" id="name" value="${getNameFromStorage()}"><br><br>
     <h2 class='questionText'>${questions[currentQuestion].question}</h2>
     ${getOptionsHTML(questions[currentQuestion].options)}
     <br><br>
