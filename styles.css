@@ -16,17 +16,6 @@ body {
     height: 90vh;
 }
 
-body {
-  text-align: center;
-  font-family: "Riffic Free", Arial, sans-serif;
-  padding: 20px;
-  background-image: url("img/bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
 h1 {
     color: #800080;
     margin-top: 1vmin;
@@ -39,23 +28,6 @@ h1 {
     font-size: 5vmin;
     -webkit-text-stroke: 3px #246df8;
     text-shadow: 4px 4px 3px #0000ff;
-}
-
-.nextQuestionButton {
-    padding: 1.5vmin;
-    width: 25vmin;
-    border-radius: 20px;
-    border: none;
-    background-color: #246df8;
-    color: #fff;
-    box-shadow: 2px 2px 5px #0000ff;
-    transition: all .5s ease-in-out;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-.nextQuestionButton:hover{
-    background-color: #0000ff;
 }
 
 label {
@@ -72,15 +44,13 @@ input {
   font-family: "Riffic Free", Arial, sans-serif;
 }
 
-button{
+button {
   text-align: center;
   border: 2px solid #800080;
   border-radius: 10px;
-  
-  margin: 20%;
+  padding: 1.5vmin;
+  letter-spacing: 1px;
   font-family: "Riffic Free", Arial, sans-serif;
-  
-
 }
 
 #colorCircle {
@@ -92,7 +62,7 @@ button{
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-image: linear-gradient(#02C627, #SE0A99);
+  background-image: linear-gradient(#02C627, #246df8);
   animation: pulse 1s ease-in-out infinite;
 }
 

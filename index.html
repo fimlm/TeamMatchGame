@@ -4,23 +4,14 @@
     <title>🧁 TeamMatch 💜💚</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <h1>🧁 TeamMatch 💜💚</h1>
     <div id="questions">
-        <label for="name">Nombre:</label>
         <input type="text" id="name" placeholder="Ingresa tu nombre"><br><br>
-
-        <!-- Preguntas con emojis -->
-        <p>🎵 ¿Cuál prefieres?</p>
-        <input type="radio" id="option1" name="music" value="A">
-        <label for="option1">Opción A</label><br>
-        <input type="radio" id="option2" name="music" value="B">
-        <label for="option2">Opción B</label><br><br>
-
-        <!-- Resto de las preguntas con emojis -->
-
-        <button onclick="calculateTeam()">Calcular equipo</button>
     </div>
     <div id="colorCircle"></div>
     <div id="result" style="display: none;">
@@ -28,7 +19,6 @@
         <img id="cupcake" src="" alt="Cupcake">
         <button onclick="shareOnSocialMedia()">Descargar recordatorio para compartir en redes sociales</button>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
