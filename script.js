@@ -15,6 +15,7 @@ const questions = [
 
 let currentQuestion = 0;
 let teamColor = '';
+const questionElement = document.getElementById('questions');
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -72,14 +73,10 @@ const calculateTeam = () => {
 
 // Función para mostrar la pregunta actual
 const showQuestion = () => {
-    const questionElement = document.getElementById('questions');
     questionElement.innerHTML = `
-    
-    <input placeholder="💚 Tu Nombre 💜" type="text" id="name" value="${getNameFromStorage()}"><br><br>
+    <input placeholder="💚 Tu Nombre 💜" type="text" id="name" value="${getNameFromStorage()}"><br>
     <h2 class='questionText'>${questions[currentQuestion].question}</h2>
     ${getOptionsHTML(questions[currentQuestion].options)}
-    <br><br>
-    
   `;
 }
 
@@ -121,27 +118,30 @@ const showResultWithAnimation = () => {
 
 // Función para mostrar el resultado
 const showResult = () => {
-    const resultElement = document.getElementById('result');
-    resultElement.style.display = 'block';
+    questionElement.innerHTML = "<img src='./img/giphy.gif' style='background-color:transparent'>";
 
-    const teamColorElement = document.getElementById('teamColor');
-    const cupcakeElement = document.getElementById('cupcake');
-
-    const greenPoints = questions.filter(q => q.color === 'Equipo Verde').length;
-    const purplePoints = questions.filter(q => q.color === 'Equipo Morado').length;
-
-    if (greenPoints > purplePoints) {
-        teamColor = 'Equipo Verde';
-        teamColorElement.style.color = 'green';
-        cupcakeElement.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqm7Qj7afcE3BPS6Lg4a0gF0hwtZx87xr2g&usqp=CAU?w=200';
-    } else {
-        teamColor = 'Equipo Morado';
-        teamColorElement.style.color = 'purple';
-        cupcakeElement.src = 'https://img.freepik.com/premium-vector/cupcake-blueberry-cream-sweet-cake-desert-vector-illustration_526280-678.jpg?w=200';
-    }
-
-    const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
-    teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
+    setTimeout(() => {
+        questionElement.innerHTML = '<h2>🧁🎉🥳 <span id="teamColor"></span></h2><img id="cupcake" src="" alt="Cupcake">  <button onclick="shareOnSocialMedia()">Descargar recordatorio para compartir en redes sociales</button>';
+    
+        const teamColorElement = document.getElementById('teamColor');
+        const cupcakeElement = document.getElementById('cupcake');
+    
+        const greenPoints = questions.filter(q => q.color === 'Equipo Verde').length;
+        const purplePoints = questions.filter(q => q.color === 'Equipo Morado').length;
+    
+        if (greenPoints > purplePoints) {
+            teamColor = 'Equipo Verde';
+            teamColorElement.style.color = 'green';
+            cupcakeElement.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqm7Qj7afcE3BPS6Lg4a0gF0hwtZx87xr2g&usqp=CAU?w=200';
+        } else {
+            teamColor = 'Equipo Morado';
+            teamColorElement.style.color = 'purple';
+            cupcakeElement.src = 'https://img.freepik.com/premium-vector/cupcake-blueberry-cream-sweet-cake-desert-vector-illustration_526280-678.jpg?w=200';
+        }
+    
+        const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
+        teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
+    }, 3000);
 }
 
 // Función para compartir en redes sociales
