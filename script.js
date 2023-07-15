@@ -7,7 +7,7 @@ const questions = [
     { question: '🎥 ¿Qué película prefieres?', options: ['Lo que el viento se llevó', 'Volver al futuro', 'Harry Potter', 'Matrix'], color: '' },
     { question: '🚗 ¿Qué carro prefieres?', options: ['BMW', 'Mercedes', 'Porsche', 'Ferrari'], color: '' },
     { question: '💐 ¿Qué flor prefieres?', options: ['Margarita', 'Rosas', 'Tulipanes', 'Orquídeas'], color: '' },
-    { question: '🍦 ¿Qué sabores de helado prefieres?', options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'], color: '' },
+    { question: '🍦 ¿Qué sabor de helado prefieres?', options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'], color: '' },
     { question: '📚 ¿Qué libro prefieres?', options: ['Crónicas de una muerte anunciada', '1984', 'La Biblia', 'La historia de Europa'], color: '' },
     { question: '🏈 ¿Qué deporte prefieres?', options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'], color: '' },
     { question: '🌈 ¿Qué color prefieres?', options: ['Rojo', 'Negro', 'Turquesa', 'Fucsia'], color: '' }
@@ -33,7 +33,7 @@ const calculateTeam = () => {
 
     if (name === '') {
         return Swal.fire({
-            title: 'Por favor, ingresa tu nombre',
+            title: 'Por favor, ingresa un nombre 🥺',
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
             },

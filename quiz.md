@@ -42,7 +42,7 @@ A: Rosas
 B: Tulipanes
 B: Orquídeas
 
-🍦 ¿Qué sabores de helado prefieres?
+🍦 ¿Qué sabor de helado prefieres?
 A: Chocolate
 A: Vainilla
 B: Limón
