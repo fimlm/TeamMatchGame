@@ -61,7 +61,7 @@ const showQuestion = () => {
   const questionElement = document.getElementById('questions');
   questionElement.innerHTML = `
     
-    <input placeholder="Digita Tu Nombre" type="text" id="name" value="${getNameFromStorage()}"><br><br>
+    <input placeholder="💚 Tu Nombre 💜" type="text" id="name" value="${getNameFromStorage()}"><br><br>
     <h2 class='questionText'>${questions[currentQuestion].question}</h2>
     ${getOptionsHTML(questions[currentQuestion].options)}
     <br><br>
@@ -79,6 +79,33 @@ const getOptionsHTML = (options) => {
   }
   return optionsHTML;
 }
+
+
+// Función para seleccionar una respuesta
+const selectAnswer = (optionIndex) => {
+  const radioButtons = document.getElementsByName('answer');
+  radioButtons[optionIndex].checked = true;
+}
+
+// Función para mostrar el resultado con animación
+const showResultWithAnimation = () => {
+  const resultElement = document.getElementById('result');
+  const colorCircle = document.getElementById('colorCircle');
+
+  // Ocultar el resultado inicialmente
+  resultElement.style.display = 'none';
+
+  // Mostrar la animación
+  colorCircle.style.display = 'block';
+
+  // Esperar 3 segundos y mostrar el resultado final
+  setTimeout(() => {
+    resultElement.style.display = 'block';
+    colorCircle.style.display = 'none';
+    showResult();
+  }, 3000);
+}
+
 
 // Función para mostrar el resultado
 const showResult = () => {
