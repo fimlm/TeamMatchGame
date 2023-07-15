@@ -1,6 +1,3 @@
-A = Equipo verde
-B = Equipo morado
-
 ¿Qué prefieres?
 
 🎨 ¿Qué artista prefieres?
@@ -45,7 +42,7 @@ A: Rosas
 B: Tulipanes
 B: Orquídeas
 
-🍦 ¿Qué sabores de helado prefieres?
+🍦 ¿Qué sabor de helado prefieres?
 A: Chocolate
 A: Vainilla
 B: Limón
@@ -57,7 +54,7 @@ A: 1984
 B: La Biblia
 B: La historia de Europa
 
-⚽ ¿Qué prefieres?
+🏈 ¿Qué prefieres?
 A: Fútbol
 A: Ajedrez
 B: Básquet
@@ -69,5 +66,5 @@ A: Negro
 B: Turquesa
 B: Fucsia
 
-Donde A es = Equipo Verde
-Donde B es = Equipo Morado
+Donde A es = 💚
+Donde B es = 💜

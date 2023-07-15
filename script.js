@@ -1,3 +1,5 @@
+// Music:
+
 // Array de preguntas y respuestas
 const questions = [
   {
@@ -46,7 +48,7 @@ const questions = [
     color: "",
   },
   {
-    question: "🍦 ¿Qué sabores de helado prefieres?",
+    question: "🍦 ¿Qué sabor de helado prefieres?",
     options: ["Chocolate", "Vainilla", "Limón", "Mandarina"],
     color: "",
   },
@@ -61,7 +63,7 @@ const questions = [
     color: "",
   },
   {
-    question: "⚽ ¿Qué deporte prefieres?",
+    question: "🏈 ¿Qué deporte prefieres?",
     options: ["Fútbol", "Ajedrez", "Básquet", "Tenis"],
     color: "",
   },
@@ -74,6 +76,7 @@ const questions = [
 
 let currentQuestion = 0;
 let teamColor = "";
+const questionElement = document.getElementById("questions");
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -91,17 +94,31 @@ const calculateTeam = () => {
   const name = document.getElementById("name").value.trim();
 
   if (name === "") {
-    alert("Por favor, ingresa tu nombre.");
-    return;
+    return Swal.fire({
+      title: "Por favor, ingresa un nombre 🥺",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
   }
 
   saveNameToStorage(name); // Guardar el nombre en el almacenamiento del navegador
 
-  const answer = document.querySelector('input[name="answer"]:checked');
+  const answer = document.querySelector("#answer");
 
   if (!answer) {
-    alert("Por favor, selecciona una respuesta.");
-    return;
+    return Swal.fire({
+      title: "Por favor, selecciona una respuesta",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
   }
 
   const optionIndex = parseInt(answer.value);
@@ -118,15 +135,11 @@ const calculateTeam = () => {
 
 // Función para mostrar la pregunta actual
 const showQuestion = () => {
-  const questionElement = document.getElementById("questions");
   questionElement.innerHTML = `
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" value="${getNameFromStorage()}"><br><br>
-      <h2 class='questionText'>${questions[currentQuestion].question}</h2>
-      ${getOptionsHTML(questions[currentQuestion].options)}
-      <br><br>
-      <button onclick="calculateTeam()">Siguiente pregunta</button>
-    `;
+    <input placeholder="💚 Tu Nombre 💜" type="text" id="name" value="${getNameFromStorage()}"><br>
+    <h2 class='questionText'>${questions[currentQuestion].question}</h2>
+    ${getOptionsHTML(questions[currentQuestion].options)}
+  `;
 };
 
 // Función para obtener el HTML de las opciones de respuesta
@@ -134,16 +147,41 @@ const getOptionsHTML = (options) => {
   let optionsHTML = "";
   for (let i = 0; i < options.length; i++) {
     optionsHTML += `
-        <input type="radio" name="answer" value="${i}">${options[i]}<br>
-      `;
+        <button value='${i}' onclick="calculateTeam()" name="answer" id='answer'> ${options[i]} </button><br>
+    `;
   }
   return optionsHTML;
 };
 
+// Función para seleccionar una respuesta
+const selectAnswer = (optionIndex) => {
+  const radioButtons = document.getElementsByName("answer");
+  radioButtons[optionIndex].checked = true;
+};
+
+// Función para mostrar el resultado con animación
+const showResultWithAnimation = () => {
+  const resultElement = document.getElementById("result");
+  const colorCircle = document.getElementById("colorCircle");
+
+  // Ocultar el resultado inicialmente
+  resultElement.style.display = "none";
+
+  // Mostrar la animación
+  colorCircle.style.display = "block";
+
+  // Esperar 3 segundos y mostrar el resultado final
+  setTimeout(() => {
+    resultElement.style.display = "block";
+    colorCircle.style.display = "none";
+    showResult();
+  }, 3000);
+};
+
 // Función para mostrar el resultado
 const showResult = () => {
-  const resultElement = document.getElementById("result");
-  resultElement.style.display = "block";
+  questionElement.innerHTML =
+    "<img src='./img/giphy.gif' style='background-color:transparent'>";
 
   const teamColorElement = document.getElementById("teamColor");
   const cupcakeElement = document.getElementById("cupcake");
@@ -201,13 +239,82 @@ function captureResultImage() {
     // Remueve el clon del documento
     document.body.removeChild(clone);
   });
+  setTimeout(() => {
+    questionElement.innerHTML =
+      '<h2>🧁🎉🥳 <span id="teamColor"></span></h2><img id="cupcake" src="" alt="Cupcake">  <button onclick="shareOnSocialMedia()">Descargar recordatorio para compartir en redes sociales</button>';
+
+    const teamColorElement = document.getElementById("teamColor");
+    const cupcakeElement = document.getElementById("cupcake");
+
+    const greenPoints = questions.filter(
+      (q) => q.color === "Equipo Verde"
+    ).length;
+    const purplePoints = questions.filter(
+      (q) => q.color === "Equipo Morado"
+    ).length;
+
+    if (greenPoints > purplePoints) {
+      teamColor = "Equipo Verde";
+      teamColorElement.style.color = "green";
+      cupcakeElement.src =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqm7Qj7afcE3BPS6Lg4a0gF0hwtZx87xr2g&usqp=CAU?w=200";
+    } else {
+      teamColor = "Equipo Morado";
+      teamColorElement.style.color = "purple";
+      cupcakeElement.src =
+        "https://img.freepik.com/premium-vector/cupcake-blueberry-cream-sweet-cake-desert-vector-illustration_526280-678.jpg?w=200";
+    }
+
+    const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
+    teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
+  }, 3000);
 }
 
 // Función para compartir en redes sociales
 const shareOnSocialMedia = () => {
   // Aquí puedes agregar la lógica para compartir en redes sociales
   alert(`Compartiendo en redes sociales: ¡Soy del ${teamColor}!`);
+  Swal.fire({
+    imageUrl: "https://placeholder.pics/svg/300x1500",
+    imageHeight: 500,
+    imageAlt: "A tall image",
+  });
 };
+
+// Función para obtener un arreglo de preguntas en orden aleatorio
+const getRandomQuestions = () => {
+  const randomQuestions = [...questions];
+  for (let i = randomQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [randomQuestions[i], randomQuestions[j]] = [
+      randomQuestions[j],
+      randomQuestions[i],
+    ];
+  }
+  return randomQuestions;
+};
+
+// Mostrar las preguntas en orden aleatorio
+const randomQuestions = getRandomQuestions();
+questions.splice(0, questions.length, ...randomQuestions);
+
+function toggleMusic() {
+  // Music
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  const playButton = document.getElementById("playButton");
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
+    backgroundMusic.play();
+  });
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    playButton.textContent = "Pause";
+  } else {
+    backgroundMusic.pause();
+    playButton.textContent = "Play";
+  }
+}
 
 // Mostrar la primera pregunta al cargar la página
 showQuestion();
