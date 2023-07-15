@@ -1,3 +1,5 @@
+// Music:
+
 // Array de preguntas y respuestas
 const questions = [
     { question: '🎨 ¿Qué artista prefieres?', options: ['Shakira', 'Karol G', 'Juan Gabriel', 'Jean Sebastian'], color: '' },
@@ -168,6 +170,28 @@ const getRandomQuestions = () => {
 // Mostrar las preguntas en orden aleatorio
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+const playButton = document.getElementById("playButton");
+
+
+
+// Music
+window.addEventListener('DOMContentLoaded', (event) => {
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
+    backgroundMusic.play();
+  });
+  
+function toggleMusic() {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    playButton.textContent = "Pause";
+  } else {
+    backgroundMusic.pause();
+    playButton.textContent = "Play";
+  }
+}
 
 // Mostrar la primera pregunta al cargar la página
 showQuestion();
