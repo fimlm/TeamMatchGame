@@ -1,16 +1,16 @@
 // Array de preguntas y respuestas
 const questions = [
-    { question: 'Artistas: ¿Shakira y Karol G (A) o Juan Gabriel y Jean Sebastian (B)?', color: '' },
-    { question: 'Canciones: ¿Monotonía y Acróstico de Shakira (A) o Como tú decidas y Oiga de Joan Sebastian (B)?', color: '' },
-    { question: 'Destinos a los que te gustaría viajar: ¿Ciudad de Panamá y Bocas del Toro (A) o Dubai y Singapur (B)?', color: '' },
-    { question: 'Bebidas: ¿Coca cola y Limonada de coco (A) o Matcha y Té de Jamaica (B)?', color: '' },
-    { question: 'Películas: ¿Lo que el viento se llevó y Volver al futuro (A) o Harry Potter y Matrix (B)?', color: '' },
-    { question: 'Carros: ¿BMW y Mercedes (A) o Porsche y Ferrari (B)?', color: '' },
-    { question: 'Flores: ¿Margarita y Rosas (A) o Tulipanes y Orquídeas (B)?', color: '' },
-    { question: 'Sabores de helado: ¿Chocolate y Vainilla (A) o Limón y Mandarina (B)?', color: '' },
-    { question: 'Libros: ¿Crónicas de una muerte anunciada y 1984 (A) o La Biblia y La historia de Europa (B)?', color: '' },
-    { question: 'Deportes o juegos: ¿Fútbol y Ajedrez (A) o Básquet y Tenis (B)?', color: '' },
-    { question: 'Colores: ¿Rojo y Negro (A) o Turquesa y Fucsia (B)?', color: '' }
+    { question: 'Artistas:<br>¿Shakira y Karol G (A) o Juan Gabriel y Jean Sebastian (B)?', color: '' },
+    { question: 'Canciones:<br>¿Monotonía y Acróstico de Shakira (A) o Como tú decidas y Oiga de Joan Sebastian (B)?', color: '' },
+    { question: 'Destinos a los que te gustaría viajar:<br>¿Ciudad de Panamá y Bocas del Toro (A) o Dubai y Singapur (B)?', color: '' },
+    { question: 'Bebidas:<br>¿Coca cola y Limonada de coco (A) o Matcha y Té de Jamaica (B)?', color: '' },
+    { question: 'Películas:<br>¿Lo que el viento se llevó y Volver al futuro (A) o Harry Potter y Matrix (B)?', color: '' },
+    { question: 'Carros:<br>¿BMW y Mercedes (A) o Porsche y Ferrari (B)?', color: '' },
+    { question: 'Flores:<br>¿Margarita y Rosas (A) o Tulipanes y Orquídeas (B)?', color: '' },
+    { question: 'Sabores de helado:<br>¿Chocolate y Vainilla (A) o Limón y Mandarina (B)?', color: '' },
+    { question: 'Libros:<br>¿Crónicas de una muerte anunciada y 1984 (A) o La Biblia y La historia de Europa (B)?', color: '' },
+    { question: 'Deportes o juegos:<br>¿Fútbol y Ajedrez (A) o Básquet y Tenis (B)?', color: '' },
+    { question: 'Colores:<br>¿Rojo y Negro (A) o Turquesa y Fucsia (B)?', color: '' }
 ];
 
 let currentQuestion = 0;

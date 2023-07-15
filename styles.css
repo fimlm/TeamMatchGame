@@ -37,8 +37,8 @@ h1 {
     color: #fff;
     letter-spacing: -1px;
     font-size: 5vmin;
-    -webkit-text-stroke: 2px #246df8;
-    text-shadow: 3px 3px 1px #0000ff;
+    -webkit-text-stroke: 3px #246df8;
+    text-shadow: 4px 4px 3px #0000ff;
 }
 
 .nextQuestionButton {
