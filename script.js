@@ -181,7 +181,7 @@ const showResultWithAnimation = () => {
 // Función para mostrar el resultado
 const showResult = () => {
   questionElement.innerHTML =
-    "<img src='./img/giphy.gif' style='background-color:transparent'>";
+    "<img src='./media/img/giphy.gif' style='background-color:transparent'>";
 
   const teamColorElement = document.getElementById("teamColor");
   const cupcakeElement = document.getElementById("cupcake");
@@ -197,12 +197,12 @@ const showResult = () => {
     teamColor = "Equipo Verde";
     teamColorElement.style.color = "green";
     cupcakeElement.src =
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqm7Qj7afcE3BPS6Lg4a0gF0hwtZx87xr2g&usqp=CAU?w=200";
+      "./media/img/cupcake.verde.png?w=200";
   } else {
     teamColor = "Equipo Morado";
     teamColorElement.style.color = "purple";
     cupcakeElement.src =
-      "https://img.freepik.com/premium-vector/cupcake-blueberry-cream-sweet-cake-desert-vector-illustration_526280-678.jpg?w=200";
+      "./media/img/cupcake.morado.png?w=200";
   }
 
   const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
@@ -257,12 +257,12 @@ function captureResultImage() {
       teamColor = "Equipo Verde";
       teamColorElement.style.color = "green";
       cupcakeElement.src =
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqm7Qj7afcE3BPS6Lg4a0gF0hwtZx87xr2g&usqp=CAU?w=200";
+        "./media/img/cupcake.verde.png?w=200";
     } else {
       teamColor = "Equipo Morado";
       teamColorElement.style.color = "purple";
       cupcakeElement.src =
-        "https://img.freepik.com/premium-vector/cupcake-blueberry-cream-sweet-cake-desert-vector-illustration_526280-678.jpg?w=200";
+        "./media/img/cupcake.morado.png?w=200";
     }
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
