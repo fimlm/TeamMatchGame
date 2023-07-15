@@ -18,10 +18,6 @@ body {
 
 body {
   text-align: center;
-<<<<<<< HEAD
-  font-family: Arial, sans-serif;
-
-=======
   font-family: "Riffic Free", Arial, sans-serif;
   padding: 20px;
   background-image: url("https://cdn2.softswiss.net/goodmancasino/b/pragmaticexternal/SugarRush1.jpg");
@@ -29,7 +25,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
->>>>>>> dedc5c8113f543351c139f5ef8c57e7c91131be9
 }
 
 h1 {
