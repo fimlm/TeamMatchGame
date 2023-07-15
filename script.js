@@ -171,12 +171,10 @@ const getRandomQuestions = () => {
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
 
-const backgroundMusic = document.getElementById("backgroundMusic");
-const playButton = document.getElementById("playButton");
-
-
 
 // Music
+const backgroundMusic = document.getElementById("backgroundMusic");
+const playButton = document.getElementById("playButton");
 window.addEventListener('DOMContentLoaded', (event) => {
     const backgroundMusic = document.getElementById("backgroundMusic");
     backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
