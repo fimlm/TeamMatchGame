@@ -1,3 +1,5 @@
+// Music:
+
 // Array de preguntas y respuestas
 const questions = [
     { question: '🎨 ¿Qué artista prefieres?', options: ['Shakira', 'Karol G', 'Juan Gabriel', 'Jean Sebastian'], color: '' },
@@ -7,7 +9,7 @@ const questions = [
     { question: '🎥 ¿Qué película prefieres?', options: ['Lo que el viento se llevó', 'Volver al futuro', 'Harry Potter', 'Matrix'], color: '' },
     { question: '🚗 ¿Qué carro prefieres?', options: ['BMW', 'Mercedes', 'Porsche', 'Ferrari'], color: '' },
     { question: '💐 ¿Qué flor prefieres?', options: ['Margarita', 'Rosas', 'Tulipanes', 'Orquídeas'], color: '' },
-    { question: '🍦 ¿Qué sabores de helado prefieres?', options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'], color: '' },
+    { question: '🍦 ¿Qué sabor de helado prefieres?', options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'], color: '' },
     { question: '📚 ¿Qué libro prefieres?', options: ['Crónicas de una muerte anunciada', '1984', 'La Biblia', 'La historia de Europa'], color: '' },
     { question: '🏈 ¿Qué deporte prefieres?', options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'], color: '' },
     { question: '🌈 ¿Qué color prefieres?', options: ['Rojo', 'Negro', 'Turquesa', 'Fucsia'], color: '' }
@@ -34,7 +36,7 @@ const calculateTeam = () => {
 
     if (name === '') {
         return Swal.fire({
-            title: 'Por favor, ingresa tu nombre',
+            title: 'Por favor, ingresa un nombre 🥺',
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
             },
@@ -168,6 +170,28 @@ const getRandomQuestions = () => {
 // Mostrar las preguntas en orden aleatorio
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+const playButton = document.getElementById("playButton");
+
+
+
+// Music
+window.addEventListener('DOMContentLoaded', (event) => {
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
+    backgroundMusic.play();
+  });
+  
+function toggleMusic() {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    playButton.textContent = "Pause";
+  } else {
+    backgroundMusic.pause();
+    playButton.textContent = "Play";
+  }
+}
 
 // Mostrar la primera pregunta al cargar la página
 showQuestion();
