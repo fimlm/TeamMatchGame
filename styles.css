@@ -1,18 +1,37 @@
+@font-face {
+  font-family: 'Riffic Free';
+  src: url('fonts/RifficFree-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Riffic Free', Arial, sans-serif;
+  padding: 20px;
+  background-image: url('https://cdn2.softswiss.net/goodmancasino/b/pragmaticexternal/SugarRush1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Ajustar el alto del fondo a la altura de la ventana */
 }
 
 h1 {
-  color: #800080; /* Puedes ajustar el color según tu preferencia */
+  color: #800080;
+  margin-top: 20px;
 }
 
 #questions {
   display: block;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 #result {
   display: none;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 #teamColor {
@@ -23,4 +42,27 @@ h1 {
   width: 200px;
   height: 200px;
   margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+      font-size: 24px;
+  }
+
+  #questions {
+      max-width: 90%;
+  }
+
+  #result {
+      max-width: 90%;
+  }
+
+  #cupcake {
+      width: 150px;
+      height: 150px;
+  }
 }

@@ -80,11 +80,11 @@ function showResult() {
     if (questions.filter(q => q.color === 'A').length > questions.filter(q => q.color === 'B').length) {
         teamColor = 'verde';
         teamColorElement.style.color = 'green';
-        cupcakeElement.src = 'cupcake_verde.jpg';
+        cupcakeElement.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqm7Qj7afcE3BPS6Lg4a0gF0hwtZx87xr2g&usqp=CAU?w=200';
     } else {
         teamColor = 'morado';
         teamColorElement.style.color = 'purple';
-        cupcakeElement.src = 'cupcake_morado.jpg';
+        cupcakeElement.src = 'https://img.freepik.com/premium-vector/cupcake-blueberry-cream-sweet-cake-desert-vector-illustration_526280-678.jpg?w=200';
     }
     
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
