@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #800080; /* Puedes ajustar el color según tu preferencia */
+}
+
+#questions {
+  display: block;
+}
+
+#result {
+  display: none;
+}
+
+#teamColor {
+  font-weight: bold;
+}
+
+#cupcake {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+}
