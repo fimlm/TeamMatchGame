@@ -52,7 +52,13 @@ button {
   letter-spacing: 1px;
   margin: 1vmin;
   width: 40vmin;
+  transition: all .5s ease-in-out;
   font-family: "Riffic Free", Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #02C627;
+  color: #fff;
 }
 
 #colorCircle {
