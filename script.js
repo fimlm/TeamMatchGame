@@ -17,18 +17,18 @@ let currentQuestion = 0;
 let teamColor = '';
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
-function getNameFromStorage() {
+const getNameFromStorage = () => {
     const name = localStorage.getItem('teamMatchName');
     return name ? name : '';
 }
 
 // Guardar el nombre en el almacenamiento del navegador (localStorage)
-function saveNameToStorage(name) {
+const saveNameToStorage = (name) => {
     localStorage.setItem('teamMatchName', name);
 }
 
 // Función para calcular el equipo
-function calculateTeam() {
+const calculateTeam = () => {
     const name = document.getElementById('name').value.trim();
     
     if (name === '') {
@@ -56,12 +56,12 @@ function calculateTeam() {
 }
 
 // Función para mostrar la pregunta actual
-function showQuestion() {
+const showQuestion = () => {
     const questionElement = document.getElementById('questions');
     questionElement.innerHTML = `
         <label for="name">Nombre:</label>
         <input type="text" id="name" value="${getNameFromStorage()}"><br><br>
-        <h2>${questions[currentQuestion].question}</h2>
+        <h2 class='questionText'>${questions[currentQuestion].question}</h2>
         <input type="radio" name="answer" value="A"> A
         <input type="radio" name="answer" value="B"> B
         <br><br>
@@ -70,7 +70,7 @@ function showQuestion() {
 }
 
 // Función para mostrar el resultado
-function showResult() {
+const showResult = () => {
     const resultElement = document.getElementById('result');
     resultElement.style.display = 'block';
     
@@ -92,7 +92,7 @@ function showResult() {
 }
 
 // Función para compartir en redes sociales
-function shareOnSocialMedia() {
+const shareOnSocialMedia = () => {
     // Aquí puedes agregar la lógica para compartir en redes sociales
     alert(`Compartiendo en redes sociales: ¡Soy del equipo ${teamColor}!`);
 }
