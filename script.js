@@ -206,7 +206,7 @@ const selectAnswer = (optionIndex) => {
 // Función para mostrar el resultado
 const showResult = () => {
     questionElement.innerHTML =
-        "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Cargando tu Equipo 😀</small>";
+        "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Buscando Match de equipos 😵🤔😀</small>";
 
     setTimeout(() => {
         questionElement.innerHTML =
@@ -279,8 +279,8 @@ const convertImage = (content) => {
                 const image = canvas.toDataURL();
 
                 Swal.fire({
-                    title: '💚 TeamMatch  💜',
-                    text: `🧁🎉🥳 ¡Descarga y Comparte! 🧁🎉🥳`,
+                    title: 'Te Esperamos 💜vs💚',
+                    text: `🧁🎉🥳 ¡Descarga y Comparte!`,
                     imageUrl: image,
                     imageWidth: 350,
                     imageHeight: 300,
@@ -292,7 +292,7 @@ const convertImage = (content) => {
 
                 setTimeout(() => {
                     recargarSitio();
-                }, 10000)
+                }, 60000)
 
 
                 resolve(image);
