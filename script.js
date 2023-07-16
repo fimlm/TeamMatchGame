@@ -76,7 +76,7 @@ let currentQuestion = 0;
 let teamColor = "";
 const questionElement = document.getElementById("questions");
 
-questionElement.innerHTML = '<h1>¡Hola!</h1>soy el juego Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velioves pain itself, who seeks after it and wants to have it, simply because it is pain<br><button style="margin-top: 5vmin" onclick="showQuestion()">Iniciar el juego</button>';
+questionElement.innerHTML = '<h1>💜 Morados vs Verdes 💚</h1>¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!<br><button style="margin-top: 5vmin" onclick="showQuestion()">Iniciar el juego</button>';
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
