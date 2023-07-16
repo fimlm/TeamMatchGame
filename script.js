@@ -142,7 +142,7 @@ const calculateTeam = () => {
     // Capitalización del nombre
     name = name.replace(/^\w/, (c) => c.toUpperCase());
 
-    saveNameToStorage(name); // Guardar el nombre en el almacenamiento del navegador
+    saveNameToStorage(name);
 
     const answer = document.querySelector("#answer");
 
@@ -158,9 +158,15 @@ const calculateTeam = () => {
         });
     }
 
-    const optionIndex = parseInt(answer.value);
-    questions[currentQuestion].color =
-        questions[currentQuestion].options[optionIndex];
+    let optionIndex = parseInt(answer.value.length);
+
+    questions[currentQuestion].color = optionIndex;
+
+    if( optionIndex % 2 === 0 ){
+        questions[currentQuestion].color = 'Verde'
+    } else {
+        questions[currentQuestion].color = 'Morado'
+    }
 
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -184,7 +190,7 @@ const getOptionsHTML = (options) => {
     let optionsHTML = "";
     for (let i = 0; i < options.length; i++) {
         optionsHTML += `
-        <button value='${i}' onclick="calculateTeam()" name="answer" id='answer'> ${options[i]} </button><br>
+        <button value='${options[i]}' onclick="calculateTeam()" name="answer" id='answer'> ${options[i]} </button><br>
     `;
     }
     return optionsHTML;
@@ -209,11 +215,14 @@ const showResult = () => {
         const cupcakeElement = document.getElementById("cupcake");
 
         const greenPoints = questions.filter(
-            (q) => q.color === "Equipo Verde"
+            (q) => q.color === "Verde"
         ).length;
         const purplePoints = questions.filter(
-            (q) => q.color === "Equipo Morado"
+            (q) => q.color === "Morado"
         ).length;
+
+        console.log(greenPoints)
+        console.log(purplePoints)
 
         if (greenPoints > purplePoints) {
             teamColor = "Equipo Verde";
@@ -309,24 +318,28 @@ const shareOnSocialMedia = async () => {
     const picture = await convertImage(image)
 
     Swal.fire({
-        title: '💚 TeamMatch FIMLM 💜',
+        title: '💚 TeamMatch  💜',
         text: `🧁🎉🥳 ¡Descarga y Comparte! 🧁🎉🥳`,
         imageUrl: picture,
         imageWidth: 400,
         imageHeight: 200,
-        imageAlt: 'Imagen TeamMatch FIMLM',
+        imageAlt: 'Imagen TeamMatch ',
     })
 };
 
 const convertImage = (content) => {
-    html2canvas(content).then(canvas => {
-        const image = new Image();
-        image.src = canvas.toDataURL();
-
-        const newTab = window.open();
-        newTab.document.write('<img src="' + image.src + '" alt="Contenido convertido en imagen">');
+    return new Promise((resolve, reject) => {
+        html2canvas(content).then(canvas => {
+            const image = canvas.toDataURL();
+            console.log(image)
+            resolve(image);
+        }).catch(error => {
+            console.log(error)
+            reject(error);
+        });
     });
 }
+
 
 // Función para obtener un arreglo de preguntas en orden aleatorio
 const getRandomQuestions = () => {
