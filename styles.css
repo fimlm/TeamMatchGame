@@ -92,14 +92,15 @@ button:hover {
     width: 215px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
 }
+#playButton{
+  position: fixed;
+  bottom: 3vh;
+  left: 3vh;
+  background-color: transparent;
+  color: #02c627;
+  border: none;
+  font-size: xx-large
 
-#playButton {
-    position: fixed;
-    bottom: 3vh;
-    left: 3vh;
-    background-color: transparent;
-    color: #02c627;
-    border: none;
 }
 
 @keyframes pulse {
