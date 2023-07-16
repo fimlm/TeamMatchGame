@@ -293,16 +293,19 @@ const captureResultImage = () => {
 
 // Función para compartir en redes sociales
 const shareOnSocialMedia = () => {
-    // Aquí puedes agregar la lógica para compartir en redes sociales
-    alert(`Compartiendo en redes sociales: ¡Soy del ${teamColor}!`);
+    const name = getNameFromStorage();
+
+    let mensaje = `¡Hola ${name}! Tu equipo es ${teamColor}`;
+
+    // alert(`Compartiendo en redes sociales: ¡Soy del ${teamColor}!`);
     Swal.fire({
-        title: 'Sweet!',
-        text: 'Modal with a custom image.',
+        title: '💚 TeamMatch FIMLM 💜',
+        text: mensaje,
         imageUrl: 'https://unsplash.it/400/200',
         imageWidth: 400,
         imageHeight: 200,
-        imageAlt: 'Custom image',
-      })
+        imageAlt: 'Imagen TeamMatch FIMLM',
+    })
 };
 
 // Función para obtener un arreglo de preguntas en orden aleatorio
@@ -322,7 +325,7 @@ const getRandomQuestions = () => {
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
 
-function toggleMusic() {
+const toggleMusic = () => {
     // Music
     const backgroundMusic = document.getElementById("backgroundMusic");
     backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
