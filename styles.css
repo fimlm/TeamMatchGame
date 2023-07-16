@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Riffic Free";
-    src: url("fonts/RifficFree-Bold.ttf") format("truetype");
+    src: url("./media/fonts/RifficFree-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
 }
@@ -21,7 +21,12 @@ body {
 h1 {
     color: #800080;
     margin-top: 1vmin;
-    font-size: 10vmin;
+    font-size: 6vmin;
+}
+h5 {
+    color: #ab810f;
+    margin-top: 1vmin;
+    font-size: 6vmin;
 }
 
 .questionText {
