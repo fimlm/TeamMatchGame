@@ -72,12 +72,36 @@ const questions = [
   },
 ];
 
+const pointGreenCalc = [
+    { id: 0, name: 'Shakira' },
+    { id: 1, name: 'Karol G' },
+    { id: 2, name: 'Monotonía de Shakira' },
+    { id: 3, name: 'Acróstico de Shakira' },
+    { id: 4, name: 'Ciudad de Panamá' },
+    { id: 5, name: 'Bocas del Toro' },
+    { id: 6, name: 'Coca-Cola' },
+    { id: 7, name: 'Limonada de Coco' },
+    { id: 8, name: 'Lo que el viento se llevó' },
+    { id: 9, name: 'BMW' },
+    { id: 10, name: 'Volver al futuro' },
+    { id: 11, name: 'Mercedes' },
+    { id: 12, name: 'Margarita' },
+    { id: 13, name: 'Rosas' },
+    { id: 14, name: 'Vainilla' },
+    { id: 15, name: 'Crónicas de una muerte anunciada' },
+    { id: 16, name: '1984' },
+    { id: 17, name: 'Fútbol' },
+    { id: 18, name: 'Ajedrez' },
+    { id: 19, name: 'Rojo' },
+    { id: 20, name: 'Negro' }
+]
+
 let currentQuestion = 0;
 let teamColor = "";
 const questionElement = document.getElementById("questions");
 
-questionElement.innerHTML =
-  '<h1 class="subtitle">💜 Morados vs Verdes 💚</h1><p class="mensajeWelcome">¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="toggleMusic(); showQuestion()">Iniciar el juego</button>';
+questionElement.innerHTML = '<h1 class="subtitle"><span class="purple"> Morados</span> <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> <span class="green">Verdes</span></h1><p class="mensajeWelcome">¿Ya sabes a qué equipo perteneces? ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="showQuestion()">Iniciar el juego</button>';
+
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -163,7 +187,7 @@ const calculateTeam = () => {
 
   console.log(optionIndex);
 
-  if (optionIndex <= 11) {
+  if (optionIndex <= 9) {
     questions[currentQuestion].color = "Verde";
   } else {
     questions[currentQuestion].color = "Morado";
@@ -181,7 +205,7 @@ const calculateTeam = () => {
 // Función para mostrar la pregunta actual
 const showQuestion = () => {
   questionElement.innerHTML = `
-    <input placeholder="💚 Tu Nombre 💜" type="text" id="name" value="${getNameFromStorage()}"><br>
+    <input placeholder="🧁 Nombre" type="text" id="name" value="${getNameFromStorage()}"><br>
     <h2 class='questionText'>${questions[currentQuestion].question}</h2>
     ${getOptionsHTML(questions[currentQuestion].options)}
   `;
@@ -210,11 +234,11 @@ const showResult = () => {
   questionElement.innerHTML =
     "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Cargando tu Equipo 😀</small>";
   questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Buscando Match de equipos 😵🤔😀</small>";
+    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Anlizando match de equipo 😵</small>";
 
   setTimeout(() => {
     questionElement.innerHTML =
-      '<h2>🧁🎉🥳 <span id="teamColor"></span></h2><br><img id="cupcake" src="" alt="Cupcake"><br><button onclick="shareOnSocialMedia()">Imagen de recordatorio</button>';
+      '<h2>🎉🥳 <span id="teamColor"></span></h2><br><img id="cupcake" src="" alt="Cupcake"><br><button onclick="shareOnSocialMedia()">Imagen de recordatorio</button>';
 
     const teamColorElement = document.getElementById("teamColor");
     const cupcakeElement = document.getElementById("cupcake");
@@ -238,7 +262,7 @@ const showResult = () => {
     }
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
-    teamColorElement.textContent = `${name}, tu equipo es ${teamColor}`;
+    teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
     //Reproduce al dar el resultado
     resultAudio.play();
   }, 3000);
@@ -256,7 +280,7 @@ const shareOnSocialMedia = async () => {
     teamColor = `<br><img src="./media/img/CupCakeGreen.png" styly="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
   }
 
-  const mensaje = `🧁🎉🥳 ¡Hola ${name}!🧁🎉🥳<br>Tu equipo es ${teamColor}`;
+  const mensaje = `🎉🥳 ¡Soy ${name}! 🎉🥳<br> Soy del ${teamColor}`;
 
   image.innerHTML = `<img src="./media/img/logo.png"><p>${mensaje}</p>`;
 
