@@ -42,7 +42,7 @@ h5 {
     vertical-align: middle;
     width: 1em;
     height: 1em;
-  }
+}
 
 .purple {
     color: #800080;
@@ -61,9 +61,8 @@ h5 {
     text-shadow: 4px 4px 3px #0000ff;
 }
 
-label {
-    color: #800080;
-    font-size: 2vw;
+.subtitle {
+    margin-bottom: 20vmin;
 }
 
 input {
@@ -166,6 +165,7 @@ button:hover {
         transform: scale(1);
     }
 }
+
 /* Media Query */
 @media screen and (max-width: 2200px) {
     @media screen and (min-width: 981px) {
@@ -181,10 +181,6 @@ button:hover {
     
         h1 {
             font-size: 4.5vmin;
-        }
-    
-        .subtitle {
-            margin-bottom: 20vmin;
         }
     
         .mensajeWelcome {
@@ -231,11 +227,7 @@ button:hover {
         h1 {
             font-size: 4.5vmin;
         }
-    
-        .subtitle {
-            margin-bottom: 20vmin;
-        }
-    
+        
         .mensajeWelcome {
             margin-bottom: 10vmin;
         }
@@ -280,11 +272,7 @@ button:hover {
         h1 {
             font-size: 4.5vmin;
         }
-    
-        .subtitle {
-            margin-bottom: 20vmin;
-        }
-    
+        
         .mensajeWelcome {
             margin-bottom: 10vmin;
         }
@@ -305,6 +293,10 @@ button:hover {
     
         .answer {
             margin-top: 150vmin;
+        }
+
+        .picture {
+            left: -180%;
         }
     
         .colorCircle {
@@ -329,11 +321,7 @@ button:hover {
         h1 {
             font-size: 6vmin;
         }
-    
-        .subtitle {
-            margin-bottom: 20vmin;
-        }
-    
+        
         .mensajeWelcome {
             margin-bottom: 10vmin;
         }
@@ -354,6 +342,10 @@ button:hover {
     
         .answer {
             margin-top: 150vmin;
+        }
+
+        .picture {
+            left: -190%;
         }
     
         .colorCircle {
@@ -402,6 +394,10 @@ button:hover {
 
     .answer {
         margin-top: 150vmin;
+    }
+
+    .picture {
+        left: -190%;
     }
 
     .colorCircle {
