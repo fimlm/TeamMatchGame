@@ -91,7 +91,7 @@ const saveNameToStorage = (name) => {
 
 // Función para calcular el equipo
 const calculateTeam = () => {
-    const name = document.getElementById("name").value.trim();
+    let name = document.getElementById("name").value.trim();
 
     if (name === "") {
         return Swal.fire({
@@ -104,6 +104,43 @@ const calculateTeam = () => {
             },
         });
     }
+
+    // Validamos que no posea números
+    const numeros = "0123456789";
+
+    for (i = 0; i < name.length; i++) {
+        if (numeros.indexOf(name.charAt(i), 0) != -1) {
+            return Swal.fire({
+                title: "Por favor, ingresa un nombre 🥺",
+                showClass: {
+                    popup: "animate__animated animate__fadeInDown",
+                },
+                hideClass: {
+                    popup: "animate__animated animate__fadeOutUp",
+                },
+            });
+        }
+    }
+
+    //  Validamos caracteres especiales
+    const especiales = '!#$%&/()=?*¿¡¨][{}-+.';
+
+    for (i = 0; i < name.length; i++) {
+        if (especiales.indexOf(name.charAt(i), 0) != -1) {
+            return Swal.fire({
+                title: "Por favor, ingresa un nombre 🥺",
+                showClass: {
+                    popup: "animate__animated animate__fadeInDown",
+                },
+                hideClass: {
+                    popup: "animate__animated animate__fadeOutUp",
+                },
+            });
+        }
+    }
+
+    // Capitalización del nombre
+    name = name.replace(/^\w/, (c) => c.toUpperCase());
 
     saveNameToStorage(name); // Guardar el nombre en el almacenamiento del navegador
 
@@ -159,32 +196,13 @@ const selectAnswer = (optionIndex) => {
     radioButtons[optionIndex].checked = true;
 };
 
-// Función para mostrar el resultado con animación
-/* const showResultWithAnimation = () => {
-    const resultElement = document.getElementById("result");
-    const colorCircle = document.getElementById("colorCircle");
-
-    // Ocultar el resultado inicialmente
-    resultElement.style.display = "none";
-
-    // Mostrar la animación
-    colorCircle.style.display = "block";
-
-    // Esperar 3 segundos y mostrar el resultado final
-    setTimeout(() => {
-        resultElement.style.display = "block";
-        colorCircle.style.display = "none";
-        showResult();
-    }, 3000);
-}; */
-
 // Función para mostrar el resultado
 const showResult = () => {
     questionElement.innerHTML =
         "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'>";
 
     setTimeout(() => {
-        questionElement.innerHTML = '<h2>🧁🎉🥳 <span id="teamColor"></span></h2><img id="cupcake" src="" alt="Cupcake">  <button onclick="shareOnSocialMedia()">Descargar recordatorio para compartir en redes sociales</button>';
+        questionElement.innerHTML = '<h2>🧁🎉🥳 <span id="teamColor"></span></h2><img id="cupcake" src="" alt="Cupcake"><button onclick="shareOnSocialMedia()">Descargar recordatorio para compartir en redes sociales</button>';
 
         const teamColorElement = document.getElementById('teamColor');
         const cupcakeElement = document.getElementById('cupcake');
@@ -209,7 +227,7 @@ const showResult = () => {
 };
 
 // Función para capturar y descargar la imagen del resultado
-function captureResultImage() {
+const captureResultImage = () => {
     const resultElement = document.getElementById("result");
 
     // Crea un nuevo elemento <div> para clonar el contenido del resultado
