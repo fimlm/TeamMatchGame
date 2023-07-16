@@ -99,6 +99,11 @@ button:hover {
   background-color: white;
   border: none;
   font-size: xx-large;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 5vmin;
+  box-shadow: 2px 2px 5px 3px #0000;
 }
 
 @keyframes pulse {
