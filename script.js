@@ -162,7 +162,7 @@ const calculateTeam = () => {
 
     questions[currentQuestion].color = optionIndex;
 
-    if( optionIndex % 2 === 0 ){
+    if (optionIndex % 2 === 0) {
         questions[currentQuestion].color = 'Verde'
     } else {
         questions[currentQuestion].color = 'Morado'
@@ -221,9 +221,6 @@ const showResult = () => {
             (q) => q.color === "Morado"
         ).length;
 
-        console.log(greenPoints)
-        console.log(purplePoints)
-
         if (greenPoints > purplePoints) {
             teamColor = "Equipo Verde";
             teamColorElement.style.color = "green";
@@ -242,8 +239,9 @@ const showResult = () => {
     // captureResultImage(); // Generar imagen con el resultado
 };
 
+// TODO: Revisar la función bien porque tiene errores los cuales hacen que nunca se ejectute
 // Función para capturar y descargar la imagen del resultado
-const captureResultImage = () => {
+/* const captureResultImage = () => {
     const resultElement = document.getElementById("result");
 
     // Crea un nuevo elemento <div> para clonar el contenido del resultado
@@ -298,7 +296,7 @@ const captureResultImage = () => {
         const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
         teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
     }, 2000);
-};
+}; */
 
 // Función para compartir en redes sociales
 const shareOnSocialMedia = async () => {
@@ -315,31 +313,43 @@ const shareOnSocialMedia = async () => {
 
     image.innerHTML = `<img src="./media/img/logo.png"><p>${mensaje}</p>`;
 
-    const picture = await convertImage(image)
+    image.style.display = 'block'
 
-    Swal.fire({
-        title: '💚 TeamMatch  💜',
-        text: `🧁🎉🥳 ¡Descarga y Comparte! 🧁🎉🥳`,
-        imageUrl: picture,
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Imagen TeamMatch ',
-    })
+    await convertImage(image)
 };
 
 const convertImage = (content) => {
-    return new Promise((resolve, reject) => {
-        html2canvas(content).then(canvas => {
-            const image = canvas.toDataURL();
-            console.log(image)
-            resolve(image);
-        }).catch(error => {
-            console.log(error)
-            reject(error);
+    // Crear un lienzo Canvas
+    const canvas = document.createElement('canvas');
+    // const context = canvas.getContext('2d');
+
+    // Establecer el tamaño del lienzo según el contenido
+    canvas.width = 1500;
+    canvas.height = 1020;
+
+    // Dibujar el contenido en el lienzo
+    html2canvas(content).then(canvas => {
+        return new Promise((resolve, reject) => {
+            html2canvas(content).then(canvas => {
+                const image = canvas.toDataURL();
+                
+                Swal.fire({
+                    title: '💚 TeamMatch  💜',
+                    text: `🧁🎉🥳 ¡Descarga y Comparte! 🧁🎉🥳`,
+                    imageUrl: image,
+                    imageWidth: 350,
+                    imageHeight: 300,
+                    imageAlt: 'Imagen TeamMatch ',
+                })
+
+                resolve(image);
+
+            }).catch(error => {
+                reject(error);
+            });
         });
     });
 }
-
 
 // Función para obtener un arreglo de preguntas en orden aleatorio
 const getRandomQuestions = () => {
