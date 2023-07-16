@@ -162,7 +162,7 @@ const calculateTeam = () => {
 
     questions[currentQuestion].color = optionIndex;
 
-    if (optionIndex % 2 === 0) {
+    if (optionIndex < 9) {
         questions[currentQuestion].color = 'Verde'
     } else {
         questions[currentQuestion].color = 'Morado'
@@ -221,6 +221,9 @@ const showResult = () => {
             (q) => q.color === "Morado"
         ).length;
 
+        console.log('Verdes => ', greenPoints)
+        console.log('Morados => ', purplePoints)
+
         if (greenPoints > purplePoints) {
             teamColor = "Equipo Verde";
             teamColorElement.style.color = "green";
@@ -239,74 +242,15 @@ const showResult = () => {
     // captureResultImage(); // Generar imagen con el resultado
 };
 
-// TODO: Revisar la función bien porque tiene errores los cuales hacen que nunca se ejectute
-// Función para capturar y descargar la imagen del resultado
-/* const captureResultImage = () => {
-    const resultElement = document.getElementById("result");
-
-    // Crea un nuevo elemento <div> para clonar el contenido del resultado
-    const clone = resultElement.cloneNode(true);
-    clone.style.width = `390px`; // Establece el ancho del clon igual al ancho original
-    clone.style.height = `844px`; // Establece la altura del clon igual a la altura original
-    clone.style.overflow = "visible"; // Asegura que el contenido completo sea visible
-    // Agregué el clon al documento
-    document.body.appendChild(clone);
-
-    // Uso html2canvas para capturar el clon y convertirlo en un canvas
-    html2canvas(clone).then(function (canvas) {
-        // Obtiene la imagen como base64
-        const dataUrl = canvas.toDataURL();
-
-        // Crea un enlace de descarga con la imagen generada
-        const link = document.createElement("a");
-        link.href = dataUrl; // Establece la URL de la imagen generada
-        link.download = "Cumpleaños FIMLM.png"; // Nombre del archivo de descarga
-        link.textContent = "Descargar imagen";
-
-        // Agrega el enlace de descarga sin borrar el contenido anterior
-        resultElement.appendChild(link);
-
-        // Remueve el clon del documento
-        document.body.removeChild(clone);
-    });
-    setTimeout(() => {
-        questionElement.innerHTML =
-            '<h2>🧁🎉🥳 <span id="teamColor"></span></h2><div><button onclick="shareOnSocialMedia()">Descargar recordatorio para compartir en redes sociales</button></div>';
-
-        const teamColorElement = document.getElementById("teamColor");
-        const cupcakeElement = document.getElementById("cupcake");
-
-        const greenPoints = questions.filter(
-            (q) => q.color === "Equipo Verde"
-        ).length;
-        const purplePoints = questions.filter(
-            (q) => q.color === "Equipo Morado"
-        ).length;
-
-        if (greenPoints > purplePoints) {
-            teamColor = "Equipo Verde";
-            teamColorElement.style.color = "green";
-            cupcakeElement.src = "./media/img/cupcake.verde.png?w=200";
-        } else {
-            teamColor = "Equipo Morado";
-            teamColorElement.style.color = "purple";
-            cupcakeElement.src = "./media/img/cupcake.morado.png?w=200";
-        }
-
-        const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
-        teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
-    }, 2000);
-}; */
-
 // Función para compartir en redes sociales
 const shareOnSocialMedia = async () => {
     const name = getNameFromStorage();
     const image = document.querySelector('.picture');
 
     if (teamColor === 'Equipo Morado') {
-        teamColor = `<span style="color: purple">${teamColor}</span>`;
+        teamColor = `<br><img src="./media/img/CupCakePurple.png" styly="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
     } else {
-        teamColor = `<span style="color: green">${teamColor}</span>`;
+        teamColor = `<br><img src="./media/img/CupCakeGreen.png" styly="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
     }
 
     const mensaje = `🧁🎉🥳 ¡Hola ${name}!🧁🎉🥳<br>Tu equipo es ${teamColor}`;
@@ -332,7 +276,7 @@ const convertImage = (content) => {
         return new Promise((resolve, reject) => {
             html2canvas(content).then(canvas => {
                 const image = canvas.toDataURL();
-                
+
                 Swal.fire({
                     title: '💚 TeamMatch  💜',
                     text: `🧁🎉🥳 ¡Descarga y Comparte! 🧁🎉🥳`,
@@ -342,13 +286,32 @@ const convertImage = (content) => {
                     imageAlt: 'Imagen TeamMatch ',
                 })
 
-                resolve(image);
+                const imagenDOM = document.querySelector('.picture');
+                imagenDOM.style.display = 'none'
 
+                setTimeout(() => {
+                    recargarSitio();
+                }, 10000)
+
+
+                resolve(image);
             }).catch(error => {
                 reject(error);
             });
         });
     });
+}
+
+const recargarSitio = () => {
+    Swal.fire(
+        '¡Gracias por participar!',
+        'Esperamos ver la imagen de tu equipo 😀',
+        'success'
+    )
+    setTimeout(() => {
+        localStorage.removeItem('teamMatchName');
+        window.location.reload()
+    }, 5000);
 }
 
 // Función para obtener un arreglo de preguntas en orden aleatorio

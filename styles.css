@@ -105,6 +105,8 @@ button:hover {
     background-color: #fff;
     border-style: groove;
     display: none;
+    position: fixed;
+    left: -50%;
 }
 
 .picture img {
