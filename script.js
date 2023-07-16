@@ -77,7 +77,7 @@ let teamColor = "";
 const questionElement = document.getElementById("questions");
 
 questionElement.innerHTML =
-  '<h1 class="subtitle">💜 Morados vs Verdes 💚</h1><p class="mensajeWelcome">¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="toggleMusic(); showQuestion()">Iniciar el juego</button>';
+  '<h1 class="subtitle">💜 Morados vs Verdes 💚</h1><p class="mensajeWelcome">¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="showQuestion()">Iniciar el juego</button>';
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -161,9 +161,9 @@ const calculateTeam = () => {
 
   let optionIndex = parseInt(answer.value.length);
 
-  questions[currentQuestion].color = optionIndex;
+  console.log(optionIndex);
 
-  if (optionIndex < 9) {
+  if (optionIndex <= 11) {
     questions[currentQuestion].color = "Verde";
   } else {
     questions[currentQuestion].color = "Morado";
@@ -171,7 +171,6 @@ const calculateTeam = () => {
 
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
-    playAudioAnswer();
     showQuestion();
   } else {
     showResult();
@@ -193,7 +192,7 @@ const getOptionsHTML = (options) => {
   for (let i = 0; i < options.length; i++) {
     optionsHTML += `
         <button value='${options[i]}' onclick="calculateTeam()" name="answer" id='answer'> ${options[i]} </button><br>
-        `;
+    `;
   }
   return optionsHTML;
 };
@@ -237,9 +236,6 @@ const showResult = () => {
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
     teamColorElement.textContent = `${name}, tu equipo es ${teamColor}`;
-
-    // Reproducir el audio
-    resultAudio.play();
   }, 3000);
   // captureResultImage(); // Generar imagen con el resultado
 };
@@ -334,21 +330,16 @@ const getRandomQuestions = () => {
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
 
-const backgroundMusic = document.getElementById("backgroundMusic");
-const playButton = document.getElementById("playButton");
-
-function toggleMusic() {
+const toggleMusic = () => {
+  // Music
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
+  backgroundMusic.play();
   if (backgroundMusic.paused) {
     backgroundMusic.play();
-    playButton.textContent = "⏸️";
+    playButton.textContent = "⏯️";
   } else {
     backgroundMusic.pause();
     playButton.textContent = "▶️";
   }
-}
-
-//Audio que se reproduce al clckear las respuestas
-function playAudioAnswer() {
-  const audioElement = document.getElementById("musicAnswer");
-  audioElement.play();
-}
+};
