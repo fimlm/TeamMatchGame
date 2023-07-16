@@ -96,8 +96,7 @@ button:hover {
   position: fixed;
   bottom: 3vh;
   left: 3vh;
-  background-color: transparent;
-  color: #02c627;
+  background-color: white;
   border: none;
   font-size: xx-large;
 }
