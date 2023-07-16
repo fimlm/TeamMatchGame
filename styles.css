@@ -1,118 +1,201 @@
 @font-face {
-    font-family: "Riffic Free";
-    src: url("fonts/RifficFree-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Riffic Free";
+  src: url("fonts/RifficFree-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 body {
-    margin: 0;
-    padding-left: 3vmin;
-    padding-right: 3vmin;
-    text-align: center;
-    font-family: "Riffic Free", Arial, sans-serif;
-    background-image: url("./media/img/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 90vh;
+  margin: 0;
+  padding-left: 3vmin;
+  padding-right: 3vmin;
+  text-align: center;
+  font-family: "Riffic Free", Arial, sans-serif;
+  background-image: url("./media/img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
 }
 
 h1 {
-    color: #800080;
-    margin-top: 1vmin;
-    font-size: 10vmin;
+  color: #800080;
+  margin-top: 1vmin;
+  font-size: 10vmin;
 }
 
 .questionText {
-    color: #fff;
-    letter-spacing: -1px;
-    font-size: 5vmin;
-    -webkit-text-stroke: 3px #246df8;
-    text-shadow: 4px 4px 3px #0000ff;
+  color: #fff;
+  letter-spacing: -1px;
+  font-size: 5vmin;
+  -webkit-text-stroke: 3px #246df8;
+  text-shadow: 4px 4px 3px #0000ff;
 }
 
 label {
-    color: #800080;
-    font-size: 2vw;
+  color: #800080;
+  font-size: 2vw;
 }
 
 input {
-    text-align: center;
-    border: 2px solid #800080;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    font-family: "Riffic Free", Arial, sans-serif;
+  text-align: center;
+  border: 2px solid #800080;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Riffic Free", Arial, sans-serif;
 }
 
 button {
-    text-align: center;
-    border: 2px solid #800080;
-    border-radius: 10px;
-    padding: 1.5vmin;
-    letter-spacing: 1px;
-    margin: 1vmin;
-    width: 40vmin;
-    transition: all 0.5s ease-in-out;
-    font-family: "Riffic Free", Arial, sans-serif;
+  text-align: center;
+  border: 2px solid #800080;
+  border-radius: 10px;
+  padding: 1.5vmin;
+  letter-spacing: 1px;
+  margin: 1vmin;
+  width: 40vmin;
+  transition: all 0.5s ease-in-out;
+  font-family: "Riffic Free", Arial, sans-serif;
 }
 
 button:hover {
-    background-color: #02c627;
-    color: #fff;
+  background-color: #02c627;
+  color: #fff;
 }
 
 .colorCircle {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-image: linear-gradient(#02c627, #246df8);
-    animation: pulse 1s ease-in-out infinite;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: linear-gradient(#02c627, #246df8);
+  animation: pulse 1s ease-in-out infinite;
 }
 
 .logo {
-    width: 200px;
-    justify-content: center;
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    transition: all .4s ease-in-out;
-    margin-bottom: 2vmin;
-    height: 120px;
+  width: 200px;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  margin-bottom: 2vmin;
+  height: 120px;
 }
 
 .logo:hover {
-    width: 215px;
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+  width: 215px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
 }
-#playButton{
+#playButton {
   position: fixed;
   bottom: 3vh;
   left: 3vh;
-  background-color: transparent;
-  color: #02c627;
+  background-color: white;
   border: none;
-  font-size: xx-large
-
+  font-size: xx-large;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 5vmin;
+  box-shadow: 2px 2px 5px 3px #0000;
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.1);
-    }
+  50% {
+    transform: scale(1.1);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Estilos para pantallas con un ancho máximo de 768px */
+@media screen and (max-width: 768px) {
+  body {
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+  }
+
+  h1 {
+    font-size: 8vmin;
+  }
+
+  .questionText {
+    font-size: 4vmin;
+  }
+
+  label {
+    font-size: 3vw;
+  }
+
+  input {
+    font-size: 2vmin;
+  }
+
+  button {
+    padding: 1vmin;
+    margin: 0.5vmin;
+    width: 50vmin;
+  }
+
+  .colorCircle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .logo {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+/* Estilos para pantallas con un ancho máximo de 480px */
+@media screen and (max-width: 480px) {
+  body {
+    padding-left: 1vmin;
+    padding-right: 1vmin;
+  }
+
+  h1 {
+    font-size: 6vmin;
+  }
+
+  .questionText {
+    font-size: 3vmin;
+  }
+
+  label {
+    font-size: 2.5vw;
+  }
+
+  input {
+    font-size: 1.5vmin;
+  }
+
+  button {
+    padding: 0.5vmin;
+    margin: 0.3vmin;
+    width: 80vmin;
+  }
+
+  .colorCircle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 80px;
+  }
 }

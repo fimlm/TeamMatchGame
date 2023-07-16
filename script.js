@@ -322,19 +322,15 @@ questions.splice(0, questions.length, ...randomQuestions);
 function toggleMusic() {
     // Music
     const backgroundMusic = document.getElementById("backgroundMusic");
-    const playButton = document.getElementById("playButton");
-    window.addEventListener("DOMContentLoaded", (event) => {
-        const backgroundMusic = document.getElementById("backgroundMusic");
-        backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
-        backgroundMusic.play();
-    });
-    if (backgroundMusic.paused) {
-        backgroundMusic.play();
-        playButton.textContent = "Pause";
-    } else {
-        backgroundMusic.pause();
-        playButton.textContent = "Play";
-    }
+    backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
+    backgroundMusic.play();
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    playButton.textContent = "⏯️";
+  } else {
+    backgroundMusic.pause();
+    playButton.textContent = "▶️";
+  }
 }
 
 // Mostrar la primera pregunta al cargar la página
