@@ -352,10 +352,10 @@ const playButton = document.getElementById("playButton");
 function toggleMusic() {
   if (backgroundMusic.paused) {
     backgroundMusic.play();
-    playButton.textContent = "⏸️";
+    playButton.innerHTML = "<img src='./media/img/Pause.png' alt='Pause'>";
   } else {
     backgroundMusic.pause();
-    playButton.textContent = "▶️";
+    playButton.innerHTML = "<img src='./media/img/Play.png' alt='Pause'>";
   }
   backgroundMusic.volume = 0.5;
 }

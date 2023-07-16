@@ -72,6 +72,12 @@ input {
   padding: 10px;
   margin: 10px;
   font-family: "Riffic Free", Arial, sans-serif;
+  font-size: larger;
+  color: #864c24;
+}
+
+::-webkit-input-placeholder {
+  background-color: #ab810f;
 }
 
 button {
@@ -81,13 +87,15 @@ button {
   padding: 1.5vmin;
   letter-spacing: 1px;
   margin: 1vmin;
-  width: 40vmin;
+  width: 90%;
   transition: all 0.5s ease-in-out;
   font-family: "Riffic Free", Arial, sans-serif;
+  font-size: larger;
+  color: #864c24;
 }
 
 button:hover {
-  background-color: #02c627;
+  background-color: #8dd4f0;
   color: #fff;
 }
 
@@ -137,11 +145,9 @@ button:hover {
   max-width: 200px;
 }
 
-#playButton {
+/*#playButton {
   display: inline-block;
   vertical-align: middle;
-  width: 1em;
-  height: 1em;
   position: fixed;
   bottom: 3vh;
   left: 3vh;
@@ -153,8 +159,21 @@ button:hover {
   height: 70px;
   font-size: 5vmin;
   box-shadow: 2px 2px 5px 3px #0000;
+}*/
+#playButton {
+  border: none;
+  background: none;
+  position: fixed;
+  left: 20px;
+  bottom: 3vmin;
+  padding: 0;
+  box-shadow: 2px 2px 5px 3px #0000;
 }
 
+#playButton img {
+  width: 100px;
+  height: 100px;
+}
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -199,8 +218,17 @@ button:hover {
     }
 
     input {
-      width: 40%;
-      font-size: 15px;
+      width: 20%;
+      font-size: larger;
+    }
+
+    button {
+      width: 20%;
+    }
+
+    #playButton {
+      width: 150px;
+      height: 150px;
     }
 
     .questionText {
@@ -250,6 +278,12 @@ button:hover {
     input {
       width: 40%;
       font-size: 15px;
+    }
+
+    #playButton {
+      width: 50px;
+      height: 50px;
+      z-index: -1;
     }
 
     .questionText {
@@ -350,6 +384,11 @@ button:hover {
       font-size: 20px;
     }
 
+    #playButton {
+      width: 50px;
+      height: 50px;
+    }
+
     .questionText {
       font-size: 8vmin;
       -webkit-text-stroke: 1.8px #246df8;
@@ -396,6 +435,13 @@ button:hover {
   input {
     width: 60%;
     font-size: 20px;
+    display: none;
+  }
+
+  #playButton {
+    width: 50px;
+    height: 50px;
+    z-index: -1;
   }
 
   .questionText {
@@ -408,7 +454,7 @@ button:hover {
   }
 
   .colorCircle {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
 }
