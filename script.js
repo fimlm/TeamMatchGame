@@ -161,9 +161,9 @@ const calculateTeam = () => {
 
     let optionIndex = parseInt(answer.value.length);
 
-    questions[currentQuestion].color = optionIndex;
+    console.log(optionIndex)
 
-    if (optionIndex < 9) {
+    if (optionIndex <= 11) {
         questions[currentQuestion].color = 'Verde'
     } else {
         questions[currentQuestion].color = 'Morado'
