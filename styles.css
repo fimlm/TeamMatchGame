@@ -23,6 +23,7 @@ h1 {
     margin-top: 1vmin;
     font-size: 6vmin;
 }
+
 h5 {
     color: #ab810f;
     margin-top: 1vmin;
@@ -142,49 +143,204 @@ button:hover {
         transform: scale(1);
     }
 }
-
-/* Estilos para pantallas con un ancho máximo de 768px */
-@media screen and (max-width: 768px) {
-    body {
-        padding-left: 2vmin;
-        padding-right: 2vmin;
-    }
-
-    h1 {
-        font-size: 8vmin;
-    }
-
-    .questionText {
-        font-size: 4vmin;
-    }
-
-    label {
-        font-size: 3vw;
-    }
-
-    input {
-        font-size: 2vmin;
-    }
-
-    button {
-        padding: 1vmin;
-        margin: 0.5vmin;
-        width: 50vmin;
-    }
-
-    .colorCircle {
-        width: 150px;
-        height: 150px;
-    }
-
-    .logo {
-        width: 150px;
-        height: 100px;
+/* Media Query */
+@media screen and (max-width: 2200px) {
+    @media screen and (min-width: 981px) {
+        body {
+            padding-left: 2vmin;
+            padding-right: 2vmin;
+            height: 100vh;
+        }
+    
+        .logo {
+            margin-bottom: 2vmin;
+        }
+    
+        h1 {
+            font-size: 4.5vmin;
+        }
+    
+        .subtitle {
+            margin-bottom: 20vmin;
+        }
+    
+        .mensajeWelcome {
+            margin-bottom: 10vmin;
+        }
+    
+        ::-webkit-input-placeholder {
+            font-size: 2vmin;
+        }
+    
+        input {
+            width: 40%;
+            font-size: 15px;
+        }
+    
+        .questionText {
+            font-size: 6vmin;
+            -webkit-text-stroke: 1.8px #246df8;
+        }
+    
+        .answer {
+            margin-top: 150vmin;
+        }
+    
+        .colorCircle {
+            width: 100px;
+            height: 100px;
+        }
     }
 }
 
-/* Estilos para pantallas con un ancho máximo de 480px */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 980px) {
+    @media screen and (min-width: 721px) {
+        body {
+            padding-left: 2vmin;
+            padding-right: 2vmin;
+            height: 100vh;
+        }
+    
+        .logo {
+            margin-bottom: 2vmin;
+        }
+    
+        h1 {
+            font-size: 4.5vmin;
+        }
+    
+        .subtitle {
+            margin-bottom: 20vmin;
+        }
+    
+        .mensajeWelcome {
+            margin-bottom: 10vmin;
+        }
+    
+        ::-webkit-input-placeholder {
+            font-size: 2vmin;
+        }
+    
+        input {
+            width: 40%;
+            font-size: 15px;
+        }
+    
+        .questionText {
+            font-size: 6vmin;
+            -webkit-text-stroke: 1.8px #246df8;
+        }
+    
+        .answer {
+            margin-top: 150vmin;
+        }
+    
+        .colorCircle {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    @media screen and (min-width: 481px) {
+        body {
+            padding-left: 2vmin;
+            padding-right: 2vmin;
+            height: 100vh;
+        }
+    
+        .logo {
+            margin-bottom: 2vmin;
+        }
+    
+        h1 {
+            font-size: 4.5vmin;
+        }
+    
+        .subtitle {
+            margin-bottom: 20vmin;
+        }
+    
+        .mensajeWelcome {
+            margin-bottom: 10vmin;
+        }
+    
+        ::-webkit-input-placeholder {
+            font-size: 2vmin;
+        }
+    
+        input {
+            width: 40%;
+            font-size: 15px;
+        }
+    
+        .questionText {
+            font-size: 6vmin;
+            -webkit-text-stroke: 1.8px #246df8;
+        }
+    
+        .answer {
+            margin-top: 150vmin;
+        }
+    
+        .colorCircle {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    @media screen and (min-width: 321px) {
+        body {
+            padding-left: 2vmin;
+            padding-right: 2vmin;
+            height: 110vh;
+        }
+    
+        .logo {
+            margin-bottom: 5vmin;
+        }
+    
+        h1 {
+            font-size: 6vmin;
+        }
+    
+        .subtitle {
+            margin-bottom: 20vmin;
+        }
+    
+        .mensajeWelcome {
+            margin-bottom: 10vmin;
+        }
+    
+        ::-webkit-input-placeholder {
+            font-size: 3vmin;
+        }
+    
+        input {
+            width: 60%;
+            font-size: 20px;
+        }
+    
+        .questionText {
+            font-size: 8vmin;
+            -webkit-text-stroke: 1.8px #246df8;
+        }
+    
+        .answer {
+            margin-top: 150vmin;
+        }
+    
+        .colorCircle {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
     body {
         padding-left: 2vmin;
         padding-right: 2vmin;
@@ -199,53 +355,34 @@ button:hover {
         font-size: 8vmin;
     }
 
-    .subtitle{
+    .subtitle {
         margin-bottom: 20vmin;
     }
 
-    .mensajeWelcome{
+    .mensajeWelcome {
         margin-bottom: 10vmin;
     }
 
-    ::-webkit-input-placeholder{
+    ::-webkit-input-placeholder {
         font-size: 5vmin;
     }
 
     input {
         width: 60%;
-        /* padding-top: 8vmin; */
-        font-size: 50px;
+        font-size: 20px;
     }
 
     .questionText {
         font-size: 12vmin;
+        -webkit-text-stroke: 1.5px #246df8;
     }
 
     .answer {
         margin-top: 150vmin;
     }
 
-    label {
-        font-size: 2.5vw;
-    }
-
-    input {
-        font-size: 1.5vmin;
-    }
-
-    button {
-        padding: 0.5vmin;
-        margin: 0.3vmin;
-        width: 80vmin;
-    }
-
     .colorCircle {
         width: 100px;
         height: 100px;
-    }
-
-    .logo {
-        width: 120px;
-        height: 80px;
     }
 }
