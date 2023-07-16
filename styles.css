@@ -6,9 +6,11 @@
 }
 
 body {
+  margin: 0;
+  padding-left: 3vmin;
+  padding-right: 3vmin;
   text-align: center;
   font-family: "Riffic Free", Arial, sans-serif;
-  /*padding: 4vmin;*/
   background-image: url("./media/img/bg.jpg");
   background-size: cover;
   background-position: center;
@@ -85,6 +87,14 @@ button:hover {
 
 .logo:hover {
   width: 210px;
+}
+#playButton{
+  position: fixed;
+  bottom: 3vh;
+  left: 3vh;
+  background-color: transparent;
+  color: #02c627;
+  border: none;
 }
 
 @keyframes pulse {
