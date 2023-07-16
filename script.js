@@ -357,6 +357,7 @@ function toggleMusic() {
     backgroundMusic.pause();
     playButton.textContent = "▶️";
   }
+  backgroundMusic.volume = 0.5;
 }
 
 function playAudioAnswer() {
