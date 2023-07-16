@@ -238,6 +238,8 @@ const showResult = () => {
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
     teamColorElement.textContent = `${name}, tu equipo es ${teamColor}`;
+    //Reproduce al dar el resultado
+    resultAudio.play();
   }, 3000);
   // captureResultImage(); // Generar imagen con el resultado
 };
