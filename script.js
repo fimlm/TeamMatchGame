@@ -223,7 +223,7 @@ const showResult = () => {
         } else {
             teamColor = "Equipo Morado";
             teamColorElement.style.color = "purple";
-            cupcakeElement.src = "./media/img/CupCakeMorado.png";
+            cupcakeElement.src = "./media/img/CupCakePurple.png";
             cupcakeElement.style.width = "20vmin";
         }
 
