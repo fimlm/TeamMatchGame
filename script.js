@@ -171,6 +171,7 @@ const calculateTeam = () => {
 
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
+    playAudioAnswer();
     showQuestion();
   } else {
     showResult();
@@ -356,4 +357,9 @@ function toggleMusic() {
     backgroundMusic.pause();
     playButton.textContent = "▶️";
   }
+}
+
+function playAudioAnswer() {
+  const audioElement = document.getElementById("musicAnswer");
+  audioElement.play();
 }
