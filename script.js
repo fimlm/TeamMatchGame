@@ -292,21 +292,41 @@ const captureResultImage = () => {
 };
 
 // Función para compartir en redes sociales
-const shareOnSocialMedia = () => {
+const shareOnSocialMedia = async () => {
     const name = getNameFromStorage();
+    const image = document.querySelector('.picture');
 
-    let mensaje = `¡Hola ${name}! Tu equipo es ${teamColor}`;
+    if (teamColor === 'Equipo Morado') {
+        teamColor = `<span style="color: purple">${teamColor}</span>`;
+    } else {
+        teamColor = `<span style="color: green">${teamColor}</span>`;
+    }
 
-    // alert(`Compartiendo en redes sociales: ¡Soy del ${teamColor}!`);
+    const mensaje = `🧁🎉🥳 ¡Hola ${name}!🧁🎉🥳<br>Tu equipo es ${teamColor}`;
+
+    image.innerHTML = `<img src="./media/img/logo.png"><p>${mensaje}</p>`;
+
+    const picture = await convertImage(image)
+
     Swal.fire({
         title: '💚 TeamMatch FIMLM 💜',
-        text: mensaje,
-        imageUrl: 'https://unsplash.it/400/200',
+        text: `🧁🎉🥳 ¡Descarga y Comparte! 🧁🎉🥳`,
+        imageUrl: picture,
         imageWidth: 400,
         imageHeight: 200,
         imageAlt: 'Imagen TeamMatch FIMLM',
     })
 };
+
+const convertImage = (content) => {
+    html2canvas(content).then(canvas => {
+        const image = new Image();
+        image.src = canvas.toDataURL();
+
+        const newTab = window.open();
+        newTab.document.write('<img src="' + image.src + '" alt="Contenido convertido en imagen">');
+    });
+}
 
 // Función para obtener un arreglo de preguntas en orden aleatorio
 const getRandomQuestions = () => {

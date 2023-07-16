@@ -8,17 +8,24 @@
     <link rel="shortcut icon" href="./media/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
     <a target="_blank" href="https://fimlm.org/23"><img src="media/img/logo.png" class="logo" /></a>
     <h1>🧁 TeamMatch 💜💚</h1>
     <div id="questions"></div>
-    <script src="script.js"></script>
+
+    <div class="picture"></div>
+    <button class="downloadPicture" style="display: none;"></button>
+    <div class="sharefPicture"></div>
+
     <audio id="backgroundMusic" loop>
         <source src="./media/music.mp3" type="audio/mpeg" />
         Tu navegador no admite el elemento de audio.
     </audio>
     <button id="playButton" onclick="toggleMusic()">▶️</button>
+    
+    <script src="script.js"></script>
   </body>
 </html>
