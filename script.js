@@ -208,8 +208,8 @@ const resultAudio = new Audio("./media/audios/success.mp3");
 const showResult = () => {
   questionElement.innerHTML =
     "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Cargando tu Equipo 😀</small>";
-    questionElement.innerHTML =
-        "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Buscando Match de equipos 😵🤔😀</small>";
+  questionElement.innerHTML =
+    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Buscando Match de equipos 😵🤔😀</small>";
 
   setTimeout(() => {
     questionElement.innerHTML =
@@ -286,14 +286,14 @@ const convertImage = (content) => {
             imageHeight: 300,
             imageAlt: "Imagen TeamMatch ",
           });
-                Swal.fire({
-                    title: 'Te Esperamos 💜vs💚',
-                    text: `🧁🎉🥳 ¡Descarga y Comparte!`,
-                    imageUrl: image,
-                    imageWidth: 350,
-                    imageHeight: 300,
-                    imageAlt: 'Imagen TeamMatch ',
-                })
+          Swal.fire({
+            title: "Te Esperamos 💜vs💚",
+            text: `🧁🎉🥳 ¡Descarga y Comparte!`,
+            imageUrl: image,
+            imageWidth: 350,
+            imageHeight: 300,
+            imageAlt: "Imagen TeamMatch ",
+          });
 
           const imagenDOM = document.querySelector(".picture");
           imagenDOM.style.display = "none";
@@ -301,10 +301,9 @@ const convertImage = (content) => {
           setTimeout(() => {
             recargarSitio();
           }, 10000);
-                setTimeout(() => {
-                    recargarSitio();
-                }, 60000)
-
+          setTimeout(() => {
+            recargarSitio();
+          }, 60000);
 
           resolve(image);
         })
