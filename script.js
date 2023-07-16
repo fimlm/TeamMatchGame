@@ -1,5 +1,3 @@
-// Music:
-
 // Array de preguntas y respuestas
 const questions = [
     {
@@ -77,6 +75,8 @@ const questions = [
 let currentQuestion = 0;
 let teamColor = "";
 const questionElement = document.getElementById("questions");
+
+questionElement.innerHTML = '<h1>¡Hola!</h1>soy el juego Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velioves pain itself, who seeks after it and wants to have it, simply because it is pain<br><button style="margin-top: 5vmin" onclick="showQuestion()">Iniciar el juego</button>';
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -324,14 +324,11 @@ function toggleMusic() {
     const backgroundMusic = document.getElementById("backgroundMusic");
     backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
     backgroundMusic.play();
-  if (backgroundMusic.paused) {
-    backgroundMusic.play();
-    playButton.textContent = "⏯️";
-  } else {
-    backgroundMusic.pause();
-    playButton.textContent = "▶️";
-  }
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        playButton.textContent = "⏯️";
+    } else {
+        backgroundMusic.pause();
+        playButton.textContent = "▶️";
+    }
 }
-
-// Mostrar la primera pregunta al cargar la página
-showQuestion();
