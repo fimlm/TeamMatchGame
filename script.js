@@ -77,7 +77,7 @@ let teamColor = "";
 const questionElement = document.getElementById("questions");
 
 questionElement.innerHTML =
-  '<h1 class="subtitle">💜 Morados vs Verdes 💚</h1><p class="mensajeWelcome">¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="showQuestion()">Iniciar el juego</button>';
+  '<h1 class="subtitle">💜 Morados vs Verdes 💚</h1><p class="mensajeWelcome">¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="toggleMusic(); showQuestion()">Iniciar el juego</button>';
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -343,16 +343,15 @@ const getRandomQuestions = () => {
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
 
-const toggleMusic = () => {
-  // Music
-  const backgroundMusic = document.getElementById("backgroundMusic");
-  backgroundMusic.volume = 0.1; // Establecer el volumen al 30%
-  backgroundMusic.play();
+const backgroundMusic = document.getElementById("backgroundMusic");
+const playButton = document.getElementById("playButton");
+
+function toggleMusic() {
   if (backgroundMusic.paused) {
     backgroundMusic.play();
-    playButton.textContent = "⏯️";
+    playButton.textContent = "⏸️";
   } else {
     backgroundMusic.pause();
     playButton.textContent = "▶️";
   }
-};
+}
