@@ -130,6 +130,7 @@ button:hover {
     display: none;
     position: fixed;
     left: -50%;
+    background-image: url("./media/img/bg.jpg");
 }
 
 .picture img {
@@ -366,7 +367,7 @@ button:hover {
     body {
         padding-left: 2vmin;
         padding-right: 2vmin;
-        height: 200vh;
+        height: 00vh;
     }
 
     .logo {
@@ -406,5 +407,7 @@ button:hover {
     .colorCircle {
         width: 100px;
         height: 100px;
+        
+        
     }
 }
