@@ -330,10 +330,10 @@ function toggleMusic() {
   });
   if (backgroundMusic.paused) {
     backgroundMusic.play();
-    playButton.textContent = "Pause";
+    playButton.textContent = "⏯️";
   } else {
     backgroundMusic.pause();
-    playButton.textContent = "Play";
+    playButton.textContent = "▶️";
   }
 }
 

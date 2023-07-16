@@ -96,11 +96,13 @@ button:hover {
   position: fixed;
   bottom: 3vh;
   left: 3vh;
-  background-color: transparent;
-  color: #02c627;
+  background-color: white;
   border: none;
-  font-size: xxx-large;  
-
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 5vmin;
+  box-shadow: 2px 2px 5px 3px #0000;
 }
 
 @keyframes pulse {
