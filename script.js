@@ -77,7 +77,7 @@ let teamColor = "";
 const questionElement = document.getElementById("questions");
 
 questionElement.innerHTML =
-  '<h1 class="subtitle">💜 Morados vs Verdes 💚</h1><p class="mensajeWelcome">¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="showQuestion()">Iniciar el juego</button>';
+  '<h1 class="subtitle">💜 Morados vs Verdes 💚</h1><p class="mensajeWelcome">¿Ya sabes a que equipo perteneces?. ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="toggleMusic(); showQuestion()">Iniciar el juego</button>';
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -171,6 +171,7 @@ const calculateTeam = () => {
 
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
+    playAudioAnswer();
     showQuestion();
   } else {
     showResult();
@@ -192,7 +193,7 @@ const getOptionsHTML = (options) => {
   for (let i = 0; i < options.length; i++) {
     optionsHTML += `
         <button value='${options[i]}' onclick="calculateTeam()" name="answer" id='answer'> ${options[i]} </button><br>
-    `;
+        `;
   }
   return optionsHTML;
 };
@@ -202,7 +203,8 @@ const selectAnswer = (optionIndex) => {
   const radioButtons = document.getElementsByName("answer");
   radioButtons[optionIndex].checked = true;
 };
-
+//Variable que contiene el audio del resultado
+const resultAudio = new Audio("./media/audios/success.mp3");
 // Función para mostrar el resultado
 const showResult = () => {
   questionElement.innerHTML =
@@ -235,6 +237,9 @@ const showResult = () => {
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
     teamColorElement.textContent = `${name}, tu equipo es ${teamColor}`;
+
+    // Reproducir el audio
+    resultAudio.play();
   }, 3000);
   // captureResultImage(); // Generar imagen con el resultado
 };
@@ -340,4 +345,10 @@ function toggleMusic() {
     backgroundMusic.pause();
     playButton.textContent = "▶️";
   }
+}
+
+//Audio que se reproduce al clckear las respuestas
+function playAudioAnswer() {
+  const audioElement = document.getElementById("musicAnswer");
+  audioElement.play();
 }
