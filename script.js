@@ -199,7 +199,7 @@ const selectAnswer = (optionIndex) => {
 // Función para mostrar el resultado
 const showResult = () => {
     questionElement.innerHTML =
-        "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'>";
+        "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Cargando tu Equipo 😀</small>";
 
     setTimeout(() => {
         questionElement.innerHTML =
@@ -229,7 +229,7 @@ const showResult = () => {
 
         const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
         teamColorElement.textContent = `${name}, tu equipo es ${teamColor}`;
-    }, 2000);
+    }, 3000);
     // captureResultImage(); // Generar imagen con el resultado
 };
 
@@ -296,10 +296,13 @@ const shareOnSocialMedia = () => {
     // Aquí puedes agregar la lógica para compartir en redes sociales
     alert(`Compartiendo en redes sociales: ¡Soy del ${teamColor}!`);
     Swal.fire({
-        imageUrl: "https://placeholder.pics/svg/300x1500",
-        imageHeight: 500,
-        imageAlt: "A tall image",
-    });
+        title: 'Sweet!',
+        text: 'Modal with a custom image.',
+        imageUrl: 'https://unsplash.it/400/200',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+      })
 };
 
 // Función para obtener un arreglo de preguntas en orden aleatorio
