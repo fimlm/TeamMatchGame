@@ -184,18 +184,45 @@ button:hover {
 }
 
 /* Estilos para pantallas con un ancho máximo de 480px */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 300px) {
     body {
-        padding-left: 1vmin;
-        padding-right: 1vmin;
+        padding-left: 2vmin;
+        padding-right: 2vmin;
+        height: 200vh;
+    }
+
+    .logo {
+        margin-bottom: 10vmin;
     }
 
     h1 {
-        font-size: 6vmin;
+        font-size: 8vmin;
+    }
+
+    .subtitle{
+        margin-bottom: 20vmin;
+    }
+
+    .mensajeWelcome{
+        margin-bottom: 10vmin;
+    }
+
+    ::-webkit-input-placeholder{
+        font-size: 5vmin;
+    }
+
+    input {
+        width: 60%;
+        /* padding-top: 8vmin; */
+        font-size: 50px;
     }
 
     .questionText {
-        font-size: 3vmin;
+        font-size: 12vmin;
+    }
+
+    .answer {
+        margin-top: 150vmin;
     }
 
     label {
