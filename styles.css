@@ -30,6 +30,29 @@ h5 {
     font-size: 6vmin;
 }
 
+.vs {
+    color: #ffffff;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    padding: 5px;
+}
+
+.vs-image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+  }
+
+.purple {
+    color: #800080;
+}
+
+.green {
+    color: #02c627;
+}
+
+
 .questionText {
     color: #fff;
     letter-spacing: -1px;
@@ -91,7 +114,6 @@ button:hover {
     border-bottom-right-radius: 10px;
     transition: all 0.4s ease-in-out;
     margin-bottom: 2vmin;
-    height: 120px;
 }
 
 .logo:hover {
