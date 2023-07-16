@@ -72,6 +72,30 @@ const questions = [
   },
 ];
 
+const pointGreenCalc = [
+    { id: 0, name: 'Shakira' },
+    { id: 1, name: 'Karol G' },
+    { id: 2, name: 'Monotonía de Shakira' },
+    { id: 3, name: 'Acróstico de Shakira' },
+    { id: 4, name: 'Ciudad de Panamá' },
+    { id: 5, name: 'Bocas del Toro' },
+    { id: 6, name: 'Coca-Cola' },
+    { id: 7, name: 'Limonada de Coco' },
+    { id: 8, name: 'Lo que el viento se llevó' },
+    { id: 9, name: 'BMW' },
+    { id: 10, name: 'Volver al futuro' },
+    { id: 11, name: 'Mercedes' },
+    { id: 12, name: 'Margarita' },
+    { id: 13, name: 'Rosas' },
+    { id: 14, name: 'Vainilla' },
+    { id: 15, name: 'Crónicas de una muerte anunciada' },
+    { id: 16, name: '1984' },
+    { id: 17, name: 'Fútbol' },
+    { id: 18, name: 'Ajedrez' },
+    { id: 19, name: 'Rojo' },
+    { id: 20, name: 'Negro' }
+]
+
 let currentQuestion = 0;
 let teamColor = "";
 const questionElement = document.getElementById("questions");
@@ -163,7 +187,7 @@ const calculateTeam = () => {
 
   console.log(optionIndex);
 
-  if (optionIndex <= 11) {
+  if (optionIndex <= 9) {
     questions[currentQuestion].color = "Verde";
   } else {
     questions[currentQuestion].color = "Morado";
