@@ -1,164 +1,166 @@
+// Limpiar la caché al iniciar el juego
+localStorage.clear();
 // Array de preguntas y respuestas
 const questions = [
   {
-    question: '🎨 ¿Qué artista prefieres?',
-    options: ['Shakira', 'Karol G', 'Juan Gabriel', 'Jean Sebastian'],
-    color: '',
+    question: "🎨 ¿Qué artista prefieres?",
+    options: ["Shakira", "Karol G", "Juan Gabriel", "Jean Sebastian"],
+    color: "",
   },
   {
-    question: '🎵 ¿Qué canción prefieres?',
+    question: "🎵 ¿Qué canción prefieres?",
     options: [
-      'Monotonía de Shakira',
-      'Acróstico de Shakira',
-      'Como tú decidas',
-      'Oiga de Joan Sebastian',
+      "Monotonía de Shakira",
+      "Acróstico de Shakira",
+      "Como tú decidas",
+      "Oiga de Joan Sebastian",
     ],
-    color: '',
+    color: "",
   },
   {
-    question: '✈️ ¿Qué destino prefieres para viajar?',
-    options: ['Ciudad de Panamá', 'Bocas del Toro', 'Dubai', 'Singapur'],
-    color: '',
+    question: "✈️ ¿Qué destino prefieres para viajar?",
+    options: ["Ciudad de Panamá", "Bocas del Toro", "Dubai", "Singapur"],
+    color: "",
   },
   {
-    question: '🍹 ¿Qué bebida prefieres?',
-    options: ['Coca-Cola', 'Limonada de Coco', 'Matcha', 'Té de Jamaica'],
-    color: '',
+    question: "🍹 ¿Qué bebida prefieres?",
+    options: ["Coca-Cola", "Limonada de Coco", "Matcha", "Té de Jamaica"],
+    color: "",
   },
   {
-    question: '🎥 ¿Qué película prefieres?',
+    question: "🎥 ¿Qué película prefieres?",
     options: [
-      'Lo que el viento se llevó',
-      'Volver al futuro',
-      'Harry Potter',
-      'Matrix',
+      "Lo que el viento se llevó",
+      "Volver al futuro",
+      "Harry Potter",
+      "Matrix",
     ],
-    color: '',
+    color: "",
   },
   {
-    question: '🚗 ¿Qué carro prefieres?',
-    options: ['BMW', 'Mercedes', 'Porsche', 'Ferrari'],
-    color: '',
+    question: "🚗 ¿Qué carro prefieres?",
+    options: ["BMW", "Mercedes", "Porsche", "Ferrari"],
+    color: "",
   },
   {
-    question: '💐 ¿Qué flor prefieres?',
-    options: ['Margarita', 'Rosas', 'Tulipanes', 'Orquídeas'],
-    color: '',
+    question: "💐 ¿Qué flor prefieres?",
+    options: ["Margarita", "Rosas", "Tulipanes", "Orquídeas"],
+    color: "",
   },
   {
-    question: '🍦 ¿Qué sabor de helado prefieres?',
-    options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'],
-    color: '',
+    question: "🍦 ¿Qué sabor de helado prefieres?",
+    options: ["Chocolate", "Vainilla", "Limón", "Mandarina"],
+    color: "",
   },
   {
-    question: '📚 ¿Qué libro prefieres?',
+    question: "📚 ¿Qué libro prefieres?",
     options: [
-      'Crónicas de una muerte anunciada',
-      '1984',
-      'La Biblia',
-      'La historia de Europa',
+      "Crónicas de una muerte anunciada",
+      "1984",
+      "La Biblia",
+      "La historia de Europa",
     ],
-    color: '',
+    color: "",
   },
   {
-    question: '🏈 ¿Qué deporte prefieres?',
-    options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'],
-    color: '',
+    question: "🏈 ¿Qué deporte prefieres?",
+    options: ["Fútbol", "Ajedrez", "Básquet", "Tenis"],
+    color: "",
   },
   {
-    question: '🌈 ¿Qué color prefieres?',
-    options: ['Rojo', 'Negro', 'Turquesa', 'Fucsia'],
-    color: '',
+    question: "🌈 ¿Qué color prefieres?",
+    options: ["Rojo", "Negro", "Turquesa", "Fucsia"],
+    color: "",
   },
 ];
 
 const pointGreenCalc = [
-  { id: 0, name: 'Shakira' },
-  { id: 1, name: 'Karol G' },
-  { id: 2, name: 'Monotonía de Shakira' },
-  { id: 3, name: 'Acróstico de Shakira' },
-  { id: 4, name: 'Ciudad de Panamá' },
-  { id: 5, name: 'Bocas del Toro' },
-  { id: 6, name: 'Coca-Cola' },
-  { id: 7, name: 'Limonada de Coco' },
-  { id: 8, name: 'Lo que el viento se llevó' },
-  { id: 9, name: 'BMW' },
-  { id: 10, name: 'Volver al futuro' },
-  { id: 11, name: 'Mercedes' },
-  { id: 12, name: 'Margarita' },
-  { id: 13, name: 'Rosas' },
-  { id: 14, name: 'Vainilla' },
-  { id: 15, name: 'Crónicas de una muerte anunciada' },
-  { id: 16, name: '1984' },
-  { id: 17, name: 'Fútbol' },
-  { id: 18, name: 'Ajedrez' },
-  { id: 19, name: 'Rojo' },
-  { id: 20, name: 'Negro' },
+  { id: 0, name: "Shakira" },
+  { id: 1, name: "Karol G" },
+  { id: 2, name: "Monotonía de Shakira" },
+  { id: 3, name: "Acróstico de Shakira" },
+  { id: 4, name: "Ciudad de Panamá" },
+  { id: 5, name: "Bocas del Toro" },
+  { id: 6, name: "Coca-Cola" },
+  { id: 7, name: "Limonada de Coco" },
+  { id: 8, name: "Lo que el viento se llevó" },
+  { id: 9, name: "BMW" },
+  { id: 10, name: "Volver al futuro" },
+  { id: 11, name: "Mercedes" },
+  { id: 12, name: "Margarita" },
+  { id: 13, name: "Rosas" },
+  { id: 14, name: "Vainilla" },
+  { id: 15, name: "Crónicas de una muerte anunciada" },
+  { id: 16, name: "1984" },
+  { id: 17, name: "Fútbol" },
+  { id: 18, name: "Ajedrez" },
+  { id: 19, name: "Rojo" },
+  { id: 20, name: "Negro" },
 ];
 
 let currentQuestion = 0;
-let teamColor = '';
-const questionElement = document.getElementById('questions');
+let teamColor = "";
+const questionElement = document.getElementById("questions");
 
 questionElement.innerHTML =
   '<h1 class="subtitle"><span class="purple"> Morados</span> <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> <span class="green">Verdes</span></h1><p class="mensajeWelcome">¿Ya sabes a qué equipo perteneces? ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar el juego</button>';
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
-  const name = localStorage.getItem('teamMatchName');
-  return name ? name : '';
+  const name = localStorage.getItem("teamMatchName");
+  return name ? name : "";
 };
 
 // Guardar el nombre en el almacenamiento del navegador (localStorage)
 const saveNameToStorage = (name) => {
-  localStorage.setItem('teamMatchName', name);
+  localStorage.setItem("teamMatchName", name);
 };
 
 // Función para calcular el equipo
 const calculateTeam = () => {
-  let name = document.getElementById('name').value.trim();
+  let name = document.getElementById("name").value.trim();
 
-  if (name === '') {
+  if (name === "") {
     return Swal.fire({
-      title: 'Por favor, ingresa un nombre 🥺',
+      title: "Por favor, ingresa un nombre 🥺",
       showClass: {
-        popup: 'animate__animated animate__fadeInDown',
+        popup: "animate__animated animate__fadeInDown",
       },
       hideClass: {
-        popup: 'animate__animated animate__fadeOutUp',
+        popup: "animate__animated animate__fadeOutUp",
       },
     });
   }
 
   // Validamos que no posea números
-  const numeros = '0123456789';
+  const numeros = "0123456789";
 
   for (i = 0; i < name.length; i++) {
     if (numeros.indexOf(name.charAt(i), 0) != -1) {
       return Swal.fire({
-        title: 'Por favor, ingresa un nombre 🥺',
+        title: "Por favor, ingresa un nombre 🥺",
         showClass: {
-          popup: 'animate__animated animate__fadeInDown',
+          popup: "animate__animated animate__fadeInDown",
         },
         hideClass: {
-          popup: 'animate__animated animate__fadeOutUp',
+          popup: "animate__animated animate__fadeOutUp",
         },
       });
     }
   }
 
   //  Validamos caracteres especiales
-  const especiales = '!#$%&/()=?*¿¡¨][{}-+.';
+  const especiales = "!#$%&/()=?*¿¡¨][{}-+.";
 
   for (i = 0; i < name.length; i++) {
     if (especiales.indexOf(name.charAt(i), 0) != -1) {
       return Swal.fire({
-        title: 'Por favor, ingresa un nombre 🥺',
+        title: "Por favor, ingresa un nombre 🥺",
         showClass: {
-          popup: 'animate__animated animate__fadeInDown',
+          popup: "animate__animated animate__fadeInDown",
         },
         hideClass: {
-          popup: 'animate__animated animate__fadeOutUp',
+          popup: "animate__animated animate__fadeOutUp",
         },
       });
     }
@@ -169,16 +171,16 @@ const calculateTeam = () => {
 
   saveNameToStorage(name);
 
-  const answer = document.querySelector('#answer');
+  const answer = document.querySelector("#answer");
 
   if (!answer) {
     return Swal.fire({
-      title: 'Por favor, selecciona una respuesta',
+      title: "Por favor, selecciona una respuesta",
       showClass: {
-        popup: 'animate__animated animate__fadeInDown',
+        popup: "animate__animated animate__fadeInDown",
       },
       hideClass: {
-        popup: 'animate__animated animate__fadeOutUp',
+        popup: "animate__animated animate__fadeOutUp",
       },
     });
   }
@@ -188,9 +190,9 @@ const calculateTeam = () => {
   console.log(optionIndex);
 
   if (optionIndex <= 9) {
-    questions[currentQuestion].color = 'Verde';
+    questions[currentQuestion].color = "Verde";
   } else {
-    questions[currentQuestion].color = 'Morado';
+    questions[currentQuestion].color = "Morado";
   }
 
   if (currentQuestion < questions.length - 1) {
@@ -213,7 +215,7 @@ const showQuestion = () => {
 
 // Función para obtener el HTML de las opciones de respuesta
 const getOptionsHTML = (options) => {
-  let optionsHTML = '';
+  let optionsHTML = "";
   for (let i = 0; i < options.length; i++) {
     optionsHTML += `
         <button value='${options[i]}' onclick="calculateTeam()" name="answer" id='answer'> ${options[i]} </button><br>
@@ -224,11 +226,11 @@ const getOptionsHTML = (options) => {
 
 // Función para seleccionar una respuesta
 const selectAnswer = (optionIndex) => {
-  const radioButtons = document.getElementsByName('answer');
+  const radioButtons = document.getElementsByName("answer");
   radioButtons[optionIndex].checked = true;
 };
 //Variable que contiene el audio del resultado
-const resultAudio = new Audio('./media/audios/success.mp3');
+const resultAudio = new Audio("./media/audios/success.mp3");
 // Función para mostrar el resultado
 const showResult = () => {
   questionElement.innerHTML =
@@ -240,25 +242,25 @@ const showResult = () => {
     questionElement.innerHTML =
       '<h2>🎉🥳 <span id="teamColor"></span></h2><br><img id="cupcake" src="" alt="Cupcake"><br>';
 
-    const teamColorElement = document.getElementById('teamColor');
-    const cupcakeElement = document.getElementById('cupcake');
+    const teamColorElement = document.getElementById("teamColor");
+    const cupcakeElement = document.getElementById("cupcake");
 
-    const greenPoints = questions.filter((q) => q.color === 'Verde').length;
-    const purplePoints = questions.filter((q) => q.color === 'Morado').length;
+    const greenPoints = questions.filter((q) => q.color === "Verde").length;
+    const purplePoints = questions.filter((q) => q.color === "Morado").length;
 
-    console.log('Verdes => ', greenPoints);
-    console.log('Morados => ', purplePoints);
+    console.log("Verdes => ", greenPoints);
+    console.log("Morados => ", purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = 'Equipo Verde';
-      teamColorElement.style.color = 'green';
-      cupcakeElement.src = './media/img/CupCakeGreen.png';
-      cupcakeElement.style.width = '35vmin';
+      teamColor = "Equipo Verde";
+      teamColorElement.style.color = "green";
+      cupcakeElement.src = "./media/img/CupCakeGreen.png";
+      cupcakeElement.style.width = "35vmin";
     } else {
-      teamColor = 'Equipo Morado';
-      teamColorElement.style.color = 'purple';
-      cupcakeElement.src = './media/img/CupCakePurple.png';
-      cupcakeElement.style.width = '35vmin';
+      teamColor = "Equipo Morado";
+      teamColorElement.style.color = "purple";
+      cupcakeElement.src = "./media/img/CupCakePurple.png";
+      cupcakeElement.style.width = "35vmin";
     }
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
@@ -272,9 +274,9 @@ const showResult = () => {
 // Función para compartir en redes sociales
 const shareOnSocialMedia = async () => {
   const name = getNameFromStorage();
-  const image = document.querySelector('.picture');
+  const image = document.querySelector(".picture");
 
-  if (teamColor === 'Equipo Morado') {
+  if (teamColor === "Equipo Morado") {
     teamColor = `<br><img src="./media/img/CupCakePurple.png" styly="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
   } else {
     teamColor = `<br><img src="./media/img/CupCakeGreen.png" styly="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
@@ -284,14 +286,14 @@ const shareOnSocialMedia = async () => {
 
   image.innerHTML = `<img src="./media/img/logo.png"><p>${mensaje}</p>`;
 
-  image.style.display = 'block';
+  image.style.display = "block";
 
   await convertImage(image);
 };
 
 const convertImage = (content) => {
   // Crear un lienzo Canvas
-  const canvas = document.createElement('canvas');
+  const canvas = document.createElement("canvas");
   // const context = canvas.getContext('2d');
 
   // Establecer el tamaño del lienzo según el contenido
@@ -311,11 +313,11 @@ const convertImage = (content) => {
             imageUrl: image,
             imageWidth: 350,
             imageHeight: 300,
-            imageAlt: 'Imagen TeamMatch ',
+            imageAlt: "Imagen TeamMatch ",
           });
 
-          const imagenDOM = document.querySelector('.picture');
-          imagenDOM.style.display = 'none';
+          const imagenDOM = document.querySelector(".picture");
+          imagenDOM.style.display = "none";
 
           setTimeout(() => {
             recargarSitio();
@@ -335,12 +337,12 @@ const convertImage = (content) => {
 
 const recargarSitio = () => {
   Swal.fire(
-    '¡Gracias por participar!',
-    'Esperamos ver la imagen de tu equipo 😀',
-    'success'
+    "¡Gracias por participar!",
+    "Esperamos ver la imagen de tu equipo 😀",
+    "success"
   );
   setTimeout(() => {
-    localStorage.removeItem('teamMatchName');
+    localStorage.removeItem("teamMatchName");
     window.location.reload();
   }, 5000);
 };
@@ -362,8 +364,8 @@ const getRandomQuestions = () => {
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
 
-const backgroundMusic = document.getElementById('backgroundMusic');
-const playButton = document.getElementById('playButton');
+const backgroundMusic = document.getElementById("backgroundMusic");
+const playButton = document.getElementById("playButton");
 
 function toggleMusic() {
   if (backgroundMusic.paused) {
@@ -377,6 +379,6 @@ function toggleMusic() {
 }
 
 function playAudioAnswer() {
-  const audioElement = document.getElementById('musicAnswer');
+  const audioElement = document.getElementById("musicAnswer");
   audioElement.play();
 }
