@@ -306,8 +306,8 @@ const convertImage = (content) => {
           const image = canvas.toDataURL();
 
           Swal.fire({
-            title: "💚 TeamMatch  💜",
-            text: `🧁🎉🥳 ¡Descarga y Comparte! 🧁🎉🥳`,
+            html: '<a href="#" class="button-download">¡Descarga y Comparte! 🎁</a>',
+            text: `¡Descarga y Comparte! 🎁`,
             imageUrl: image,
             imageWidth: 350,
             imageHeight: 300,

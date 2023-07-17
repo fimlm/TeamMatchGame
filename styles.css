@@ -109,12 +109,12 @@ button:hover {
 }
 
 .logo {
-  width: 200px;
+  width: 250px;
   justify-content: center;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
   transition: all 0.4s ease-in-out;
   margin-bottom: 2vmin;
 }
@@ -170,6 +170,26 @@ button:hover {
   width: 100px;
   height: 100px;
 }
+
+.button-download {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #0000ff;
+  border-radius: 5px;
+  background-color: #0000ff;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.button-download:hover {
+  background-color: #0077ff;
+  border-color: #0077ff;
+}
+
+.button-download:focus {
+  outline: none;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
