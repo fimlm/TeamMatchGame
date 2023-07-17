@@ -76,7 +76,7 @@ input {
   color: #864c24;
 }
 
-button {
+button {  
   text-align: center;
   border: 2px solid #800080;
   border-radius: 10px;
@@ -133,6 +133,7 @@ button:hover {
   display: none;
   position: fixed;
   left: -50%;
+  background-image: url("./media/img/bg.jpg");
 }
 
 .picture img {
@@ -220,6 +221,7 @@ button:hover {
 
     button {
       width: 20%;
+      
     }
 
     #playButton {
