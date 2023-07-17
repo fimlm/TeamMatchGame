@@ -317,12 +317,12 @@ const convertImage = (content) => {
           const imagenDOM = document.querySelector(".picture");
           imagenDOM.style.display = "none";
 
-          /*                     setTimeout(() => {
+                              setTimeout(() => {
                         recargarSitio();
                     }, 10000);
                     setTimeout(() => {
                         recargarSitio();
-                    }, 60000); */
+                    }, 60000); 
 
           resolve(image);
         })
@@ -339,10 +339,10 @@ const recargarSitio = () => {
     "Esperamos ver la imagen de tu equipo 😀",
     "success"
   );
-  /*     setTimeout(() => {
+       setTimeout(() => {
         localStorage.removeItem("teamMatchName");
         window.location.reload();
-    }, 5000); */
+    }, 5000); 
 };
 
 // Función para obtener un arreglo de preguntas en orden aleatorio

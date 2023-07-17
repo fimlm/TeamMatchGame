@@ -133,6 +133,7 @@ button:hover {
   display: none;
   position: fixed;
   left: -50%;
+  background-image: url("./media/img/bg.jpg");
 }
 
 .picture img {
@@ -451,7 +452,7 @@ button:hover {
   input {
     width: 60%;
     font-size: 20px;
-    display: none;
+    /*display: none;*/
   }
 
   #playButton {
