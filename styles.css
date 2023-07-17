@@ -76,10 +76,6 @@ input {
   color: #864c24;
 }
 
-::-webkit-input-placeholder {
-  background-color: #ab810f;
-}
-
 button {
   text-align: center;
   border: 2px solid #800080;
