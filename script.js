@@ -155,15 +155,37 @@ const calculateTeam = () => {
   let name = document.getElementById('name').value.trim();
 
   if (name === '') {
-    return Swal.fire({
-      title: 'Por Favor, Ingresa Un Nombre 🥺',
+    function getRandomColor() {
+      const colors = ['#800080', '#02C627'];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      return colors[randomIndex];
+    }
+
+    const randomBackgroundColor = getRandomColor();
+
+    Swal.fire({
+      title: 'Por favor, ingresa un nombre',
+      width: 600,
+      padding: '3em',
+      color: '#864c24',
+      confirmButtonColor: randomBackgroundColor,
       showClass: {
         popup: 'animate__animated animate__fadeInDown',
       },
       hideClass: {
         popup: 'animate__animated animate__fadeOutUp',
       },
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("/media/gif/nyan-cat.gif")
+        left top
+        no-repeat
+      `,
     });
+
+    playAudioError();
+
+    return;
   }
 
   // Validamos que no posea números
@@ -171,32 +193,76 @@ const calculateTeam = () => {
 
   for (let i = 0; i < name.length; i++) {
     if (numeros.indexOf(name.charAt(i), 0) != -1) {
-      return Swal.fire({
-        title: 'Por Favor, Ingresa Un Nombre 🥺',
+      function getRandomColor() {
+        const colors = ['#800080', '#02C627'];
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex];
+      }
+
+      const randomBackgroundColor = getRandomColor();
+
+      Swal.fire({
+        title: 'Por favor, no ingreses números',
+        width: 600,
+        padding: '3em',
+        color: '#864c24',
+        confirmButtonColor: randomBackgroundColor,
         showClass: {
           popup: 'animate__animated animate__fadeInDown',
         },
         hideClass: {
           popup: 'animate__animated animate__fadeOutUp',
         },
+        backdrop: `
+        rgba(0,0,123,0.4)
+        url("/media/gif/nyan-cat.gif")
+        left top
+        no-repeat
+      `,
       });
+
+      playAudioError();
+
+      return;
     }
   }
 
   //  Validamos caracteres especiales
-  const especiales = '!#$%&/()=?*¿¡¨][{}-+.';
+  const especiales = '><!#$%&/()=?*¿¡¨][{}-+.';
 
   for (let i = 0; i < name.length; i++) {
     if (especiales.indexOf(name.charAt(i), 0) != -1) {
-      return Swal.fire({
-        title: 'Por Favor, Ingresa Un Nombre 🥺',
+      function getRandomColor() {
+        const colors = ['#800080', '#02C627'];
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex];
+      }
+
+      const randomBackgroundColor = getRandomColor();
+
+      Swal.fire({
+        title: 'Por favor, cambia tu nombre',
+        width: 600,
+        padding: '3em',
+        color: '#864c24',
+        confirmButtonColor: randomBackgroundColor,
         showClass: {
           popup: 'animate__animated animate__fadeInDown',
         },
         hideClass: {
           popup: 'animate__animated animate__fadeOutUp',
         },
+        backdrop: `
+        rgba(0,0,123,0.4)
+        url("/media/gif/nyan-cat.gif")
+        left top
+        no-repeat
+      `,
       });
+
+      playAudioError();
+
+      return;
     }
   }
 
@@ -215,15 +281,37 @@ const calculateTeam = () => {
   console.log(buttonValue);
 
   if (!answer) {
-    return Swal.fire({
-      title: 'Por Favor, Selecciona Una Respuesta',
+    function getRandomColor() {
+      const colors = ['#800080', '#02C627'];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      return colors[randomIndex];
+    }
+
+    const randomBackgroundColor = getRandomColor();
+
+    Swal.fire({
+      title: 'Por favor, selecciona una respuesta',
+      width: 600,
+      padding: '3em',
+      color: '#864c24',
+      confirmButtonColor: randomBackgroundColor,
       showClass: {
         popup: 'animate__animated animate__fadeInDown',
       },
       hideClass: {
         popup: 'animate__animated animate__fadeOutUp',
       },
+      backdrop: `
+      rgba(0,0,123,0.4)
+      url("/media/gif/nyan-cat.gif")
+      left top
+      no-repeat
+    `,
     });
+
+    playAudioError();
+
+    return;
   }
 
   if (pointGreenCalc.some((item) => item.name === buttonValue)) {
@@ -304,18 +392,13 @@ const showResult = () => {
     "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Analizando match de equipo 🥳</small>";
 
   setTimeout(() => {
-    questionElement.innerHTML =
-      `
+    questionElement.innerHTML = `
       <div id="miDescarga" class="miDescarga" style="">
         <h2>🎉🥳 <span id="teamColor"></span></h2>
         </div>
         `;
-    /* <br>
-    <button onclick="descarga()" id="downloadButton">Descargars</button>
-<img id="cupcake" src="" alt="Cupcake"><br>  */
 
     const teamColorElement = document.getElementById('teamColor');
-    const cupcakeElement = document.getElementById('cupcake');
 
     const greenPoints = questions.filter((q) => q.color === 'Verde').length;
     const purplePoints = questions.filter((q) => q.color === 'Morado').length;
@@ -324,24 +407,19 @@ const showResult = () => {
     console.log('Morados => ', purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = "Eres del Equipo Verde";
-      teamColorElement.style.color = "green";
-      //miDescargaElement.style = "background-image:url('./media/img/Ponquesito-Verde.jpg')";
+      teamColor = 'Eres del Equipo Verde';
+      teamColorElement.style.color = 'green';
 
       // Obtén una referencia a la div
       const miDescargaElement = document.getElementById('miDescarga');
-      miDescargaElement.style.backgroundImage = "url('./media/img/Ponquesito-Verde.jpg')";
-
-      //cupcakeElement.src = "./media/img/CupCakeGreen.png";
-      //cupcakeElement.style.width = "35vmin";
+      miDescargaElement.style.backgroundImage =
+        "url('./media/img/Ponquesito-Verde.jpg')";
     } else {
-      teamColor = "Eres del Equipo Morado";
-      teamColorElement.style.color = "purple";
+      teamColor = 'Eres del Equipo Morado';
+      teamColorElement.style.color = 'purple';
       const miDescargaElement = document.getElementById('miDescarga');
-      miDescargaElement.style.backgroundImage = "url('./media/img/Ponquesito-Morado.jpg')";
-
-      //cupcakeElement.src = "./media/img/CupCakePurple.png";
-      //cupcakeElement.style.width = "35vmin";
+      miDescargaElement.style.backgroundImage =
+        "url('./media/img/Ponquesito-Morado.jpg')";
     }
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
@@ -351,8 +429,6 @@ const showResult = () => {
     questionElement.innerHTML +=
       '<button class="descarga" onclick="descarga()">Descargar y Compartir</button>';
   }, 3000);
-
-  // captureResultImage(); // Generar imagen con el resultado
 };
 
 // Función para compartir en redes sociales
@@ -395,12 +471,17 @@ const convertImage = (content) => {
 
     Swal.fire({
       title: '¡Descarga y Comparte! 🎁',
+      width: 600,
+      padding: '3em',
+      color: '#864c24',
       text: 'Haz clic en el botón para descargar la imagen o cierra esta ventana para verla aquí.',
       imageUrl: lowQualityImage,
       imageAlt: 'Team Match Result',
       showCancelButton: true,
       confirmButtonText: 'Descargar imagen',
+      confirmButtonColor: randomBackgroundColor,
       cancelButtonText: 'Cerrar',
+      cancelButtonColor: randomBackgroundColor,
       showClass: {
         popup: 'animate__animated animate__fadeInDown',
         image: 'swal2-no-border',
@@ -414,6 +495,12 @@ const convertImage = (content) => {
         htmlContainer: 'resultado-html-container',
         image: 'swal2-image',
       },
+      backdrop: `
+      rgba(0,0,123,0.4)
+      url("/media/gif/nyan-cat.gif")
+      left top
+      no-repeat
+    `,
     }).then((result) => {
       if (result.isConfirmed) {
         const link = document.createElement('a');
@@ -430,7 +517,11 @@ const convertImage = (content) => {
 
         Swal.fire({
           title: 'Resultado Del Team Match 🎁',
+          width: 600,
+          padding: '3em',
+          color: '#864c24',
           html: imgElement.outerHTML,
+          confirmButtonColor: randomBackgroundColor,
           showClass: {
             popup: 'animate__animated animate__fadeInDown',
             image: 'swal2-no-border',
@@ -444,6 +535,12 @@ const convertImage = (content) => {
             htmlContainer: 'resultado-html-container',
             image: 'swal2-image',
           },
+          backdrop: `
+          rgba(0,0,123,0.4)
+          url("/media/gif/nyan-cat.gif")
+          left top
+          no-repeat
+        `,
         });
       }
     });
@@ -493,62 +590,20 @@ function playAudioAnswer() {
   audioElement.play();
 }
 
-
-
-/* function descarga() {
-  // Captura la div utilizando html2canvas
-  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
-    // Crea un enlace para descargar la imagen
-    var link = document.createElement("a");
-    link.href = canvas.toDataURL("image/jpeg");
-    link.download = "mi_div.jpg";
-    link.click();
-  });
-} */
-
-
-/* function descarga() {
-  // Captura la div utilizando html2canvas
-  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
-    // Escalar la imagen de fondo del canvas
-    var scaledCanvas = document.createElement("canvas");
-    var scaledContext = scaledCanvas.getContext("2d");
-    scaledCanvas.width = canvas.width * 3; // Escala al 150% (1.5 veces el tamaño original)
-    scaledCanvas.height = canvas.height * 3;
-    scaledContext.drawImage(canvas, 0, 0, scaledCanvas.width, scaledCanvas.height);
-
-    // Crea un enlace para descargar la imagen escalada
-    var link = document.createElement("a");
-    link.href = scaledCanvas.toDataURL("image/jpeg");
-    link.download = "Mi-Equipo-23.jpg";
-    link.click();
-  });
+function playAudioError() {
+  const audioElement = document.getElementById('audioError');
+  audioElement.play();
 }
- */
-
-/* function descarga() {
-  // Captura la div utilizando html2canvas
-  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
-    // Crea un enlace temporal para la descarga
-    var link = document.createElement("a");
-    link.href = canvas.toDataURL("image/jpeg");
-    link.download = "Mi-Equipo-23.jpeg";
-
-    // Simula el clic en el enlace utilizando el evento de click
-    var event = new MouseEvent('click', {
-      view: window,
-      bubbles: true,
-      cancelable: true
-    });
-    link.dispatchEvent(event);
-  });
-} */
 
 function descarga() {
   // Captura la div utilizando html2canvas
-  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
+  html2canvas(document.getElementById('miDescarga')).then(function (canvas) {
     // Crea una nueva ventana o pestaña con la imagen generada
-    var newWindow = window.open();
-    newWindow.document.write('<img src="' + canvas.toDataURL("image/jpeg") + '" alt="Mi-Equipo-23" style="width:100%;height:auto;">');
+    let newWindow = window.open();
+    newWindow.document.write(
+      '<img src="' +
+        canvas.toDataURL('image/jpeg') +
+        '" alt="Mi-Equipo-23" style="width:100%;height:auto;">'
+    );
   });
 }
