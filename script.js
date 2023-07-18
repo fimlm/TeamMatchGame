@@ -300,9 +300,10 @@ const resultAudio = new Audio('./media/audios/success.mp3');
 // Función para mostrar el resultado
 const showResult = () => {
   questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Cargando tu Equipo 😀</small>";
+    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 22px;'>Cargando tu Equipo 😀</small>";
+
   questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small>Analizando match de equipo 😵</small>";
+    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 22px;'>Analizando match de equipo 😵</small>";
 
   setTimeout(() => {
     questionElement.innerHTML =
