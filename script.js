@@ -234,7 +234,7 @@ const calculateTeam = () => {
 
   console.log(greenCount);
 
-  let optionIndex = answer.value;
+  
 
   if (greenCount > purpleCount) {
     questions[currentQuestion].color = 'Verde';
@@ -437,17 +437,7 @@ const convertImage = (content) => {
   });
 };
 
-const recargarSitio = () => {
-  Swal.fire(
-    '¡Gracias por participar!',
-    'Esperamos ver la imagen de tu equipo 😀',
-    'success'
-  );
-  setTimeout(() => {
-    localStorage.removeItem('teamMatchName');
-    window.location.reload();
-  }, 5000);
-};
+
 
 // Función para obtener un arreglo de preguntas en orden aleatorio
 const getRandomQuestions = () => {
