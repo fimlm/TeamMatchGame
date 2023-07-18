@@ -92,7 +92,7 @@ const pointGreenCalc = [
   { name: 'Rosas' },
   { name: 'Chocolate' },
   { name: 'Vainilla' },
-  { name: 'Crónica de una muerte anunciada' },
+  { name: 'Crónicas de una muerte anunciada' },
   { name: '1984' },
   { name: 'Fútbol' },
   { name: 'Ajedrez' },
@@ -232,7 +232,12 @@ const calculateTeam = () => {
     purpleCount++;
   }
 
-  if (greenCount > purpleCount) {
+  console.log(greenCount);
+  console.log(redCount);
+
+  let optionIndex = answer.value;
+
+  if (greenCount > redCount) {
     questions[currentQuestion].color = 'Verde';
   } else {
     questions[currentQuestion].color = 'Morado';
@@ -314,12 +319,12 @@ const showResult = () => {
     console.log('Morados => ', purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = 'eres del Equipo Verde';
+      teamColor = 'Eres del Equipo Verde';
       teamColorElement.style.color = 'green';
       cupcakeElement.src = './media/img/CupCakeGreen.png';
       cupcakeElement.style.width = '35vmin';
     } else {
-      teamColor = 'eres del Equipo Morado';
+      teamColor = 'Eres del Equipo Morado';
       teamColorElement.style.color = 'purple';
       cupcakeElement.src = './media/img/CupCakePurple.png';
       cupcakeElement.style.width = '35vmin';
@@ -331,7 +336,7 @@ const showResult = () => {
     resultAudio.play();
     questionElement.innerHTML +=
       '<button onclick="shareOnSocialMedia()">Descargar y Compartir</button>';
-  }, 1500);
+  }, 3000);
 
   // captureResultImage(); // Generar imagen con el resultado
 };
@@ -344,7 +349,9 @@ const shareOnSocialMedia = async () => {
   let textColor = 'brown';
   let teamColorHTML = '';
 
-  if (teamColor === 'Equipo Morado') {
+  console.log(teamColor);
+
+  if (teamColor === 'Eres del Equipo Morado') {
     teamColorHTML = `<br><img src="./media/img/CupCakePurple.png" style="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
   } else {
     teamColorHTML = `<br><img src="./media/img/CupCakeGreen.png" style="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
