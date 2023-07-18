@@ -136,7 +136,7 @@ questionElement.innerHTML = `<h1 class="subtitle">
     <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> 
     <span class="purple"> Morados</span> 
   </h1>
-  <p class="mensajeWelcome">¿Ya Sabes A Qué Equipo Perteneces? ¡Averigüémoslo!</p>
+  <p class="mensajeWelcome">¿Sabes a qué equipo perteneces? <br>¡Averigüémoslo!</p>
   <button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar El Juego</button>`;
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
@@ -297,17 +297,15 @@ const selectAnswer = (optionIndex) => {
 const resultAudio = new Audio('./media/audios/success.mp3');
 // Función para mostrar el resultado
 const showResult = () => {
-  questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Cargando tu Equipo 😀</small>";
 
   questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Analizando match de equipo 🥳</small>";
+    "<img src='./media/img/CupCake.gif' style='width: 20vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Analizando match de equipo 🥳</small>";
 
   setTimeout(() => {
     questionElement.innerHTML =
       `
       <div id="miDescarga" class="miDescarga" style="">
-        <h2>🎉🥳 <span id="teamColor"></span></h2>
+        <h2>🥳 <span id="teamColor"></span></h2>
         </div>
         `;
     /* <br>
