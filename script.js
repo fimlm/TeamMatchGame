@@ -156,7 +156,7 @@ const calculateTeam = () => {
 
   if (name === "") {
     return Swal.fire({
-      title: "Por favor, ingresa un nombre 🥺",
+      title: "Por Favor, Ingresa Un Nombre 🥺",
       showClass: {
         popup: "animate__animated animate__fadeInDown",
       },
@@ -172,7 +172,7 @@ const calculateTeam = () => {
   for (i = 0; i < name.length; i++) {
     if (numeros.indexOf(name.charAt(i), 0) != -1) {
       return Swal.fire({
-        title: "Por favor, ingresa un nombre 🥺",
+        title: "Por Favor, Ingresa Un Nombre 🥺",
         showClass: {
           popup: "animate__animated animate__fadeInDown",
         },
@@ -189,7 +189,7 @@ const calculateTeam = () => {
   for (i = 0; i < name.length; i++) {
     if (especiales.indexOf(name.charAt(i), 0) != -1) {
       return Swal.fire({
-        title: "Por favor, ingresa un nombre 🥺",
+        title: "Por Favor, Ingresa Un Nombre 🥺",
         showClass: {
           popup: "animate__animated animate__fadeInDown",
         },
@@ -249,11 +249,11 @@ console.log(redCount);
   } else {
     questions[currentQuestion].color = "Morado";
   }
- /*  if (optionIndex <= 9) {
+  if (optionIndex <= 9) {
     questions[currentQuestion].color = 'Verde';
   } else {
     questions[currentQuestion].color = 'Morado';
-  } */
+  } 
 
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
