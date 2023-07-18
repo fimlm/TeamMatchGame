@@ -136,7 +136,7 @@ questionElement.innerHTML = `<h1 class="subtitle">
     <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> 
     <span class="purple"> Morados</span> 
   </h1>
-  <p class="mensajeWelcome">¿Ya Sabes A Qué Equipo Perteneces? ¡Averigüémoslo!</p>
+  <p class="mensajeWelcome">¿Sabes a qué equipo perteneces? <br>¡Averigüémoslo!</p>
   <button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar El Juego</button>`;
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
@@ -386,15 +386,12 @@ const resultAudio = new Audio('./media/audios/success.mp3');
 // Función para mostrar el resultado
 const showResult = () => {
   questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Cargando tu Equipo 😀</small>";
-
-  questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Analizando match de equipo 🥳</small>";
+    "<img src='./media/img/CupCake.gif' style='width: 20vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Analizando match de equipo 🥳</small>";
 
   setTimeout(() => {
     questionElement.innerHTML = `
       <div id="miDescarga" class="miDescarga" style="">
-        <h2>🎉🥳 <span id="teamColor"></span></h2>
+        <h2>🥳 <span id="teamColor"></span></h2>
         </div>
         `;
 
@@ -598,12 +595,38 @@ function playAudioError() {
 function descarga() {
   // Captura la div utilizando html2canvas
   html2canvas(document.getElementById('miDescarga')).then(function (canvas) {
-    // Crea una nueva ventana o pestaña con la imagen generada
-    let newWindow = window.open();
-    newWindow.document.write(
-      '<img src="' +
-        canvas.toDataURL('image/jpeg') +
-        '" alt="Mi-Equipo-23" style="width:100%;height:auto;">'
-    );
+    // Crea un enlace para descargar la imagen
+    var link = document.createElement('a');
+    link.href = canvas.toDataURL('image/jpeg');
+    link.download = 'Mi-Equipo-23.jpg';
+
+    // Crea un botón para guardar la imagen
+    /*  var button = document.createElement("button");
+    button.innerText = "Guardar imagen"; */
+
+    /* button.addEventListener("click", function () {
+      // Simula el clic en el enlace utilizando el evento de click
+
+    }); */
+
+    // Agrega el botón al documento
+    //document.body.appendChild(button);
+    var event = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true,
+    });
+    link.dispatchEvent(event);
   });
+
+  //targetDescarga()
+}
+function targetDescarga() {
+  // Captura la div utilizando html2canvas
+  var event = new MouseEvent('click', {
+    view: window,
+    bubbles: true,
+    cancelable: true,
+  });
+  link.dispatchEvent(event);
 }

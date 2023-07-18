@@ -12,7 +12,7 @@ body {
   text-align: center;
   font-family: 'Riffic Free', Arial, sans-serif;
   background-image: url('./media/img/bg.jpg');
-  background-size: cover;
+  background-size: 190%;
   background-position: center;
   background-repeat: no-repeat;
   height: 90vh;
@@ -207,6 +207,7 @@ button:hover {
   width: 100%;
   background-color: #bdbefe;
   padding: 10px 0;
+  z-index: 99999;
 }
 
 .fixed-menu ul {
