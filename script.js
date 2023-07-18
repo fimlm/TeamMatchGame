@@ -551,22 +551,34 @@ function descarga() {
     var link = document.createElement("a");
     link.href = canvas.toDataURL("image/jpeg");
     link.download = "Mi-Equipo-23.jpg";
-    
+
     // Crea un botón para guardar la imagen
-    /* var button = document.createElement("button");
+   /*  var button = document.createElement("button");
     button.innerText = "Guardar imagen"; */
 
-    //button.addEventListener("click", function () {
+    /* button.addEventListener("click", function () {
       // Simula el clic en el enlace utilizando el evento de click
-      var event = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-      });
-      link.dispatchEvent(event);
-    //});
-    
+
+    }); */
+
     // Agrega el botón al documento
     //document.body.appendChild(button);
+    var event = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+    link.dispatchEvent(event);
   });
+
+  //targetDescarga()
+}
+function targetDescarga() {
+  // Captura la div utilizando html2canvas
+  var event = new MouseEvent('click', {
+    view: window,
+    bubbles: true,
+    cancelable: true
+  });
+  link.dispatchEvent(event);
 }
