@@ -532,7 +532,7 @@ function descarga() {
     // Crea un enlace temporal para la descarga
     var link = document.createElement("a");
     link.href = canvas.toDataURL("image/jpeg");
-    link.download = "Mi-Equipo-23.jpg";
+    link.download = "Mi-Equipo-23.jpeg";
 
     // Simula el clic en el enlace utilizando el evento de click
     var event = new MouseEvent('click', {
