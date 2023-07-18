@@ -526,7 +526,7 @@ function playAudioAnswer() {
 }
  */
 
-function descarga() {
+/* function descarga() {
   // Captura la div utilizando html2canvas
   html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
     // Crea un enlace temporal para la descarga
@@ -541,5 +541,14 @@ function descarga() {
       cancelable: true
     });
     link.dispatchEvent(event);
+  });
+} */
+
+function descarga() {
+  // Captura la div utilizando html2canvas
+  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
+    // Crea una nueva ventana o pestaña con la imagen generada
+    var newWindow = window.open();
+    newWindow.document.write('<img src="' + canvas.toDataURL("image/jpeg") + '" alt="Mi-Equipo-23" style="width:100%;height:auto;">');
   });
 }
