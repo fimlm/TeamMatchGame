@@ -278,8 +278,6 @@ const calculateTeam = () => {
   // Obtener el valor del botón
   const buttonValue = clickedButton.value;
 
-  console.log(buttonValue);
-
   if (!answer) {
     function getRandomColor() {
       const colors = ['#800080', '#02C627'];
@@ -303,7 +301,7 @@ const calculateTeam = () => {
       },
       backdrop: `
       rgba(0,0,123,0.4)
-      url("/media/gif/nyan-cat.gif")
+      url("./media/gif/nyan-cat.gif")
       left top
       no-repeat
     `,
@@ -319,8 +317,6 @@ const calculateTeam = () => {
   } else if (pointPurpleCalc.some((item) => item.name === buttonValue)) {
     purpleCount++;
   }
-
-  console.log(greenCount);
 
   if (greenCount > purpleCount) {
     questions[currentQuestion].color = 'Verde';
@@ -377,7 +373,6 @@ const getOptionsHTML = (options) => {
 
 // Función para seleccionar una respuesta
 const selectAnswer = (optionIndex) => {
-  console.log(optionIndex);
   const radioButtons = document.getElementsByName('answer');
   radioButtons[optionIndex].checked = true;
 };
@@ -399,9 +394,6 @@ const showResult = () => {
 
     const greenPoints = questions.filter((q) => q.color === 'Verde').length;
     const purplePoints = questions.filter((q) => q.color === 'Morado').length;
-
-    console.log('Verdes => ', greenPoints);
-    console.log('Morados => ', purplePoints);
 
     if (greenPoints > purplePoints) {
       teamColor = 'Eres del Equipo Verde';
@@ -435,8 +427,6 @@ const shareOnSocialMedia = async () => {
 
   let textColor = 'brown';
   let teamColorHTML = '';
-
-  console.log(teamColor);
 
   if (teamColor === 'Eres Del Equipo Morado') {
     teamColorHTML = `<br><img src="./media/img/CupCakePurple.png" style="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
