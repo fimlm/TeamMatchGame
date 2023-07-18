@@ -12,14 +12,14 @@ const questions = [
     options: [
       "Monotonía de Shakira",
       "Acróstico de Shakira",
-      "Como tú decidas",
+      "Como tú decidas Joan Sebastian",
       "Oiga de Joan Sebastian",
     ],
     color: "",
   },
   {
     question: "✈️ ¿Qué destino prefieres para viajar?",
-    options: ["Ciudad de Panamá", "Bocas del Toro", "Dubai", "Singapur"],
+    options: ["Ciudad de Panamá", "Punta Cana", "Dubai", "Singapur"],
     color: "",
   },
   {
