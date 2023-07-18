@@ -1,5 +1,6 @@
 // Limpiar la caché al iniciar el juego
 localStorage.clear();
+
 // Array de preguntas y respuestas
 const questions = [
   {
@@ -55,7 +56,7 @@ const questions = [
   {
     question: '📚 ¿Qué libro prefieres?',
     options: [
-      'Crónicas de una muerte anunciada',
+      'Crónica de una muerte anunciada',
       '1984',
       'La Biblia',
       'La historia de Europa',
@@ -91,7 +92,7 @@ const pointGreenCalc = [
   { name: 'Rosas' },
   { name: 'Chocolate' },
   { name: 'Vainilla' },
-  { name: 'Crónicas de una muerte anunciada' },
+  { name: 'Crónica de una muerte anunciada' },
   { name: '1984' },
   { name: 'Fútbol' },
   { name: 'Ajedrez' },
@@ -131,9 +132,9 @@ let purpleCount = 0;
 const questionElement = document.getElementById('questions');
 
 questionElement.innerHTML = `<h1 class="subtitle">
-    <span class="purple"> Morados</span> 
+<span class="green">Verdes</span>
     <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> 
-    <span class="green">Verdes</span>
+    <span class="purple"> Morados</span> 
   </h1>
   <p class="mensajeWelcome">¿Ya sabes a qué equipo perteneces? ¡Averigüémoslo!</p>
   <button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar el juego</button>`;
@@ -330,7 +331,7 @@ const showResult = () => {
     resultAudio.play();
     questionElement.innerHTML +=
       '<button onclick="shareOnSocialMedia()">Descargar y Compartir</button>';
-  }, 3000);
+  }, 1500);
 
   // captureResultImage(); // Generar imagen con el resultado
 };
