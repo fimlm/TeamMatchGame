@@ -588,7 +588,7 @@ function playAudioError() {
   audioElement.play();
 }
 
-function descarga() {
+/* function descarga() {
   // Captura la div utilizando html2canvas
   html2canvas(document.getElementById('miDescarga')).then(function (canvas) {
     // Crea un enlace para descargar la imagen
@@ -603,15 +603,31 @@ function descarga() {
     });
     link.dispatchEvent(event);
   });
+} */
 
-  //targetDescarga()
-}
-function targetDescarga() {
+function descarga() {
   // Captura la div utilizando html2canvas
-  let event = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true,
+  html2canvas(document.getElementById('miDescarga')).then(function (canvas) {
+    // Verifica si el navegador es compatible con el uso compartido
+    if (navigator.share) {
+      // Comparte la imagen
+      canvas.toBlob(function (blob) {
+        navigator.share({
+          files: [new File([blob], 'Mi-Equipo-23.jpg', { type: 'image/jpeg' })],
+        });
+      });
+    } else {
+      // Descarga la imagen en la versión de escritorio
+      let link = document.createElement('a');
+      link.href = canvas.toDataURL('image/jpeg');
+      link.download = 'Mi-Equipo-23.jpg';
+
+      let event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+      });
+      link.dispatchEvent(event);
+    }
   });
-  link.dispatchEvent(event);
 }
