@@ -137,8 +137,8 @@ button:hover {
 }
 
 .picture {
-  width: 100%;
-  height: auto;
+  width: 1500;
+  height: 800;
   max-width: 400px;
   background-color: #fff;
   border-style: groove;
@@ -153,7 +153,6 @@ button:hover {
   height: auto;
   max-width: 200px;
 }
-
 
 #playButton {
   border: none;
@@ -235,7 +234,7 @@ button:hover {
 }
 
 .playButtonMenu {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 @keyframes pulse {
