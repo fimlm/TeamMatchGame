@@ -81,7 +81,7 @@ const pointGreenCalc = [
   { name: 'Monotonía de Shakira' },
   { name: 'Acróstico de Shakira' },
   { name: 'Ciudad de Panamá' },
-  { name: 'Bocas del Toro' },
+  { name: 'Punta Cana' },
   { name: 'Coca-Cola' },
   { name: 'Limonada de Coco' },
   { name: 'Lo que el viento se llevó' },
@@ -103,7 +103,7 @@ const pointGreenCalc = [
 const pointPurpleCalc = [
   { name: 'Juan Gabriel' },
   { name: 'Joan Sebastian' },
-  { name: 'Como tú decidas' },
+  { name: 'Como tú decidas Joan Sebastian' },
   { name: 'Oiga de Joan Sebastian' },
   { name: 'Dubai' },
   { name: 'Singapur' },
