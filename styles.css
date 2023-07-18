@@ -24,6 +24,18 @@ h1 {
   font-size: 6vmin;
 }
 
+.youtube {
+  fill: red !important;
+}
+
+.donar {
+  fill: red !important;
+}
+
+.play {
+  fill: #0000ff !important;
+}
+
 h5 {
   color: #ab810f;
   margin-top: 1vmin;
@@ -158,18 +170,18 @@ button:hover {
   box-shadow: 2px 2px 5px 3px #0000;
 }*/
 #playButton {
-	border: none;
-	background: none;
-	position: fixed;
-	right: 16px;
-	top: 30vmin;
-	padding: 0;
-	box-shadow: 2px 2px 5px 3px #0000;
+  border: none;
+  background: none;
+  position: fixed;
+  right: 16px;
+  top: 30vmin;
+  padding: 0;
+  box-shadow: 2px 2px 5px 3px #0000;
 }
 
 #playButton img {
-	width: 70px;
-	height: 70px;
+  width: 70px;
+  height: 70px;
 }
 
 .resultado-title {
@@ -202,6 +214,42 @@ button:hover {
 
 .button-download:focus {
   outline: none;
+}
+
+.fixed-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #bdbefe;
+  padding: 10px 0;
+}
+
+.fixed-menu ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.fixed-menu li {
+  margin: 0 10px;
+}
+
+.fixed-menu a {
+  color: #121212;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.fixed-menu li:hover a {
+  color: #6d6a6a;
+}
+
+.playButtonMenu {
+	cursor: pointer;
 }
 
 @keyframes pulse {
