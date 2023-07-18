@@ -237,6 +237,44 @@ button:hover {
   cursor: pointer;
 }
 
+.miDescarga {
+	margin: 39px auto 0;
+	width: 361px;
+	height: 642px;
+	top: 200px;
+	position: relative;
+	background-size: contain;
+	background-position: top center;
+}
+
+.miDescarga h2 {
+	position: relative;
+	display: block;
+	margin: -230px auto;
+  padding: 143px 0;
+	z-index: 9999;
+	width: 299px;
+}
+
+#cupcake {
+	width: 364px;
+	z-index: 0;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+#teamColor {
+	width: 200px;
+}
+
+.descarga {
+	z-index: 999;
+	position: relative;
+	width: auto;
+	margin: 221px 0px;
+}
+
+
 @keyframes pulse {
   0% {
     transform: scale(1);
