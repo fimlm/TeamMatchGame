@@ -324,7 +324,7 @@ const showResult = () => {
     console.log('Morados => ', purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = "Eres Del Equipo Verde";
+      teamColor = "Eres del Equipo Verde";
       teamColorElement.style.color = "green";
       //miDescargaElement.style = "background-image:url('./media/img/Ponquesito-Verde.jpg')";
 
@@ -335,7 +335,7 @@ const showResult = () => {
       //cupcakeElement.src = "./media/img/CupCakeGreen.png";
       //cupcakeElement.style.width = "35vmin";
     } else {
-      teamColor = "Eres Del Equipo Morado";
+      teamColor = "Eres del Equipo Morado";
       teamColorElement.style.color = "purple";
       const miDescargaElement = document.getElementById('miDescarga');
       miDescargaElement.style.backgroundImage = "url('./media/img/Ponquesito-Morado.jpg')";
