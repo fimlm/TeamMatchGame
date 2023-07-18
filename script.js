@@ -553,9 +553,10 @@ function descarga() {
     link.download = "Mi-Equipo-23.jpg";
     
     // Crea un botón para guardar la imagen
-    var button = document.createElement("button");
-    button.innerText = "Guardar imagen";
-    button.addEventListener("click", function () {
+    /* var button = document.createElement("button");
+    button.innerText = "Guardar imagen"; */
+
+    //button.addEventListener("click", function () {
       // Simula el clic en el enlace utilizando el evento de click
       var event = new MouseEvent('click', {
         view: window,
@@ -563,9 +564,9 @@ function descarga() {
         cancelable: true
       });
       link.dispatchEvent(event);
-    });
+    //});
     
     // Agrega el botón al documento
-    document.body.appendChild(button);
+    //document.body.appendChild(button);
   });
 }
