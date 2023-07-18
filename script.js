@@ -301,7 +301,7 @@ const showResult = () => {
     "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Cargando tu Equipo 😀</small>";
 
   questionElement.innerHTML =
-    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Analizando match de equipo 😵</small>";
+    "<img src='./media/img/giphy.gif' style='width: 8vmin; margin-bottom: 3vmin'><br><small style='color: #864c24; font-size: 38px;'>Analizando match de equipo 🥳</small>";
 
   setTimeout(() => {
     questionElement.innerHTML =
@@ -520,7 +520,7 @@ function descarga() {
     // Crea un enlace para descargar la imagen escalada
     var link = document.createElement("a");
     link.href = scaledCanvas.toDataURL("image/jpeg");
-    link.download = "Mi-Equipo-23.png";
+    link.download = "Mi-Equipo-23.jpg";
     link.click();
   });
 }
