@@ -4,12 +4,12 @@ localStorage.clear();
 // Array de preguntas y respuestas
 const questions = [
   {
-    question: '🎨 ¿Qué artista prefieres?',
+    question: '🎨 ¿Qué Artista Prefieres?',
     options: ['Shakira', 'Karol G', 'Juan Gabriel', 'Joan Sebastian'],
     color: '',
   },
   {
-    question: '🎵 ¿Qué canción prefieres?',
+    question: '🎵 ¿Qué Canción Prefieres?',
     options: [
       'Monotonía de Shakira',
       'Acróstico de Shakira',
@@ -19,17 +19,17 @@ const questions = [
     color: '',
   },
   {
-    question: '✈️ ¿Qué destino prefieres para viajar?',
+    question: '✈️ ¿Qué Destino Prefieres Para Viajar?',
     options: ['Ciudad de Panamá', 'Punta Cana', 'Dubai', 'Singapur'],
     color: '',
   },
   {
-    question: '🍹 ¿Qué bebida prefieres?',
+    question: '🍹 ¿Qué Bebida Prefieres?',
     options: ['Coca-Cola', 'Limonada de Coco', 'Matcha', 'Té de Jamaica'],
     color: '',
   },
   {
-    question: '🎥 ¿Qué película prefieres?',
+    question: '🎥 ¿Qué Película Prefieres?',
     options: [
       'Lo que el viento se llevó',
       'Volver al futuro',
@@ -39,22 +39,22 @@ const questions = [
     color: '',
   },
   {
-    question: '🚗 ¿Qué carro prefieres?',
+    question: '🚗 ¿Qué Carro Prefieres?',
     options: ['BMW', 'Mercedes', 'Porsche', 'Ferrari'],
     color: '',
   },
   {
-    question: '💐 ¿Qué flor prefieres?',
+    question: '💐 ¿Qué Flor Prefieres?',
     options: ['Margarita', 'Rosas', 'Tulipanes', 'Orquídeas'],
     color: '',
   },
   {
-    question: '🍦 ¿Qué sabor de helado prefieres?',
+    question: '🍦 ¿Qué Sabor De Helado Prefieres?',
     options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'],
     color: '',
   },
   {
-    question: '📚 ¿Qué libro prefieres?',
+    question: '📚 ¿Qué Libro Prefieres?',
     options: [
       'Crónica de una muerte anunciada',
       '1984',
@@ -64,12 +64,12 @@ const questions = [
     color: '',
   },
   {
-    question: '🏈 ¿Qué deporte prefieres?',
+    question: '🏈 ¿Qué Deporte Prefieres?',
     options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'],
     color: '',
   },
   {
-    question: '🌈 ¿Qué color prefieres?',
+    question: '🌈 ¿Qué Color Prefieres?',
     options: ['Rojo', 'Negro', 'Turquesa', 'Fucsia'],
     color: '',
   },
@@ -136,8 +136,8 @@ questionElement.innerHTML = `<h1 class="subtitle">
     <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> 
     <span class="purple"> Morados</span> 
   </h1>
-  <p class="mensajeWelcome">¿Ya sabes a qué equipo perteneces? ¡Averigüémoslo!</p>
-  <button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar el juego</button>`;
+  <p class="mensajeWelcome">¿Ya Sabes A Qué Equipo Perteneces? ¡Averigüémoslo!</p>
+  <button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar El Juego</button>`;
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -216,7 +216,7 @@ const calculateTeam = () => {
 
   if (!answer) {
     return Swal.fire({
-      title: 'Por favor, selecciona una respuesta',
+      title: 'Por Favor, Selecciona Una Respuesta',
       showClass: {
         popup: 'animate__animated animate__fadeInDown',
       },
@@ -317,12 +317,12 @@ const showResult = () => {
     console.log('Morados => ', purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = 'Eres del Equipo Verde';
+      teamColor = 'Eres Del Equipo Verde';
       teamColorElement.style.color = 'green';
       cupcakeElement.src = './media/img/CupCakeGreen.png';
       cupcakeElement.style.width = '35vmin';
     } else {
-      teamColor = 'Eres del Equipo Morado';
+      teamColor = 'Eres Del Equipo Morado';
       teamColorElement.style.color = 'purple';
       cupcakeElement.src = './media/img/CupCakePurple.png';
       cupcakeElement.style.width = '35vmin';
@@ -349,7 +349,7 @@ const shareOnSocialMedia = async () => {
 
   console.log(teamColor);
 
-  if (teamColor === 'Eres del Equipo Morado') {
+  if (teamColor === 'Eres Del Equipo Morado') {
     teamColorHTML = `<br><img src="./media/img/CupCakePurple.png" style="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
   } else {
     teamColorHTML = `<br><img src="./media/img/CupCakeGreen.png" style="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
@@ -369,17 +369,18 @@ const convertImage = (content) => {
   const canvas = document.createElement('canvas');
 
   // Establecer el tamaño del lienzo según el contenido
-  canvas.width = 1500;
-  canvas.height = 1020;
+  canvas.width = 3000;
+  canvas.height = 2040;
 
   // Dibujar el contenido en el lienzo
   html2canvas(content).then((canvas) => {
-    const image = canvas.toDataURL();
+    const highQualityImage = canvas.toDataURL('image/png', 1);
+    const lowQualityImage = canvas.toDataURL('image/png', 0.5);
 
     Swal.fire({
       title: '¡Descarga y Comparte! 🎁',
       text: 'Haz clic en el botón para descargar la imagen o cierra esta ventana para verla aquí.',
-      imageUrl: image,
+      imageUrl: lowQualityImage,
       imageAlt: 'Team Match Result',
       showCancelButton: true,
       confirmButtonText: 'Descargar imagen',
@@ -400,7 +401,7 @@ const convertImage = (content) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const link = document.createElement('a');
-        link.href = image;
+        link.href = highQualityImage;
         link.download = 'team_match_result.png';
         link.style.display = 'none';
         document.body.appendChild(link);
@@ -408,11 +409,11 @@ const convertImage = (content) => {
         document.body.removeChild(link);
       } else {
         const imgElement = document.createElement('img');
-        imgElement.src = image;
-        imgElement.style.width = '100%';
+        imgElement.src = highQualityImage;
+        imgElement.style.width = '50%';
 
         Swal.fire({
-          title: 'Resultado del Team Match 🎁',
+          title: 'Resultado Del Team Match 🎁',
           html: imgElement.outerHTML,
           showClass: {
             popup: 'animate__animated animate__fadeInDown',
