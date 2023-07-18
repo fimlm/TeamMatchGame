@@ -92,7 +92,7 @@ const pointGreenCalc = [
   { name: 'Rosas' },
   { name: 'Chocolate' },
   { name: 'Vainilla' },
-  { name: 'Crónicas de una muerte anunciada' },
+  { name: 'Crónica de una muerte anunciada' },
   { name: '1984' },
   { name: 'Fútbol' },
   { name: 'Ajedrez' },
@@ -323,8 +323,10 @@ const calculateTeam = () => {
 
   if (greenCount > purpleCount) {
     questions[currentQuestion].color = 'Verde';
-  } else {
+  } else if (greenCount < purpleCount) {
     questions[currentQuestion].color = 'Morado';
+  } else {
+    questions[currentQuestion].color = '';
   }
 
 
