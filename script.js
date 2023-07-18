@@ -1,4 +1,6 @@
-// Array de preguntas y respuestas
+// Array de preguntas y respuestas.
+
+
 const questions = [
   {
     question: '🎨 ¿Qué artista prefieres?',
@@ -73,35 +75,69 @@ const questions = [
 ];
 
 const pointGreenCalc = [
-  { id: 0, name: 'Shakira' },
-  { id: 1, name: 'Karol G' },
-  { id: 2, name: 'Monotonía de Shakira' },
-  { id: 3, name: 'Acróstico de Shakira' },
-  { id: 4, name: 'Ciudad de Panamá' },
-  { id: 5, name: 'Bocas del Toro' },
-  { id: 6, name: 'Coca-Cola' },
-  { id: 7, name: 'Limonada de Coco' },
-  { id: 8, name: 'Lo que el viento se llevó' },
-  { id: 9, name: 'BMW' },
-  { id: 10, name: 'Volver al futuro' },
-  { id: 11, name: 'Mercedes' },
-  { id: 12, name: 'Margarita' },
-  { id: 13, name: 'Rosas' },
-  { id: 14, name: 'Vainilla' },
-  { id: 15, name: 'Crónicas de una muerte anunciada' },
-  { id: 16, name: '1984' },
-  { id: 17, name: 'Fútbol' },
-  { id: 18, name: 'Ajedrez' },
-  { id: 19, name: 'Rojo' },
-  { id: 20, name: 'Negro' },
+  {name: 'Shakira' },
+  {name: 'Karol G' },
+  {name: 'Monotonía de Shakira' },
+  {name: 'Acróstico de Shakira' },
+  {name: 'Ciudad de Panamá' },
+  {name: 'Bocas del Toro' },
+  {name: 'Coca-Cola' },
+  {name: 'Limonada de Coco' },
+  {name: 'Lo que el viento se llevó' },
+  {name: 'Volver al futuro' },
+  {name: 'BMW' },
+  {name: 'Mercedes' },
+  {name: 'Margarita' },
+  {name: 'Rosas' },
+  {name: 'Chocolate' },
+  {name: 'Vainilla' },
+  {name: 'Crónicas de una muerte anunciada' },
+  {name: '1984' },
+  {name: 'Fútbol' },
+  {name: 'Ajedrez' },
+  {name: 'Rojo' },
+  {name: 'Negro' }
+];
+
+const pointPurpleCalc = [
+  {name: 'Juan Gabriel' },
+  {name: 'Jean Sebastian' },
+  {name: 'Como tú decidas' },
+  {name: 'Oiga de Joan Sebastian' },
+  {name: 'Dubai' },
+  {name: 'Singapur' },
+  {name: 'Matcha' },
+  {name: 'Té de Jamaica' },
+  {name: 'Harry Potter' },
+  {name: 'Matrix' },
+  {name: 'Porsche' },
+  {name: 'Ferrari' },
+  {name: 'Tulipanes' },
+  {name: 'Orquídeas' },
+  {name: 'Limón' },
+  {name: 'Mandarina' },
+  {name: 'La Biblia' },
+  {name: 'La historia de Europa' },
+  {name: 'Básquet' },
+  {name: 'Tenis' },
+  {name: 'Turquesa' },
+  {name: 'Fucsia' } 
 ];
 
 let currentQuestion = 0;
 let teamColor = '';
+let greenCount = 0;
+let redCount = 0;
 const questionElement = document.getElementById('questions');
 
 questionElement.innerHTML =
-  '<h1 class="subtitle"><span class="purple"> Morados</span> <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> <span class="green">Verdes</span></h1><p class="mensajeWelcome">¿Ya sabes a qué equipo perteneces? ¡Averigüémoslo!</p><button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar el juego</button>';
+  `<h1 class="subtitle">
+    <span class="purple"> Morados</span> 
+    <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> 
+    <span class="green">Verdes</span>
+  </h1>
+  <p class="mensajeWelcome">¿Ya sabes a qué equipo perteneces? ¡Averigüémoslo!</p>
+  <button style="margin-top: 5vmin" onclick="showQuestion(); toggleMusic()">Iniciar el juego</button>`;
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
@@ -170,6 +206,15 @@ const calculateTeam = () => {
   saveNameToStorage(name);
 
   const answer = document.querySelector('#answer');
+  //const answer = document.getElementsByClassName('answer');
+
+  const clickedButton = event.target;
+  
+  // Obtener el valor del botón
+  const buttonValue = clickedButton.value;
+
+
+  console.log(buttonValue);
 
   if (!answer) {
     return Swal.fire({
@@ -183,15 +228,32 @@ const calculateTeam = () => {
     });
   }
 
-  let optionIndex = parseInt(answer.value.length);
+  
 
-  console.log(optionIndex);
+  if (pointGreenCalc.some(item => item.name === buttonValue)) {
+    greenCount++;
+  } else if (pointPurpleCalc.some(item => item.name === buttonValue)) {
+    redCount++;
+  }
 
-  if (optionIndex <= 9) {
+console.log(greenCount);
+console.log(redCount);
+
+  //let optionIndex = parseInt(answer.value.length);
+  let optionIndex = answer.value;
+
+  //console.log(optionIndex);
+
+  if (greenCount > redCount) {
     questions[currentQuestion].color = 'Verde';
   } else {
     questions[currentQuestion].color = 'Morado';
   }
+ /*  if (optionIndex <= 9) {
+    questions[currentQuestion].color = 'Verde';
+  } else {
+    questions[currentQuestion].color = 'Morado';
+  } */
 
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
@@ -224,6 +286,7 @@ const getOptionsHTML = (options) => {
 
 // Función para seleccionar una respuesta
 const selectAnswer = (optionIndex) => {
+  console.log(optionIndex)
   const radioButtons = document.getElementsByName('answer');
   radioButtons[optionIndex].checked = true;
 };
