@@ -3,135 +3,134 @@ localStorage.clear();
 // Array de preguntas y respuestas
 const questions = [
   {
-    question: "🎨 ¿Qué artista prefieres?",
-    options: ["Shakira", "Karol G", "Juan Gabriel", "Jean Sebastian"],
-    color: "",
+    question: '🎨 ¿Qué artista prefieres?',
+    options: ['Shakira', 'Karol G', 'Juan Gabriel', 'Joan Sebastian'],
+    color: '',
   },
   {
-    question: "🎵 ¿Qué canción prefieres?",
+    question: '🎵 ¿Qué canción prefieres?',
     options: [
-      "Monotonía de Shakira",
-      "Acróstico de Shakira",
-      "Como tú decidas Joan Sebastian",
-      "Oiga de Joan Sebastian",
+      'Monotonía de Shakira',
+      'Acróstico de Shakira',
+      'Como tú decidas Joan Sebastian',
+      'Oiga de Joan Sebastian',
     ],
-    color: "",
+    color: '',
   },
   {
-    question: "✈️ ¿Qué destino prefieres para viajar?",
-    options: ["Ciudad de Panamá", "Punta Cana", "Dubai", "Singapur"],
-    color: "",
+    question: '✈️ ¿Qué destino prefieres para viajar?',
+    options: ['Ciudad de Panamá', 'Punta Cana', 'Dubai', 'Singapur'],
+    color: '',
   },
   {
-    question: "🍹 ¿Qué bebida prefieres?",
-    options: ["Coca-Cola", "Limonada de Coco", "Matcha", "Té de Jamaica"],
-    color: "",
+    question: '🍹 ¿Qué bebida prefieres?',
+    options: ['Coca-Cola', 'Limonada de Coco', 'Matcha', 'Té de Jamaica'],
+    color: '',
   },
   {
-    question: "🎥 ¿Qué película prefieres?",
+    question: '🎥 ¿Qué película prefieres?',
     options: [
-      "Lo que el viento se llevó",
-      "Volver al futuro",
-      "Harry Potter",
-      "Matrix",
+      'Lo que el viento se llevó',
+      'Volver al futuro',
+      'Harry Potter',
+      'Matrix',
     ],
-    color: "",
+    color: '',
   },
   {
-    question: "🚗 ¿Qué carro prefieres?",
-    options: ["BMW", "Mercedes", "Porsche", "Ferrari"],
-    color: "",
+    question: '🚗 ¿Qué carro prefieres?',
+    options: ['BMW', 'Mercedes', 'Porsche', 'Ferrari'],
+    color: '',
   },
   {
-    question: "💐 ¿Qué flor prefieres?",
-    options: ["Margarita", "Rosas", "Tulipanes", "Orquídeas"],
-    color: "",
+    question: '💐 ¿Qué flor prefieres?',
+    options: ['Margarita', 'Rosas', 'Tulipanes', 'Orquídeas'],
+    color: '',
   },
   {
-    question: "🍦 ¿Qué sabor de helado prefieres?",
-    options: ["Chocolate", "Vainilla", "Limón", "Mandarina"],
-    color: "",
+    question: '🍦 ¿Qué sabor de helado prefieres?',
+    options: ['Chocolate', 'Vainilla', 'Limón', 'Mandarina'],
+    color: '',
   },
   {
-    question: "📚 ¿Qué libro prefieres?",
+    question: '📚 ¿Qué libro prefieres?',
     options: [
-      "Crónicas de una muerte anunciada",
-      "1984",
-      "La Biblia",
-      "La historia de Europa",
+      'Crónicas de una muerte anunciada',
+      '1984',
+      'La Biblia',
+      'La historia de Europa',
     ],
-    color: "",
+    color: '',
   },
   {
-    question: "🏈 ¿Qué deporte prefieres?",
-    options: ["Fútbol", "Ajedrez", "Básquet", "Tenis"],
-    color: "",
+    question: '🏈 ¿Qué deporte prefieres?',
+    options: ['Fútbol', 'Ajedrez', 'Básquet', 'Tenis'],
+    color: '',
   },
   {
-    question: "🌈 ¿Qué color prefieres?",
-    options: ["Rojo", "Negro", "Turquesa", "Fucsia"],
-    color: "",
+    question: '🌈 ¿Qué color prefieres?',
+    options: ['Rojo', 'Negro', 'Turquesa', 'Fucsia'],
+    color: '',
   },
 ];
 
 const pointGreenCalc = [
-  {name: 'Shakira' },
-  {name: 'Karol G' },
-  {name: 'Monotonía de Shakira' },
-  {name: 'Acróstico de Shakira' },
-  {name: 'Ciudad de Panamá' },
-  {name: 'Bocas del Toro' },
-  {name: 'Coca-Cola' },
-  {name: 'Limonada de Coco' },
-  {name: 'Lo que el viento se llevó' },
-  {name: 'Volver al futuro' },
-  {name: 'BMW' },
-  {name: 'Mercedes' },
-  {name: 'Margarita' },
-  {name: 'Rosas' },
-  {name: 'Chocolate' },
-  {name: 'Vainilla' },
-  {name: 'Crónicas de una muerte anunciada' },
-  {name: '1984' },
-  {name: 'Fútbol' },
-  {name: 'Ajedrez' },
-  {name: 'Rojo' },
-  {name: 'Negro' }
+  { name: 'Shakira' },
+  { name: 'Karol G' },
+  { name: 'Monotonía de Shakira' },
+  { name: 'Acróstico de Shakira' },
+  { name: 'Ciudad de Panamá' },
+  { name: 'Bocas del Toro' },
+  { name: 'Coca-Cola' },
+  { name: 'Limonada de Coco' },
+  { name: 'Lo que el viento se llevó' },
+  { name: 'Volver al futuro' },
+  { name: 'BMW' },
+  { name: 'Mercedes' },
+  { name: 'Margarita' },
+  { name: 'Rosas' },
+  { name: 'Chocolate' },
+  { name: 'Vainilla' },
+  { name: 'Crónicas de una muerte anunciada' },
+  { name: '1984' },
+  { name: 'Fútbol' },
+  { name: 'Ajedrez' },
+  { name: 'Rojo' },
+  { name: 'Negro' },
 ];
 
 const pointPurpleCalc = [
-  {name: 'Juan Gabriel' },
-  {name: 'Jean Sebastian' },
-  {name: 'Como tú decidas' },
-  {name: 'Oiga de Joan Sebastian' },
-  {name: 'Dubai' },
-  {name: 'Singapur' },
-  {name: 'Matcha' },
-  {name: 'Té de Jamaica' },
-  {name: 'Harry Potter' },
-  {name: 'Matrix' },
-  {name: 'Porsche' },
-  {name: 'Ferrari' },
-  {name: 'Tulipanes' },
-  {name: 'Orquídeas' },
-  {name: 'Limón' },
-  {name: 'Mandarina' },
-  {name: 'La Biblia' },
-  {name: 'La historia de Europa' },
-  {name: 'Básquet' },
-  {name: 'Tenis' },
-  {name: 'Turquesa' },
-  {name: 'Fucsia' } 
+  { name: 'Juan Gabriel' },
+  { name: 'Joan Sebastian' },
+  { name: 'Como tú decidas' },
+  { name: 'Oiga de Joan Sebastian' },
+  { name: 'Dubai' },
+  { name: 'Singapur' },
+  { name: 'Matcha' },
+  { name: 'Té de Jamaica' },
+  { name: 'Harry Potter' },
+  { name: 'Matrix' },
+  { name: 'Porsche' },
+  { name: 'Ferrari' },
+  { name: 'Tulipanes' },
+  { name: 'Orquídeas' },
+  { name: 'Limón' },
+  { name: 'Mandarina' },
+  { name: 'La Biblia' },
+  { name: 'La historia de Europa' },
+  { name: 'Básquet' },
+  { name: 'Tenis' },
+  { name: 'Turquesa' },
+  { name: 'Fucsia' },
 ];
 
 let currentQuestion = 0;
 let teamColor = '';
 let greenCount = 0;
-let redCount = 0;
+let purpleCount = 0;
 const questionElement = document.getElementById('questions');
 
-questionElement.innerHTML =
-  `<h1 class="subtitle">
+questionElement.innerHTML = `<h1 class="subtitle">
     <span class="purple"> Morados</span> 
     <img src="https://em-content.zobj.net/thumbs/120/twitter/348/crossed-swords_2694-fe0f.png" alt="vs" class="vs-image"> 
     <span class="green">Verdes</span>
@@ -141,60 +140,60 @@ questionElement.innerHTML =
 
 // Obtener el nombre del almacenamiento del navegador (localStorage)
 const getNameFromStorage = () => {
-  const name = localStorage.getItem("teamMatchName");
-  return name ? name : "";
+  const name = localStorage.getItem('teamMatchName');
+  return name ? name : '';
 };
 
 // Guardar el nombre en el almacenamiento del navegador (localStorage)
 const saveNameToStorage = (name) => {
-  localStorage.setItem("teamMatchName", name);
+  localStorage.setItem('teamMatchName', name);
 };
 
 // Función para calcular el equipo
 const calculateTeam = () => {
-  let name = document.getElementById("name").value.trim();
+  let name = document.getElementById('name').value.trim();
 
-  if (name === "") {
+  if (name === '') {
     return Swal.fire({
-      title: "Por favor, ingresa un nombre 🥺",
+      title: 'Por favor, ingresa un nombre 🥺',
       showClass: {
-        popup: "animate__animated animate__fadeInDown",
+        popup: 'animate__animated animate__fadeInDown',
       },
       hideClass: {
-        popup: "animate__animated animate__fadeOutUp",
+        popup: 'animate__animated animate__fadeOutUp',
       },
     });
   }
 
   // Validamos que no posea números
-  const numeros = "0123456789";
+  const numeros = '0123456789';
 
-  for (i = 0; i < name.length; i++) {
+  for (let i = 0; i < name.length; i++) {
     if (numeros.indexOf(name.charAt(i), 0) != -1) {
       return Swal.fire({
-        title: "Por favor, ingresa un nombre 🥺",
+        title: 'Por favor, ingresa un nombre 🥺',
         showClass: {
-          popup: "animate__animated animate__fadeInDown",
+          popup: 'animate__animated animate__fadeInDown',
         },
         hideClass: {
-          popup: "animate__animated animate__fadeOutUp",
+          popup: 'animate__animated animate__fadeOutUp',
         },
       });
     }
   }
 
   //  Validamos caracteres especiales
-  const especiales = "!#$%&/()=?*¿¡¨][{}-+.";
+  const especiales = '!#$%&/()=?*¿¡¨][{}-+.';
 
-  for (i = 0; i < name.length; i++) {
+  for (let i = 0; i < name.length; i++) {
     if (especiales.indexOf(name.charAt(i), 0) != -1) {
       return Swal.fire({
-        title: "Por favor, ingresa un nombre 🥺",
+        title: 'Por favor, ingresa un nombre 🥺',
         showClass: {
-          popup: "animate__animated animate__fadeInDown",
+          popup: 'animate__animated animate__fadeInDown',
         },
         hideClass: {
-          popup: "animate__animated animate__fadeOutUp",
+          popup: 'animate__animated animate__fadeOutUp',
         },
       });
     }
@@ -206,54 +205,37 @@ const calculateTeam = () => {
   saveNameToStorage(name);
 
   const answer = document.querySelector('#answer');
-  //const answer = document.getElementsByClassName('answer');
 
   const clickedButton = event.target;
-  
+
   // Obtener el valor del botón
   const buttonValue = clickedButton.value;
-
 
   console.log(buttonValue);
 
   if (!answer) {
     return Swal.fire({
-      title: "Por favor, selecciona una respuesta",
+      title: 'Por favor, selecciona una respuesta',
       showClass: {
-        popup: "animate__animated animate__fadeInDown",
+        popup: 'animate__animated animate__fadeInDown',
       },
       hideClass: {
-        popup: "animate__animated animate__fadeOutUp",
+        popup: 'animate__animated animate__fadeOutUp',
       },
     });
   }
 
-  
-
-  if (pointGreenCalc.some(item => item.name === buttonValue)) {
+  if (pointGreenCalc.some((item) => item.name === buttonValue)) {
     greenCount++;
-  } else if (pointPurpleCalc.some(item => item.name === buttonValue)) {
-    redCount++;
+  } else if (pointPurpleCalc.some((item) => item.name === buttonValue)) {
+    purpleCount++;
   }
 
-console.log(greenCount);
-console.log(redCount);
-
-  //let optionIndex = parseInt(answer.value.length);
-  let optionIndex = answer.value;
-
-  //console.log(optionIndex);
-
-  if (greenCount > redCount) {
-    questions[currentQuestion].color = 'Verde';
-  } else {
-    questions[currentQuestion].color = "Morado";
-  }
- /*  if (optionIndex <= 9) {
+  if (greenCount > purpleCount) {
     questions[currentQuestion].color = 'Verde';
   } else {
     questions[currentQuestion].color = 'Morado';
-  } */
+  }
 
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
@@ -267,18 +249,36 @@ console.log(redCount);
 // Función para mostrar la pregunta actual
 const showQuestion = () => {
   questionElement.innerHTML = `
-    <input placeholder="🧁 Nombre" type="text" id="name" value="${getNameFromStorage()}"><br>
+    <input autoComplete='off' placeholder="🧁 Nombre" type="text" id="name" value="${getNameFromStorage()}"><br>
     <h2 class='questionText'>${questions[currentQuestion].question}</h2>
     ${getOptionsHTML(questions[currentQuestion].options)}
   `;
 };
 
 // Función para obtener el HTML de las opciones de respuesta
+const shuffleArray = (array) => {
+  let currentIndex = array.length,
+    randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+};
+
 const getOptionsHTML = (options) => {
-  let optionsHTML = "";
-  for (let i = 0; i < options.length; i++) {
+  let shuffledOptions = shuffleArray(options);
+  let optionsHTML = '';
+  for (const element of shuffledOptions) {
     optionsHTML += `
-        <button value='${options[i]}' onclick="calculateTeam()" name="answer" id='answer'> ${options[i]} </button><br>
+        <button value='${element}' onclick="calculateTeam()" name="answer" id='answer'> ${element} </button><br>
     `;
   }
   return optionsHTML;
@@ -286,12 +286,12 @@ const getOptionsHTML = (options) => {
 
 // Función para seleccionar una respuesta
 const selectAnswer = (optionIndex) => {
-  console.log(optionIndex)
+  console.log(optionIndex);
   const radioButtons = document.getElementsByName('answer');
   radioButtons[optionIndex].checked = true;
 };
 //Variable que contiene el audio del resultado
-const resultAudio = new Audio("./media/audios/success.mp3");
+const resultAudio = new Audio('./media/audios/success.mp3');
 // Función para mostrar el resultado
 const showResult = () => {
   questionElement.innerHTML =
@@ -303,29 +303,29 @@ const showResult = () => {
     questionElement.innerHTML =
       '<h2>🎉🥳 <span id="teamColor"></span></h2><br><img id="cupcake" src="" alt="Cupcake"><br>';
 
-    const teamColorElement = document.getElementById("teamColor");
-    const cupcakeElement = document.getElementById("cupcake");
+    const teamColorElement = document.getElementById('teamColor');
+    const cupcakeElement = document.getElementById('cupcake');
 
-    const greenPoints = questions.filter((q) => q.color === "Verde").length;
-    const purplePoints = questions.filter((q) => q.color === "Morado").length;
+    const greenPoints = questions.filter((q) => q.color === 'Verde').length;
+    const purplePoints = questions.filter((q) => q.color === 'Morado').length;
 
-    console.log("Verdes => ", greenPoints);
-    console.log("Morados => ", purplePoints);
+    console.log('Verdes => ', greenPoints);
+    console.log('Morados => ', purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = "Soy del Equipo Verde";
-      teamColorElement.style.color = "green";
-      cupcakeElement.src = "./media/img/CupCakeGreen.png";
-      cupcakeElement.style.width = "35vmin";
+      teamColor = 'eres del Equipo Verde';
+      teamColorElement.style.color = 'green';
+      cupcakeElement.src = './media/img/CupCakeGreen.png';
+      cupcakeElement.style.width = '35vmin';
     } else {
-      teamColor = "Soy del Equipo Morado";
-      teamColorElement.style.color = "purple";
-      cupcakeElement.src = "./media/img/CupCakePurple.png";
-      cupcakeElement.style.width = "35vmin";
+      teamColor = 'eres del Equipo Morado';
+      teamColorElement.style.color = 'purple';
+      cupcakeElement.src = './media/img/CupCakePurple.png';
+      cupcakeElement.style.width = '35vmin';
     }
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
-    teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
+    teamColorElement.textContent = `${name}, ${teamColor}`;
     //Reproduce al dar el resultado
     resultAudio.play();
     questionElement.innerHTML +=
@@ -338,12 +338,12 @@ const showResult = () => {
 // Función para compartir en redes sociales
 const shareOnSocialMedia = async () => {
   const name = getNameFromStorage();
-  const image = document.querySelector(".picture");
+  const image = document.querySelector('.picture');
 
-  let textColor = "brown";
-  let teamColorHTML = "";
+  let textColor = 'brown';
+  let teamColorHTML = '';
 
-  if (teamColor === "Equipo Morado") {
+  if (teamColor === 'Equipo Morado') {
     teamColorHTML = `<br><img src="./media/img/CupCakePurple.png" style="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
   } else {
     teamColorHTML = `<br><img src="./media/img/CupCakeGreen.png" style="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
@@ -353,15 +353,14 @@ const shareOnSocialMedia = async () => {
 
   image.innerHTML = `<img src="./media/img/logo.png"><p style="color: ${textColor}">${mensaje}</p>${teamColorHTML}`;
 
-  image.style.display = "block";
+  image.style.display = 'block';
 
-  await convertImage(image);
+  convertImage(image);
 };
 
 const convertImage = (content) => {
   // Crear un lienzo Canvas
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
+  const canvas = document.createElement('canvas');
 
   // Establecer el tamaño del lienzo según el contenido
   canvas.width = 1500;
@@ -372,73 +371,73 @@ const convertImage = (content) => {
     const image = canvas.toDataURL();
 
     Swal.fire({
-      title: "¡Descarga y Comparte! 🎁",
-      text: "Haz clic en el botón para descargar la imagen o cierra esta ventana para verla aquí.",
+      title: '¡Descarga y Comparte! 🎁',
+      text: 'Haz clic en el botón para descargar la imagen o cierra esta ventana para verla aquí.',
       imageUrl: image,
-      imageAlt: "Team Match Result",
+      imageAlt: 'Team Match Result',
       showCancelButton: true,
-      confirmButtonText: "Descargar imagen",
-      cancelButtonText: "Cerrar",
+      confirmButtonText: 'Descargar imagen',
+      cancelButtonText: 'Cerrar',
       showClass: {
-        popup: "animate__animated animate__fadeInDown",
-        image: "swal2-no-border",
+        popup: 'animate__animated animate__fadeInDown',
+        image: 'swal2-no-border',
       },
       hideClass: {
-        popup: "animate__animated animate__fadeOutUp",
-        image: "swal2-no-border",
+        popup: 'animate__animated animate__fadeOutUp',
+        image: 'swal2-no-border',
       },
       customClass: {
-        title: "resultado-title",
-        htmlContainer: "resultado-html-container",
-        image: "swal2-image",
+        title: 'resultado-title',
+        htmlContainer: 'resultado-html-container',
+        image: 'swal2-image',
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        const link = document.createElement("a");
+        const link = document.createElement('a');
         link.href = image;
-        link.download = "team_match_result.png";
-        link.style.display = "none";
+        link.download = 'team_match_result.png';
+        link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       } else {
-        const imgElement = document.createElement("img");
+        const imgElement = document.createElement('img');
         imgElement.src = image;
-        imgElement.style.width = "100%";
+        imgElement.style.width = '100%';
 
         Swal.fire({
-          title: "Resultado del Team Match 🎁",
+          title: 'Resultado del Team Match 🎁',
           html: imgElement.outerHTML,
           showClass: {
-            popup: "animate__animated animate__fadeInDown",
-            image: "swal2-no-border",
+            popup: 'animate__animated animate__fadeInDown',
+            image: 'swal2-no-border',
           },
           hideClass: {
-            popup: "animate__animated animate__fadeOutUp",
-            image: "swal2-no-border",
+            popup: 'animate__animated animate__fadeOutUp',
+            image: 'swal2-no-border',
           },
           customClass: {
-            title: "resultado-title",
-            htmlContainer: "resultado-html-container",
-            image: "swal2-image",
+            title: 'resultado-title',
+            htmlContainer: 'resultado-html-container',
+            image: 'swal2-image',
           },
         });
       }
     });
 
-    const imagenDOM = document.querySelector(".picture");
-    imagenDOM.style.display = "none";
+    const imagenDOM = document.querySelector('.picture');
+    imagenDOM.style.display = 'none';
   });
 };
 
 const recargarSitio = () => {
   Swal.fire(
-    "¡Gracias por participar!",
-    "Esperamos ver la imagen de tu equipo 😀",
-    "success"
+    '¡Gracias por participar!',
+    'Esperamos ver la imagen de tu equipo 😀',
+    'success'
   );
   setTimeout(() => {
-    localStorage.removeItem("teamMatchName");
+    localStorage.removeItem('teamMatchName');
     window.location.reload();
   }, 5000);
 };
@@ -460,8 +459,8 @@ const getRandomQuestions = () => {
 const randomQuestions = getRandomQuestions();
 questions.splice(0, questions.length, ...randomQuestions);
 
-const backgroundMusic = document.getElementById("backgroundMusic");
-const playButton = document.getElementById("playButton");
+const backgroundMusic = document.getElementById('backgroundMusic');
+const playButton = document.getElementById('playButton');
 
 function toggleMusic() {
   if (backgroundMusic.paused) {
@@ -475,6 +474,6 @@ function toggleMusic() {
 }
 
 function playAudioAnswer() {
-  const audioElement = document.getElementById("musicAnswer");
+  const audioElement = document.getElementById('musicAnswer');
   audioElement.play();
 }
