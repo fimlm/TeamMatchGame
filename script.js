@@ -267,7 +267,10 @@ const showResult = () => {
     teamColorElement.textContent = `${name}, quedaste en el ${teamColor}`;
     //Reproduce al dar el resultado
     resultAudio.play();
+    questionElement.innerHTML +=
+      '<button onclick="shareOnSocialMedia()">Descargar y Compartir</button>';
   }, 3000);
+
   // captureResultImage(); // Generar imagen con el resultado
 };
 
@@ -294,7 +297,7 @@ const shareOnSocialMedia = async () => {
 const convertImage = (content) => {
   // Crear un lienzo Canvas
   const canvas = document.createElement("canvas");
-  // const context = canvas.getContext('2d');
+  const context = canvas.getContext("2d");
 
   // Establecer el tamaño del lienzo según el contenido
   canvas.width = 1500;
@@ -302,36 +305,50 @@ const convertImage = (content) => {
 
   // Dibujar el contenido en el lienzo
   html2canvas(content).then((canvas) => {
-    return new Promise((resolve, reject) => {
-      html2canvas(content)
-        .then((canvas) => {
-          const image = canvas.toDataURL();
+    const image = canvas.toDataURL();
 
-          Swal.fire({
-            html: '<a href="#" class="button-download">¡Descarga y Comparte! 🎁</a>',
-            text: `¡Descarga y Comparte! 🎁`,
-            imageUrl: image,
-            imageWidth: 350,
-            imageHeight: 300,
-            imageAlt: "Imagen TeamMatch ",
-          });
-
-          const imagenDOM = document.querySelector(".picture");
-          imagenDOM.style.display = "none";
-
-          setTimeout(() => {
-            recargarSitio();
-          }, 10000);
-          setTimeout(() => {
-            recargarSitio();
-          }, 60000);
-
-          resolve(image);
-        })
-        .catch((error) => {
-          reject(error);
+    Swal.fire({
+      title: "¡Descarga y Comparte! 🎁",
+      text: "Haz clic en el botón para descargar la imagen o cierra esta ventana para verla aquí.",
+      imageUrl: image,
+      imageAlt: "Team Match Result",
+      showCancelButton: true,
+      confirmButtonText: "Descargar imagen",
+      cancelButtonText: "Cerrar",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const link = document.createElement("a");
+        link.href = image;
+        link.download = "team_match_result.png";
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        const imgElement = document.createElement("img");
+        imgElement.src = image;
+        imgElement.style.width = "100%";
+        Swal.fire({
+          title: "Resultado del Team Match",
+          html: imgElement.outerHTML,
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
         });
+      }
     });
+
+    const imagenDOM = document.querySelector(".picture");
+    imagenDOM.style.display = "none";
   });
 };
 
