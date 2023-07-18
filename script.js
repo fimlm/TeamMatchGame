@@ -305,7 +305,14 @@ const showResult = () => {
 
   setTimeout(() => {
     questionElement.innerHTML =
-      '<h2>🎉🥳 <span id="teamColor"></span></h2><br><img id="cupcake" src="" alt="Cupcake"><br>';
+      `
+      <div id="miDescarga" class="miDescarga" style="">
+        <h2>🎉🥳 <span id="teamColor"></span></h2>
+        </div>
+        `;
+    /* <br>
+    <button onclick="descarga()" id="downloadButton">Descargars</button>
+<img id="cupcake" src="" alt="Cupcake"><br>  */
 
     const teamColorElement = document.getElementById('teamColor');
     const cupcakeElement = document.getElementById('cupcake');
@@ -317,15 +324,24 @@ const showResult = () => {
     console.log('Morados => ', purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = 'Eres Del Equipo Verde';
-      teamColorElement.style.color = 'green';
-      cupcakeElement.src = './media/img/CupCakeGreen.png';
-      cupcakeElement.style.width = '35vmin';
+      teamColor = "Eres Del Equipo Verde";
+      teamColorElement.style.color = "green";
+      //miDescargaElement.style = "background-image:url('./media/img/Ponquesito-Verde.jpg')";
+
+      // Obtén una referencia a la div
+      const miDescargaElement = document.getElementById('miDescarga');
+      miDescargaElement.style.backgroundImage = "url('./media/img/Ponquesito-Verde.jpg')";
+
+      //cupcakeElement.src = "./media/img/CupCakeGreen.png";
+      //cupcakeElement.style.width = "35vmin";
     } else {
-      teamColor = 'Eres Del Equipo Morado';
-      teamColorElement.style.color = 'purple';
-      cupcakeElement.src = './media/img/CupCakePurple.png';
-      cupcakeElement.style.width = '35vmin';
+      teamColor = "Eres Del Equipo Morado";
+      teamColorElement.style.color = "purple";
+      const miDescargaElement = document.getElementById('miDescarga');
+      miDescargaElement.style.backgroundImage = "url('./media/img/Ponquesito-Morado.jpg')";
+
+      //cupcakeElement.src = "./media/img/CupCakePurple.png";
+      //cupcakeElement.style.width = "35vmin";
     }
 
     const name = getNameFromStorage(); // Obtener el nombre del almacenamiento del navegador
@@ -333,7 +349,7 @@ const showResult = () => {
     //Reproduce al dar el resultado
     resultAudio.play();
     questionElement.innerHTML +=
-      '<button onclick="shareOnSocialMedia()">Descargar y Compartir</button>';
+      '<button class="descarga" onclick="descarga()">Descargar y Compartir</button>';
   }, 3000);
 
   // captureResultImage(); // Generar imagen con el resultado
@@ -475,4 +491,36 @@ function toggleMusic() {
 function playAudioAnswer() {
   const audioElement = document.getElementById('musicAnswer');
   audioElement.play();
+}
+
+
+
+/* function descarga() {
+  // Captura la div utilizando html2canvas
+  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
+    // Crea un enlace para descargar la imagen
+    var link = document.createElement("a");
+    link.href = canvas.toDataURL("image/jpeg");
+    link.download = "mi_div.jpg";
+    link.click();
+  });
+} */
+
+
+function descarga() {
+  // Captura la div utilizando html2canvas
+  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
+    // Escalar la imagen de fondo del canvas
+    var scaledCanvas = document.createElement("canvas");
+    var scaledContext = scaledCanvas.getContext("2d");
+    scaledCanvas.width = canvas.width * 3; // Escala al 150% (1.5 veces el tamaño original)
+    scaledCanvas.height = canvas.height * 3;
+    scaledContext.drawImage(canvas, 0, 0, scaledCanvas.width, scaledCanvas.height);
+
+    // Crea un enlace para descargar la imagen escalada
+    var link = document.createElement("a");
+    link.href = scaledCanvas.toDataURL("image/jpeg");
+    link.download = "Mi-Equipo-23.png";
+    link.click();
+  });
 }
