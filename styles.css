@@ -141,7 +141,6 @@ button:hover {
   height: 800;
   max-width: 400px;
   background-color: #fff;
-  border-style: groove;
   display: none;
   position: fixed;
   left: -50%;

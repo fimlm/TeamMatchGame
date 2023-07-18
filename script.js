@@ -369,17 +369,18 @@ const convertImage = (content) => {
   const canvas = document.createElement("canvas");
 
   // Establecer el tamaño del lienzo según el contenido
-  canvas.width = 1500;
-  canvas.height = 1020;
+  canvas.width = 3000;
+  canvas.height = 2040;
 
   // Dibujar el contenido en el lienzo
   html2canvas(content).then((canvas) => {
-    const image = canvas.toDataURL();
+    const highQualityImage = canvas.toDataURL("image/png", 1);
+    const lowQualityImage = canvas.toDataURL("image/png", 0.5);
 
     Swal.fire({
       title: "¡Descarga y Comparte! 🎁",
       text: "Haz clic en el botón para descargar la imagen o cierra esta ventana para verla aquí.",
-      imageUrl: image,
+      imageUrl: lowQualityImage,
       imageAlt: "Team Match Result",
       showCancelButton: true,
       confirmButtonText: "Descargar imagen",
@@ -400,7 +401,7 @@ const convertImage = (content) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const link = document.createElement("a");
-        link.href = image;
+        link.href = highQualityImage;
         link.download = "team_match_result.png";
         link.style.display = "none";
         document.body.appendChild(link);
@@ -408,8 +409,8 @@ const convertImage = (content) => {
         document.body.removeChild(link);
       } else {
         const imgElement = document.createElement("img");
-        imgElement.src = image;
-        imgElement.style.width = "100%";
+        imgElement.src = highQualityImage;
+        imgElement.style.width = "50%";
 
         Swal.fire({
           title: "Resultado Del Team Match 🎁",
