@@ -547,8 +547,25 @@ function playAudioAnswer() {
 function descarga() {
   // Captura la div utilizando html2canvas
   html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
-    // Crea una nueva ventana o pestaña con la imagen generada
-    var newWindow = window.open();
-    newWindow.document.write('<img src="' + canvas.toDataURL("image/jpeg") + '" alt="Mi-Equipo-23" style="width:100%;height:auto;">');
+    // Crea un enlace para descargar la imagen
+    var link = document.createElement("a");
+    link.href = canvas.toDataURL("image/jpeg");
+    link.download = "Mi-Equipo-23.jpg";
+    
+    // Crea un botón para guardar la imagen
+    var button = document.createElement("button");
+    button.innerText = "Guardar imagen";
+    button.addEventListener("click", function () {
+      // Simula el clic en el enlace utilizando el evento de click
+      var event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+      });
+      link.dispatchEvent(event);
+    });
+    
+    // Agrega el botón al documento
+    document.body.appendChild(button);
   });
 }
