@@ -9,6 +9,7 @@ B: Jean Sebastian
 🎵 ¿Qué canción prefieres?
 A: Monotonía de Shakira
 A: Acróstico de Shakira
+
 B: Como tú decidas
 B: Oiga de Joan Sebastian
 
