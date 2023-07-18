@@ -158,18 +158,18 @@ button:hover {
   box-shadow: 2px 2px 5px 3px #0000;
 }*/
 #playButton {
-  border: none;
-  background: none;
-  position: fixed;
-  left: 20px;
-  bottom: 3vmin;
-  padding: 0;
-  box-shadow: 2px 2px 5px 3px #0000;
+	border: none;
+	background: none;
+	position: fixed;
+	right: 16px;
+	top: 30vmin;
+	padding: 0;
+	box-shadow: 2px 2px 5px 3px #0000;
 }
 
 #playButton img {
-  width: 100px;
-  height: 100px;
+	width: 70px;
+	height: 70px;
 }
 
 .button-download {
