@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Riffic Free';
-  src: url('./media/fonts/RifficFree-Bold.ttf') format('truetype');
+  font-family: "Riffic Free";
+  src: url("./media/fonts/RifficFree-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -10,8 +10,8 @@ body {
   padding-left: 5vmin;
   padding-right: 5vmin;
   text-align: center;
-  font-family: 'Riffic Free', Arial, sans-serif;
-  background-image: url('./media/img/bg.jpg');
+  font-family: "Riffic Free", Arial, sans-serif;
+  background-image: url("./media/img/bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -71,7 +71,7 @@ input {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  font-family: 'Riffic Free', Arial, sans-serif;
+  font-family: "Riffic Free", Arial, sans-serif;
   font-size: larger;
   color: #864c24;
 }
@@ -85,7 +85,7 @@ button {
   margin: 1vmin;
   width: 90%;
   transition: all 0.5s ease-in-out;
-  font-family: 'Riffic Free', Arial, sans-serif;
+  font-family: "Riffic Free", Arial, sans-serif;
   font-size: larger;
   color: #864c24;
 }
@@ -133,7 +133,7 @@ button:hover {
   display: none;
   position: fixed;
   left: -50%;
-  background-image: url('./media/img/bg.jpg');
+  background-image: url("./media/img/bg.jpg");
 }
 
 .picture img {
@@ -170,6 +170,19 @@ button:hover {
 #playButton img {
 	width: 70px;
 	height: 70px;
+}
+
+.resultado-title {
+  color: brown;
+}
+
+.resultado-html-container {
+  background-color: transparent;
+  border: none;
+}
+
+.swal2-popup .swal2-image {
+  border-radius: 10px;
 }
 
 .button-download {

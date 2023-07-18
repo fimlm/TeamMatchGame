@@ -313,12 +313,12 @@ const showResult = () => {
     console.log("Morados => ", purplePoints);
 
     if (greenPoints > purplePoints) {
-      teamColor = "Equipo Verde";
+      teamColor = "Soy del Equipo Verde";
       teamColorElement.style.color = "green";
       cupcakeElement.src = "./media/img/CupCakeGreen.png";
       cupcakeElement.style.width = "35vmin";
     } else {
-      teamColor = "Equipo Morado";
+      teamColor = "Soy del Equipo Morado";
       teamColorElement.style.color = "purple";
       cupcakeElement.src = "./media/img/CupCakePurple.png";
       cupcakeElement.style.width = "35vmin";
@@ -340,15 +340,18 @@ const shareOnSocialMedia = async () => {
   const name = getNameFromStorage();
   const image = document.querySelector(".picture");
 
+  let textColor = "brown";
+  let teamColorHTML = "";
+
   if (teamColor === "Equipo Morado") {
-    teamColor = `<br><img src="./media/img/CupCakePurple.png" styly="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
+    teamColorHTML = `<br><img src="./media/img/CupCakePurple.png" style="width: 20vmin"><br><span style="color: purple">${teamColor}</span>`;
   } else {
-    teamColor = `<br><img src="./media/img/CupCakeGreen.png" styly="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
+    teamColorHTML = `<br><img src="./media/img/CupCakeGreen.png" style="width: 20vmin"><br><span style="color: green">${teamColor}</span>`;
   }
 
-  const mensaje = `🎉🥳 ¡Soy ${name}! 🎉🥳<br> Soy del ${teamColor}`;
+  const mensaje = `🎉🥳 ¡Soy ${name}! 🎉🥳<br>`;
 
-  image.innerHTML = `<img src="./media/img/logo.png"><p>${mensaje}</p>`;
+  image.innerHTML = `<img src="./media/img/logo.png"><p style="color: ${textColor}">${mensaje}</p>${teamColorHTML}`;
 
   image.style.display = "block";
 
@@ -378,9 +381,16 @@ const convertImage = (content) => {
       cancelButtonText: "Cerrar",
       showClass: {
         popup: "animate__animated animate__fadeInDown",
+        image: "swal2-no-border",
       },
       hideClass: {
         popup: "animate__animated animate__fadeOutUp",
+        image: "swal2-no-border",
+      },
+      customClass: {
+        title: "resultado-title",
+        htmlContainer: "resultado-html-container",
+        image: "swal2-image",
       },
     }).then((result) => {
       if (result.isConfirmed) {
@@ -395,14 +405,22 @@ const convertImage = (content) => {
         const imgElement = document.createElement("img");
         imgElement.src = image;
         imgElement.style.width = "100%";
+
         Swal.fire({
-          title: "Resultado del Team Match",
+          title: "Resultado del Team Match 🎁",
           html: imgElement.outerHTML,
           showClass: {
             popup: "animate__animated animate__fadeInDown",
+            image: "swal2-no-border",
           },
           hideClass: {
             popup: "animate__animated animate__fadeOutUp",
+            image: "swal2-no-border",
+          },
+          customClass: {
+            title: "resultado-title",
+            htmlContainer: "resultado-html-container",
+            image: "swal2-image",
           },
         });
       }
