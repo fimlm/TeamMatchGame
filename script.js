@@ -233,11 +233,10 @@ const calculateTeam = () => {
   }
 
   console.log(greenCount);
-  console.log(redCount);
 
   let optionIndex = answer.value;
 
-  if (greenCount > redCount) {
+  if (greenCount > purpleCount) {
     questions[currentQuestion].color = 'Verde';
   } else {
     questions[currentQuestion].color = 'Morado';
