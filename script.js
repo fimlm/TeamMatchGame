@@ -318,11 +318,15 @@ const calculateTeam = () => {
     purpleCount++;
   }
 
+  console.log(greenCount);
+  console.log(purpleCount);
+
   if (greenCount > purpleCount) {
     questions[currentQuestion].color = 'Verde';
   } else {
     questions[currentQuestion].color = 'Morado';
   }
+
 
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
