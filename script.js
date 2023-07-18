@@ -507,7 +507,7 @@ function playAudioAnswer() {
 } */
 
 
-function descarga() {
+/* function descarga() {
   // Captura la div utilizando html2canvas
   html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
     // Escalar la imagen de fondo del canvas
@@ -522,5 +522,24 @@ function descarga() {
     link.href = scaledCanvas.toDataURL("image/jpeg");
     link.download = "Mi-Equipo-23.jpg";
     link.click();
+  });
+}
+ */
+
+function descarga() {
+  // Captura la div utilizando html2canvas
+  html2canvas(document.getElementById("miDescarga")).then(function (canvas) {
+    // Crea un enlace temporal para la descarga
+    var link = document.createElement("a");
+    link.href = canvas.toDataURL("image/jpeg");
+    link.download = "Mi-Equipo-23.jpg";
+
+    // Simula el clic en el enlace utilizando el evento de click
+    var event = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+    link.dispatchEvent(event);
   });
 }
